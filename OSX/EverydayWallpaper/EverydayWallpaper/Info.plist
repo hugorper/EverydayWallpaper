@@ -25,9 +25,9 @@
 	<key>NSMainNibFile</key>
 	<string>EverydayWallpaper</string>
 	<key>NSPrefPaneIconFile</key>
-	<string>EverydayWallpaper.tiff</string>
+	<string>EverydayWallpaper.png</string>
 	<key>NSPrefPaneIconLabel</key>
-	<string>EverydayWallpaper</string>
+	<string>Wallpaper</string>
 	<key>NSPrincipalClass</key>
 	<string>EverydayWallpaper</string>
 </dict>

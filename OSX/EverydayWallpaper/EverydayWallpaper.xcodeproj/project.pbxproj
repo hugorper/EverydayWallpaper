@@ -248,7 +248,7 @@
 				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hugorper.EverydayWallpaper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EverydayWallpaper;
 				SWIFT_OBJC_BRIDGING_HEADER = "EverydayWallpaper/EverydayWallpaper-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = prefPane;
@@ -265,7 +265,7 @@
 				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hugorper.EverydayWallpaper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EverydayWallpaper;
 				SWIFT_OBJC_BRIDGING_HEADER = "EverydayWallpaper/EverydayWallpaper-Bridging-Header.h";
 				WRAPPER_EXTENSION = prefPane;
 			};
@@ -290,6 +290,7 @@
 				9AC6130A1BFA590D00B69F56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,6 +10,7 @@
 		9AC613041BFA590D00B69F56 /* EverydayWallpaper.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AC613021BFA590D00B69F56 /* EverydayWallpaper.xib */; };
 		9AC6130D1BFA592800B69F56 /* EverydayWallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6130C1BFA592800B69F56 /* EverydayWallpaper.swift */; };
 		9AC613111BFA6E4C00B69F56 /* EverydayWallpaper.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AC613101BFA6E4C00B69F56 /* EverydayWallpaper.png */; };
+		9AE985821C03C2F40072AF95 /* EverydayWallpaperAgent in Resources */ = {isa = PBXBuildFile; fileRef = 9AE985811C03C2F40072AF95 /* EverydayWallpaperAgent */; settings = {ASSET_TAGS = (New, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		9AC6130B1BFA592800B69F56 /* EverydayWallpaper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EverydayWallpaper-Bridging-Header.h"; sourceTree = "<group>"; };
 		9AC6130C1BFA592800B69F56 /* EverydayWallpaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EverydayWallpaper.swift; sourceTree = "<group>"; };
 		9AC613101BFA6E4C00B69F56 /* EverydayWallpaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EverydayWallpaper.png; sourceTree = "<group>"; };
+		9AE985811C03C2F40072AF95 /* EverydayWallpaperAgent */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = EverydayWallpaperAgent; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 		9AC612FB1BFA590D00B69F56 /* EverydayWallpaper */ = {
 			isa = PBXGroup;
 			children = (
+				9AE985811C03C2F40072AF95 /* EverydayWallpaperAgent */,
 				9AC613101BFA6E4C00B69F56 /* EverydayWallpaper.png */,
 				9AC613021BFA590D00B69F56 /* EverydayWallpaper.xib */,
 				9AC613051BFA590D00B69F56 /* Info.plist */,
@@ -98,6 +101,9 @@
 		9AC612F01BFA590D00B69F56 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Hugo PEREIRA";
 				TargetAttributes = {
@@ -130,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AC613111BFA6E4C00B69F56 /* EverydayWallpaper.png in Resources */,
+				9AE985821C03C2F40072AF95 /* EverydayWallpaperAgent in Resources */,
 				9AC613041BFA590D00B69F56 /* EverydayWallpaper.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

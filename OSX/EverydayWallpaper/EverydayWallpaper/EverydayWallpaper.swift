@@ -18,12 +18,16 @@ class EverydayWallpaper: NSPreferencePane {
     }
     
     @IBAction func testAction(sender: AnyObject) {
+       // let defaults = NSUserDefaults.standardUserDefaults()
+       // defaults.setObject("Coding Explorer", forKey: "userNameKey")
+        
         let alert = NSAlert()
         alert.messageText = "Do you want to save the changes you made in the document?"
         alert.informativeText = "Your changes will be lost if you don't save them."
         alert.addButtonWithTitle("Save")
         alert.addButtonWithTitle("Cancel")
         alert.addButtonWithTitle("Don't Save")
+        
         
         alert.runModal()
     }

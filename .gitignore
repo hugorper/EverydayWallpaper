@@ -194,4 +194,7 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+
+# EverydayWallpaper specific
 temp/*
+.DS_Store

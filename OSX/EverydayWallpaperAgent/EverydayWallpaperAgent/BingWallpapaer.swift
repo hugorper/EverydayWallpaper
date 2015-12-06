@@ -10,10 +10,10 @@ import Foundation
 */
 class BingWallpaper {
     var Url: String = ""
-    var UrlBase: String = ""
+    var UrlWithoutResolution: String = ""
     var StartDate: NSDate = NSDate()
     var EndDate: NSDate = NSDate()
-
+    
     /*!
     * @discussion Class constructor
     * @param param description
@@ -23,7 +23,7 @@ class BingWallpaper {
     */
     init(url: String, urlBase: String, startDate: String, endDate: String) {
         Url = url
-        UrlBase = urlBase
+        UrlWithoutResolution = urlBase
         StartDate = dateFromString(startDate)
         EndDate = dateFromString(endDate)
     }

@@ -28,6 +28,7 @@ do {
             endDate: endDate[0])
 
     print(bing.Url)
+    print(bing.UrlWithoutResolution)
     print(bing.StartDate)
     print(bing.EndDate)
 

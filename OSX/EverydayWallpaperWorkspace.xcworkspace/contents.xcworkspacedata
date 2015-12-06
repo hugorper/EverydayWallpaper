@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:EverydayWallpaperUtils/EverydayWallpaperUtils.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:EverydayWallpaperAgent/EverydayWallpaperAgent.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:EverydayWallpaper/EverydayWallpaper.xcodeproj">
+   </FileRef>
+</Workspace>

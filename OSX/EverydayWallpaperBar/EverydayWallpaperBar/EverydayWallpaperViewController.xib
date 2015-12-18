@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="EverydayWallpaperViewController" customModule="EverydayWallpaperBar" customModuleProvider="target">
+            <connections>
+                <outlet property="allScreenActivationCheckbox" destination="A7o-ob-fMm" id="99V-GD-oLL"/>
+                <outlet property="allScreenMarketsCombo" destination="tXF-q0-Qvc" id="GLM-gy-oGA"/>
+                <outlet property="alternateScreenActivationCheckbox" destination="7bz-Tc-9Qm" id="J62-hb-rYO"/>
+                <outlet property="alternateScreenMarketsCombo" destination="Ued-2d-7ee" id="JUQ-pj-9Jq"/>
+                <outlet property="imagePathControl" destination="b3z-nm-alc" id="tWj-tW-cIh"/>
+                <outlet property="infoImageLabel" destination="x5u-vQ-Zeu" id="w7L-BT-fQ7"/>
+                <outlet property="infoTooltipImage" destination="BIu-UH-Vv9" id="B7w-3l-Oxt"/>
+                <outlet property="saveLastButton" destination="NAz-nN-rwh" id="r5W-S9-SyK"/>
+                <outlet property="useYesterdayOnAlternateScreenCheckbox" destination="FuD-p6-RSL" id="OLk-aZ-Uqt"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+                <outlet property="wallpaperImageView" destination="YOo-k2-1Bo" id="m1l-3s-Jhk"/>
+                <outlet property="wallpaperPreviousButton" destination="gVF-JW-4aX" id="usu-dD-xkP"/>
+                <outlet property="wallpaperScreenNextButton" destination="GIB-ui-2ey" id="EM9-pl-56b"/>
+                <outlet property="wallpaperScreenTodayButton" destination="lcd-Ha-akl" id="vXS-RU-vMu"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView focusRingType="exterior" id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="556" height="297"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A7o-ob-fMm">
+                    <rect key="frame" x="18" y="261" width="247" height="18"/>
+                    <animations/>
+                    <buttonCell key="cell" type="check" title="Activate wallpapers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="gJp-PK-57j">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aKN-lA-QLh">
+                    <rect key="frame" x="36" y="238" width="74" height="17"/>
+                    <animations/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Codepage:" id="YJ0-Qu-9i0">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tXF-q0-Qvc">
+                    <rect key="frame" x="116" y="231" width="92" height="25"/>
+                    <animations/>
+                    <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="f1Z-JS-pyd">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="zP3-SF-htu"/>
+                    </popUpButtonCell>
+                </popUpButton>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NAz-nN-rwh">
+                    <rect key="frame" x="18" y="105" width="199" height="18"/>
+                    <animations/>
+                    <buttonCell key="cell" type="check" title="Save last 10 wallpares" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="b9u-GM-eUH">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b3z-nm-alc">
+                    <rect key="frame" x="20" y="20" width="467" height="22"/>
+                    <animations/>
+                    <pathCell key="cell" selectable="YES" alignment="left" id="1a0-MX-er9">
+                        <font key="font" metaFont="system"/>
+                        <url key="url" string="file://localhost/Applications/"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.92549019607843142" blue="0.97254901960784312" alpha="1" colorSpace="deviceRGB"/>
+                    </pathCell>
+                </pathControl>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YOo-k2-1Bo">
+                    <rect key="frame" x="268" y="104" width="278" height="176"/>
+                    <animations/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="rJb-5l-kVP"/>
+                </imageView>
+                <button ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gVF-JW-4aX">
+                    <rect key="frame" x="269" y="48" width="62" height="26"/>
+                    <animations/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="NSGoLeftTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hLb-sz-aa7">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system" size="10"/>
+                    </buttonCell>
+                </button>
+                <button verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lcd-Ha-akl">
+                    <rect key="frame" x="351" y="44" width="112" height="32"/>
+                    <animations/>
+                    <buttonCell key="cell" type="push" title="Today" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0cI-Ey-UWm">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GIB-ui-2ey">
+                    <rect key="frame" x="480" y="48" width="65" height="26"/>
+                    <animations/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="NSGoRightTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="I19-Ui-Ssx">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system" size="10"/>
+                    </buttonCell>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7bz-Tc-9Qm">
+                    <rect key="frame" x="18" y="196" width="239" height="18"/>
+                    <animations/>
+                    <buttonCell key="cell" type="check" title="Use different on secondary screen" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Hx6-WK-uJS">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ued-2d-7ee">
+                    <rect key="frame" x="114" y="166" width="97" height="25"/>
+                    <animations/>
+                    <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="abu-yl-Ows">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="1Ry-uR-rkh"/>
+                    </popUpButtonCell>
+                </popUpButton>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FuD-p6-RSL">
+                    <rect key="frame" x="40" y="144" width="171" height="18"/>
+                    <animations/>
+                    <buttonCell key="cell" type="check" title="Use yesteray wallpaper" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Hcl-zz-VuU">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="752" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="75b-oZ-kLO">
+                    <rect key="frame" x="36" y="171" width="74" height="17"/>
+                    <animations/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Codepage:" id="ugJ-y3-MGp">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x5u-vQ-Zeu">
+                    <rect key="frame" x="269" y="82" width="246" height="17"/>
+                    <animations/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Nothing loaded" id="JAf-bO-fcF">
+                        <font key="font" metaFont="cellTitle"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BIu-UH-Vv9">
+                    <rect key="frame" x="522" y="79" width="21" height="22"/>
+                    <animations/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSInfo" id="2uh-K7-Ccq"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7IR-fu-vta">
+                    <rect key="frame" x="18" y="50" width="247" height="17"/>
+                    <animations/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Wallpaper path" placeholderString="eeee" id="o4r-Yu-1hp">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cR3-Cg-hhH">
+                    <rect key="frame" x="501" y="18" width="42" height="19"/>
+                    <animations/>
+                    <popUpButtonCell key="cell" type="bevel" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" arrowPosition="arrowAtCenter" id="rNs-DT-bWh">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="n3H-Qt-LbI">
+                            <items>
+                                <menuItem state="on" image="NSSmartBadgeTemplate" hidden="YES" id="IjV-ND-xxc"/>
+                                <menuItem title="Help" tag="1" id="pbP-bh-OIs">
+                                    <connections>
+                                        <action selector="menuActionHelp:" target="-2" id="3mf-Fc-H1J"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem isSeparatorItem="YES" id="RVn-kg-b4t"/>
+                                <menuItem title="Uninstall" tag="2" id="ZcS-bG-Efx">
+                                    <connections>
+                                        <action selector="menuActionUninstall:" target="-2" id="aF7-wi-KXe"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem isSeparatorItem="YES" id="c2h-UE-IA4"/>
+                                <menuItem title="Hide" tag="3" id="v2z-II-L2h">
+                                    <connections>
+                                        <action selector="menuActionHide:" target="-2" id="Z2t-rn-2FL"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="Exit" tag="4" id="3eF-Gm-YUk">
+                                    <connections>
+                                        <action selector="menuActionQuit:" target="-2" id="2S5-dH-zJH"/>
+                                    </connections>
+                                </menuItem>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+            </subviews>
+            <constraints>
+                <constraint firstItem="lcd-Ha-akl" firstAttribute="centerY" secondItem="gVF-JW-4aX" secondAttribute="centerY" id="BKC-c5-kQa"/>
+                <constraint firstItem="GIB-ui-2ey" firstAttribute="centerY" secondItem="gVF-JW-4aX" secondAttribute="centerY" id="R0n-kZ-0px"/>
+            </constraints>
+            <animations/>
+            <point key="canvasLocation" x="178" y="459.5"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="NAO-Zd-98r"/>
+    </objects>
+    <resources>
+        <image name="NSGoLeftTemplate" width="9" height="12"/>
+        <image name="NSGoRightTemplate" width="9" height="12"/>
+        <image name="NSInfo" width="32" height="32"/>
+        <image name="NSSmartBadgeTemplate" width="14" height="14"/>
+    </resources>
+</document>

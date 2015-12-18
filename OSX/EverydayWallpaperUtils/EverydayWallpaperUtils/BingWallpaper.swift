@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum BingWallperResolutions : String {
+public enum BingWallperResolutions : String {
     case Res176x220 = "176x220", Res220x176 = "220x176", Res240x240 = "240x240", Res240x320 = "240x320",
          Res240x400 = "240x400", Res320x240 = "320x240", Res320x320 = "320x320", Res360x480 = "360x480",
          Res400x240 = "400x240", Res480x360 = "480x360", Res480x640 = "480x640", Res480x800 = "480x800",
@@ -17,16 +17,16 @@ enum BingWallperResolutions : String {
          Res1920x1080 = "1920x1080", Res1920x1200 = "1920x1200"
 
     
-    static let allValues = [Res176x220, Res220x176, Res240x240, Res240x320, Res240x400, Res320x240, Res320x320, Res360x480, Res400x240, Res480x360, Res480x640, Res480x800, Res640x480, Res768x1024, Res800x480, Res800x600, Res1024x768, Res1280x720, Res1280x768, Res1366x768, Res1920x1080, Res1920x1200]
+    public static let allValues = [Res176x220, Res220x176, Res240x240, Res240x320, Res240x400, Res320x240, Res320x320, Res360x480, Res400x240, Res480x360, Res480x640, Res480x800, Res640x480, Res768x1024, Res800x480, Res800x600, Res1024x768, Res1280x720, Res1280x768, Res1366x768, Res1920x1080, Res1920x1200]
 }
 
-enum BingWallperMarkets : String {
+public enum BingWallperMarkets : String {
     case EnglishUnitedStates = "en-US", ChineseChina = "zh-CN", JapaneseJapan = "ja-JP",
     EnglishAustralia = "en-AU", EnglishUnitedKingdom = "en-UK", GermanGermany = "de-DE",
     EnglishNewZealand = "en-NZ", EnglishCanada = "en-CA"
     
     
-    static let allValues = [EnglishUnitedStates, ChineseChina, JapaneseJapan, EnglishAustralia, EnglishUnitedKingdom, GermanGermany, EnglishNewZealand, EnglishCanada]
+    public static let allValues = [EnglishUnitedStates, ChineseChina, JapaneseJapan, EnglishAustralia, EnglishUnitedKingdom, GermanGermany, EnglishNewZealand, EnglishCanada]
 }
 
 
@@ -37,7 +37,7 @@ for category in ProductCategory.allValues{
 */
 
 
-class BingWallpaperReference {
+public class BingWallpaperReference {
     var Url: String = ""
     var UrlWithoutResolution: String = ""
     var StartDate: NSDate = NSDate()
@@ -72,7 +72,7 @@ class BingWallpaperReference {
     }
 }
 
-class BingWallpaperService {
+public class BingWallpaperService {
     
     static func GetTodayBingWallpaperReference(market: String) -> BingWallpaperReference?  {
         return GetBingWallpaperReference(0, market: market);

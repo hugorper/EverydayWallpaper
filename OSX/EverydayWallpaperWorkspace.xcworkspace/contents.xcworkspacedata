@@ -2,12 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:EverydayWallpaperBar/EverydayWallpaperBar.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:EverydayWallpaperUtils/EverydayWallpaperUtils.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:EverydayWallpaperAgent/EverydayWallpaperAgent.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:EverydayWallpaper/EverydayWallpaper.xcodeproj">
    </FileRef>
 </Workspace>

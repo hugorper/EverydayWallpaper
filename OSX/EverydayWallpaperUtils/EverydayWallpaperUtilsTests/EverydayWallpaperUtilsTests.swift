@@ -12,7 +12,7 @@ import XCTest
 
 class EverydayWallpaperUtilsTests: XCTestCase {
     
-    let DefaultMarket: String = "en-US";
+    let DefaultMarket: String = "en-US"
     
     override func setUp() {
         super.setUp()
@@ -39,7 +39,7 @@ class EverydayWallpaperUtilsTests: XCTestCase {
     }
     
     func testUrlLoaded() {
-        let bing = BingWallpaperService.GetTodayBingWallpaperReference(DefaultMarket);
+        let bing = BingWallpaperService.GetTodayBingWallpaperReference(DefaultMarket)
         XCTAssert(bing?.Url.characters.count > 0, "Wallpaper URL empty")
     }
     
@@ -52,7 +52,7 @@ class EverydayWallpaperUtilsTests: XCTestCase {
 
     func testAllResolutionsDownloadWithPerformance() {
         //let bing = BingWallpaperService.GetTodayBingWallpaperReference(DefaultMarket);
-        let bing = BingWallpaperService.GetYesterdayBingWallpaperReference(DefaultMarket);
+        let bing = BingWallpaperService.GetYesterdayBingWallpaperReference(DefaultMarket)
 
         for resolution in BingWallperResolutions.allValues {
             
@@ -66,7 +66,7 @@ class EverydayWallpaperUtilsTests: XCTestCase {
             
             if success {
                 do {
-                    try NSFileManager.defaultManager().removeItemAtPath("\(downloadedImagePath)")
+                   try NSFileManager.defaultManager().removeItemAtPath("\(downloadedImagePath)")
                 } catch {
                     XCTAssert(false, "Error deleting file for resolution \(resolution)")
                 }
@@ -77,7 +77,7 @@ class EverydayWallpaperUtilsTests: XCTestCase {
     func testBingWallpaperPerformance() {
         // This is an example of a performance test case.
         self.measureBlock {
-            _ = BingWallpaperService.GetTodayBingWallpaperReference(self.DefaultMarket);
+            _ = BingWallpaperService.GetTodayBingWallpaperReference(self.DefaultMarket)
         }
     }
     

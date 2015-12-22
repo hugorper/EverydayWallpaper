@@ -51,13 +51,23 @@ class EverydayWallpaperViewController: NSViewController {
 extension EverydayWallpaperViewController {
     
     @IBAction func menuActionHelp(sender: AnyObject) {
+        let myPopup: NSAlert = NSAlert()
+
+        //self.menuActionHide(sender)
+        
+        myPopup.messageText = "Everyday Wallpaper help"
+        myPopup.informativeText = "eee\nfjdskjkjhfdsks fdlj fdlf jdskjf lds sd\n fhdjskfjsahf dhfkj safj hdksja\nfkjjfhcrwuecghjklfdsjklgfhgfg ghfjslkg ghfj"
+
+        myPopup.alertStyle = NSAlertStyle.InformationalAlertStyle
+        myPopup.addButtonWithTitle("close")
+        myPopup.beginSheetModalForWindow(self.view.window!, completionHandler: nil )
     }
     
     @IBAction func menuActionUninstall(sender: AnyObject) {
     }
     
     @IBAction func menuActionHide(sender: AnyObject) {
-        (NSApplication.sharedApplication().delegate as! AppDelegate).closePopover(nil)
+        (NSApplication.sharedApplication().delegate as! AppDelegate).closePopover(sender)
     }
 
     @IBAction func menuActionQuit(sender: AnyObject) {

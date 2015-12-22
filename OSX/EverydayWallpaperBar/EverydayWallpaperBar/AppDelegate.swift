@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   let popover = NSPopover()
   var eventMonitor: EventMonitor?
 
+
   func applicationDidFinishLaunching(notification: NSNotification) {
     if let button = statusItem.button {
       button.image = NSImage(named: "StatusBarButtonImage")
@@ -22,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     popover.contentViewController = EverydayWallpaperViewController(nibName: "EverydayWallpaperViewController", bundle: nil)
-
+    
     eventMonitor = EventMonitor(mask: [.LeftMouseDownMask, .RightMouseDownMask]) { [unowned self] event in
       if self.popover.shown {
         self.closePopover(event)
@@ -34,7 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
     }
-    
+
     func togglePopover(sender: AnyObject?) {
         if popover.shown {
             closePopover(sender)

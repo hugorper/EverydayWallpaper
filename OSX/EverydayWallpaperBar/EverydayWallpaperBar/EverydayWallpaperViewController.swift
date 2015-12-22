@@ -32,6 +32,8 @@ class EverydayWallpaperViewController: NSViewController {
     
     @IBOutlet weak var infoImageLabel: NSTextField!
     
+    var actionHide: Selector = ""
+    
     override func viewWillAppear() {
         super.viewWillAppear()
         
@@ -55,6 +57,7 @@ extension EverydayWallpaperViewController {
     }
     
     @IBAction func menuActionHide(sender: AnyObject) {
+        (NSApplication.sharedApplication().delegate as! AppDelegate).closePopover(nil)
     }
 
     @IBAction func menuActionQuit(sender: AnyObject) {

@@ -7,7 +7,4 @@
    <FileRef
       location = "group:EverydayWallpaperUtils/EverydayWallpaperUtils.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:EverydayWallpaperAgent/EverydayWallpaperAgent.xcodeproj">
-   </FileRef>
 </Workspace>

@@ -8,33 +8,31 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    @IBOutlet weak var window: NSWindow!
 
-  @IBOutlet weak var window: NSWindow!
-  
-  let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
-  let popover = NSPopover()
-  var eventMonitor: EventMonitor?
-  private var defaultToolTipDelay: Int = 0
+    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
+    let popover = NSPopover()
+    var eventMonitor: EventMonitor?
+    private var defaultToolTipDelay: Int = 0
 
+    func applicationDidFinishLaunching(notification: NSNotification) {
+        if let button = statusItem.button {
+            button.image = NSImage(named: "StatusBarButtonImage")
+            button.action = Selector("togglePopover:")
+        }
 
-  func applicationDidFinishLaunching(notification: NSNotification) {
-    if let button = statusItem.button {
-      button.image = NSImage(named: "StatusBarButtonImage")
-      button.action = Selector("togglePopover:")
+        popover.contentViewController = EverydayWallpaperViewController(nibName: "EverydayWallpaperViewController", bundle: nil)
+
+        eventMonitor = EventMonitor(mask: [.LeftMouseDownMask, .RightMouseDownMask]) {
+            [unowned self] event in
+            if self.popover.shown {
+                self.closePopover(event)
+            }
+        }
+        eventMonitor?.start()
+
+        self.saveAndChangeDefaultToolTipDefaults()
     }
-
-    popover.contentViewController = EverydayWallpaperViewController(nibName: "EverydayWallpaperViewController", bundle: nil)
-    
-    eventMonitor = EventMonitor(mask: [.LeftMouseDownMask, .RightMouseDownMask]) { [unowned self] event in
-      if self.popover.shown {
-        self.closePopover(event)
-      }
-    }
-    eventMonitor?.start()
-    
-    self.saveAndChangeDefaultToolTipDefaults()
-
-  }
 
     func applicationWillTerminate(aNotification: NSNotification) {
         self.restoreDefaultToolTipDefaults()
@@ -47,25 +45,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             showPopover(sender)
         }
     }
-    
+
     func showPopover(sender: AnyObject?) {
         if let button = statusItem.button {
             popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: NSRectEdge.MinY)
         }
         eventMonitor?.start()
     }
-    
+
     func closePopover(sender: AnyObject?) {
         popover.performClose(sender)
         eventMonitor?.stop()
     }
-    
+
     private func saveAndChangeDefaultToolTipDefaults() {
         defaultToolTipDelay = NSUserDefaults.standardUserDefaults().integerForKey("NSInitialToolTipDelay")
-        
+
         NSUserDefaults.standardUserDefaults().setInteger(100, forKey: "NSInitialToolTipDelay")
     }
-    
+
     private func restoreDefaultToolTipDefaults() {
         NSUserDefaults.standardUserDefaults().setInteger(defaultToolTipDelay, forKey: "NSInitialToolTipDelay")
     }

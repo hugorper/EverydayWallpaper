@@ -8,11 +8,10 @@ import Cocoa
 import EverydayWallpaperUtils
 
 class EverydayWallpaperViewController: NSViewController {
-    
-    
     @IBOutlet weak var allScreenActivationCheckbox: NSButton!
     @IBOutlet weak var alternateScreenActivationCheckbox: NSButton!
     @IBOutlet weak var allScreenMarketsCombo: NSPopUpButton!
+
     @IBOutlet weak var alternateScreenMarketsCombo: NSPopUpButton!
     @IBOutlet weak var useYesterdayOnAlternateScreenCheckbox: NSButton!
     
@@ -47,14 +46,11 @@ class EverydayWallpaperViewController: NSViewController {
 }
 
 // MARK: Actions
-
 extension EverydayWallpaperViewController {
     
     @IBAction func menuActionHelp(sender: AnyObject) {
         let myPopup: NSAlert = NSAlert()
 
-        //self.menuActionHide(sender)
-        
         myPopup.messageText = "Everyday Wallpaper help"
         myPopup.informativeText = "eee\nfjdskjkjhfdsks fdlj fdlf jdskjf lds sd\n fhdjskfjsahf dhfkj safj hdksja\nfkjjfhcrwuecghjklfdsjklgfhgfg ghfjslkg ghfj"
 
@@ -72,7 +68,6 @@ extension EverydayWallpaperViewController {
 
     @IBAction func menuActionQuit(sender: AnyObject) {
         NSApplication.sharedApplication().terminate(sender)
-
     }
 
 }

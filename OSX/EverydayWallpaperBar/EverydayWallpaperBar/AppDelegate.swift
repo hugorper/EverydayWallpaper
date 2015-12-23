@@ -14,6 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
   let popover = NSPopover()
   var eventMonitor: EventMonitor?
+  private var defaultToolTipDelay: Int = 0
 
 
   func applicationDidFinishLaunching(notification: NSNotification) {
@@ -30,10 +31,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       }
     }
     eventMonitor?.start()
+    
+    self.saveAndChangeDefaultToolTipDefaults()
+
   }
 
     func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
+        self.restoreDefaultToolTipDefaults()
     }
 
     func togglePopover(sender: AnyObject?) {
@@ -54,6 +58,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func closePopover(sender: AnyObject?) {
         popover.performClose(sender)
         eventMonitor?.stop()
+    }
+    
+    private func saveAndChangeDefaultToolTipDefaults() {
+        defaultToolTipDelay = NSUserDefaults.standardUserDefaults().integerForKey("NSInitialToolTipDelay")
+        
+        NSUserDefaults.standardUserDefaults().setInteger(100, forKey: "NSInitialToolTipDelay")
+    }
+    
+    private func restoreDefaultToolTipDefaults() {
+        NSUserDefaults.standardUserDefaults().setInteger(defaultToolTipDelay, forKey: "NSInitialToolTipDelay")
     }
 }
 

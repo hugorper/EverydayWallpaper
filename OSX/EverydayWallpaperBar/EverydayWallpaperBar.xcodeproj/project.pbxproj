@@ -16,7 +16,18 @@
 		9A07005B1C1B4E620066B045 /* EverydayWallpaperUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07005A1C1B4E620066B045 /* EverydayWallpaperUtils.framework */; };
 		9A96F4561C2B3E46002F49D4 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96F4551C2B3E46002F49D4 /* AppSettings.swift */; };
 		9AA0E8171C3421B80036F370 /* defaultPreference.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AA0E8161C3421B80036F370 /* defaultPreference.plist */; };
+		9AA0E8201C349A010036F370 /* EverydayWallpaperBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0E81F1C349A010036F370 /* EverydayWallpaperBarTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9AA0E8221C349A010036F370 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78A6BBC31ADCB5EE00554D13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78A6BBCA1ADCB5EE00554D13;
+			remoteInfo = EverydayWallpaperBar;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7891CA021AE09AF000EC10C6 /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
@@ -30,6 +41,9 @@
 		9A07005A1C1B4E620066B045 /* EverydayWallpaperUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EverydayWallpaperUtils.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/EverydayWallpaperWorkspace-fojqkuwirnwzhfbtacttnusyaoru/Build/Products/Debug/EverydayWallpaperUtils.framework"; sourceTree = "<group>"; };
 		9A96F4551C2B3E46002F49D4 /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		9AA0E8161C3421B80036F370 /* defaultPreference.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaultPreference.plist; sourceTree = "<group>"; };
+		9AA0E81D1C349A010036F370 /* EverydayWallpaperBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverydayWallpaperBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AA0E81F1C349A010036F370 /* EverydayWallpaperBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverydayWallpaperBarTests.swift; sourceTree = "<group>"; };
+		9AA0E8211C349A010036F370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +55,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9AA0E81A1C349A010036F370 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -49,6 +70,7 @@
 			children = (
 				9A07005A1C1B4E620066B045 /* EverydayWallpaperUtils.framework */,
 				78A6BBCD1ADCB5EE00554D13 /* EverydayWallpaperBar */,
+				9AA0E81E1C349A010036F370 /* EverydayWallpaperBarTests */,
 				78A6BBCC1ADCB5EE00554D13 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				78A6BBCB1ADCB5EE00554D13 /* EverydayWallpaperBar.app */,
+				9AA0E81D1C349A010036F370 /* EverydayWallpaperBarTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +108,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9AA0E81E1C349A010036F370 /* EverydayWallpaperBarTests */ = {
+			isa = PBXGroup;
+			children = (
+				9AA0E81F1C349A010036F370 /* EverydayWallpaperBarTests.swift */,
+				9AA0E8211C349A010036F370 /* Info.plist */,
+			);
+			path = EverydayWallpaperBarTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,6 +137,24 @@
 			productReference = 78A6BBCB1ADCB5EE00554D13 /* EverydayWallpaperBar.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9AA0E81C1C349A010036F370 /* EverydayWallpaperBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AA0E8241C349A010036F370 /* Build configuration list for PBXNativeTarget "EverydayWallpaperBarTests" */;
+			buildPhases = (
+				9AA0E8191C349A010036F370 /* Sources */,
+				9AA0E81A1C349A010036F370 /* Frameworks */,
+				9AA0E81B1C349A010036F370 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9AA0E8231C349A010036F370 /* PBXTargetDependency */,
+			);
+			name = EverydayWallpaperBarTests;
+			productName = EverydayWallpaperBarTests;
+			productReference = 9AA0E81D1C349A010036F370 /* EverydayWallpaperBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -112,12 +162,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0710;
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Hugo Pereira";
 				TargetAttributes = {
 					78A6BBCA1ADCB5EE00554D13 = {
 						CreatedOnToolsVersion = 6.3;
+					};
+					9AA0E81C1C349A010036F370 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 78A6BBCA1ADCB5EE00554D13;
 					};
 				};
 			};
@@ -135,6 +189,7 @@
 			projectRoot = "";
 			targets = (
 				78A6BBCA1ADCB5EE00554D13 /* EverydayWallpaperBar */,
+				9AA0E81C1C349A010036F370 /* EverydayWallpaperBarTests */,
 			);
 		};
 /* End PBXProject section */
@@ -148,6 +203,13 @@
 				9AA0E8171C3421B80036F370 /* defaultPreference.plist in Resources */,
 				78A6BBD31ADCB5EE00554D13 /* Images.xcassets in Resources */,
 				78A6BBD61ADCB5EE00554D13 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AA0E81B1C349A010036F370 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +227,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9AA0E8191C349A010036F370 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AA0E8201C349A010036F370 /* EverydayWallpaperBarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9AA0E8231C349A010036F370 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78A6BBCA1ADCB5EE00554D13 /* EverydayWallpaperBar */;
+			targetProxy = 9AA0E8221C349A010036F370 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		78A6BBD41ADCB5EE00554D13 /* MainMenu.xib */ = {
@@ -286,6 +364,34 @@
 			};
 			name = Release;
 		};
+		9AA0E8251C349A010036F370 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EverydayWallpaperBarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hugorper.EverydayWallpaperBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EverydayWallpaperBar.app/Contents/MacOS/EverydayWallpaperBar";
+			};
+			name = Debug;
+		};
+		9AA0E8261C349A010036F370 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EverydayWallpaperBarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hugorper.EverydayWallpaperBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EverydayWallpaperBar.app/Contents/MacOS/EverydayWallpaperBar";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -306,6 +412,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		9AA0E8241C349A010036F370 /* Build configuration list for PBXNativeTarget "EverydayWallpaperBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AA0E8251C349A010036F370 /* Debug */,
+				9AA0E8261C349A010036F370 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

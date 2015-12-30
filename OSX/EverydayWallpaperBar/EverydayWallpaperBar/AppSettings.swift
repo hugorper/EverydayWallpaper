@@ -37,7 +37,7 @@ class AppSettings {
         userDefaultDictionary = userDefaults.dictionaryForKey(prefKey)
     }
     
-    private func isFirstUse() -> Bool {
+    internal func isFirstUse() -> Bool {
         return (userDefaults.objectForKey(prefKey) == nil)
     }
 
@@ -67,6 +67,13 @@ class AppSettings {
         }
     }
 
+    internal func deleteAllPreference() {
+        if !self.isFirstUse() {
+            userDefaults.removeObjectForKey(prefKey)
+            userDefaults.synchronize()
+        }
+    }
+    
     var IsWallpaperSaved: Bool {
         get {
             return (userDefaultDictionary![savedWallpaperConst]?.boolValue)!

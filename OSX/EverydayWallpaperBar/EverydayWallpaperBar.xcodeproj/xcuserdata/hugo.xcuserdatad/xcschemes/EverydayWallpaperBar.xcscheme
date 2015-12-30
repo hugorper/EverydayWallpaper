@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9AA0E81C1C349A010036F370"
+               BuildableName = "EverydayWallpaperBarTests.xctest"
+               BlueprintName = "EverydayWallpaperBarTests"
+               ReferencedContainer = "container:EverydayWallpaperBar.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

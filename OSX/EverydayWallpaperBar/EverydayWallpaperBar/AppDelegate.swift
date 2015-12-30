@@ -16,6 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var defaultToolTipDelay: Int = 0
 
     func applicationDidFinishLaunching(notification: NSNotification) {
+        
         if let button = statusItem.button {
             button.image = NSImage(named: "StatusBarButtonImage")
             button.action = Selector("togglePopover:")

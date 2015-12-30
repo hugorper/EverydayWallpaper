@@ -14,6 +14,8 @@
 		78A6BBED1ADCDDDC00554D13 /* EverydayWallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A6BBEB1ADCDDDC00554D13 /* EverydayWallpaperViewController.swift */; };
 		78A6BBEE1ADCDDDC00554D13 /* EverydayWallpaperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78A6BBEC1ADCDDDC00554D13 /* EverydayWallpaperViewController.xib */; };
 		9A07005B1C1B4E620066B045 /* EverydayWallpaperUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07005A1C1B4E620066B045 /* EverydayWallpaperUtils.framework */; };
+		9A96F4561C2B3E46002F49D4 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96F4551C2B3E46002F49D4 /* AppSettings.swift */; };
+		9AA0E8171C3421B80036F370 /* defaultPreference.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AA0E8161C3421B80036F370 /* defaultPreference.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		78A6BBEB1ADCDDDC00554D13 /* EverydayWallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EverydayWallpaperViewController.swift; sourceTree = "<group>"; };
 		78A6BBEC1ADCDDDC00554D13 /* EverydayWallpaperViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EverydayWallpaperViewController.xib; sourceTree = "<group>"; };
 		9A07005A1C1B4E620066B045 /* EverydayWallpaperUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EverydayWallpaperUtils.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/EverydayWallpaperWorkspace-fojqkuwirnwzhfbtacttnusyaoru/Build/Products/Debug/EverydayWallpaperUtils.framework"; sourceTree = "<group>"; };
+		9A96F4551C2B3E46002F49D4 /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		9AA0E8161C3421B80036F370 /* defaultPreference.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaultPreference.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 				78A6BBD21ADCB5EE00554D13 /* Images.xcassets */,
 				78A6BBD41ADCB5EE00554D13 /* MainMenu.xib */,
 				78A6BBCE1ADCB5EE00554D13 /* Supporting Files */,
+				9A96F4551C2B3E46002F49D4 /* AppSettings.swift */,
+				9AA0E8161C3421B80036F370 /* defaultPreference.plist */,
 			);
 			path = EverydayWallpaperBar;
 			sourceTree = "<group>";
@@ -139,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78A6BBEE1ADCDDDC00554D13 /* EverydayWallpaperViewController.xib in Resources */,
+				9AA0E8171C3421B80036F370 /* defaultPreference.plist in Resources */,
 				78A6BBD31ADCB5EE00554D13 /* Images.xcassets in Resources */,
 				78A6BBD61ADCB5EE00554D13 /* MainMenu.xib in Resources */,
 			);
@@ -153,6 +160,7 @@
 			files = (
 				78A6BBD11ADCB5EE00554D13 /* AppDelegate.swift in Sources */,
 				78A6BBED1ADCDDDC00554D13 /* EverydayWallpaperViewController.swift in Sources */,
+				9A96F4561C2B3E46002F49D4 /* AppSettings.swift in Sources */,
 				7891CA031AE09AF000EC10C6 /* EventMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SaveWallpapers</key>
+	<false/>
+	<key>Activate</key>
+	<true/>
+	<key>MainCodePage</key>
+	<string>en-US</string>
+	<key>AlternateCodePage</key>
+	<string>en-US</string>
+	<key>AlternateIsDifferent</key>
+	<true/>
+	<key>AlternateUseYesterdayWallpaper</key>
+	<false/>
+</dict>
+</plist>

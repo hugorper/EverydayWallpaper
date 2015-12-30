@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="EverydayWallpaperViewController" customModule="EverydayWallpaperBar" customModuleProvider="target">
@@ -31,7 +31,6 @@
             <subviews>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="A7o-ob-fMm">
                     <rect key="frame" x="18" y="261" width="247" height="18"/>
-                    <animations/>
                     <buttonCell key="cell" type="check" title="Activate wallpapers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="gJp-PK-57j">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -42,7 +41,6 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="70" id="fVa-RN-1Go"/>
                     </constraints>
-                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Codepage:" id="YJ0-Qu-9i0">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -54,7 +52,6 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="92" id="xev-bj-K3W"/>
                     </constraints>
-                    <animations/>
                     <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="f1Z-JS-pyd">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -63,7 +60,6 @@
                 </popUpButton>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="NAz-nN-rwh">
                     <rect key="frame" x="18" y="105" width="199" height="18"/>
-                    <animations/>
                     <buttonCell key="cell" type="check" title="Save last 10 wallpares" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="b9u-GM-eUH">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -71,7 +67,6 @@
                 </button>
                 <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b3z-nm-alc">
                     <rect key="frame" x="20" y="20" width="467" height="22"/>
-                    <animations/>
                     <pathCell key="cell" selectable="YES" alignment="left" id="1a0-MX-er9">
                         <font key="font" metaFont="system"/>
                         <url key="url" string="file://localhost/Applications/"/>
@@ -80,7 +75,6 @@
                 </pathControl>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YOo-k2-1Bo">
                     <rect key="frame" x="268" y="104" width="278" height="176"/>
-                    <animations/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="rJb-5l-kVP"/>
                 </imageView>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="gVF-JW-4aX">
@@ -88,7 +82,6 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="58" id="E23-rq-4ls"/>
                     </constraints>
-                    <animations/>
                     <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="NSGoLeftTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hLb-sz-aa7">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system" size="10"/>
@@ -96,7 +89,6 @@
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lcd-Ha-akl">
                     <rect key="frame" x="351" y="44" width="112" height="32"/>
-                    <animations/>
                     <buttonCell key="cell" type="push" title="Today" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0cI-Ey-UWm">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -104,7 +96,6 @@
                 </button>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="GIB-ui-2ey">
                     <rect key="frame" x="480" y="48" width="65" height="26"/>
-                    <animations/>
                     <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="NSGoRightTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="I19-Ui-Ssx">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system" size="10"/>
@@ -112,7 +103,6 @@
                 </button>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="7bz-Tc-9Qm">
                     <rect key="frame" x="18" y="196" width="239" height="18"/>
-                    <animations/>
                     <buttonCell key="cell" type="check" title="Use different on secondary screen" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Hx6-WK-uJS">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -120,7 +110,6 @@
                 </button>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ued-2d-7ee">
                     <rect key="frame" x="114" y="166" width="97" height="25"/>
-                    <animations/>
                     <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="abu-yl-Ows">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -129,7 +118,6 @@
                 </popUpButton>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="FuD-p6-RSL">
                     <rect key="frame" x="40" y="144" width="171" height="18"/>
-                    <animations/>
                     <buttonCell key="cell" type="check" title="Use yesteray wallpaper" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Hcl-zz-VuU">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -137,7 +125,6 @@
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="75b-oZ-kLO">
                     <rect key="frame" x="36" y="171" width="74" height="17"/>
-                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Codepage:" id="ugJ-y3-MGp">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -146,7 +133,6 @@
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="x5u-vQ-Zeu">
                     <rect key="frame" x="269" y="82" width="246" height="17"/>
-                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Nothing loaded" id="JAf-bO-fcF">
                         <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -158,12 +144,10 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="21" id="XWH-Sf-WsW"/>
                     </constraints>
-                    <animations/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSInfo" id="2uh-K7-Ccq"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7IR-fu-vta">
                     <rect key="frame" x="18" y="50" width="247" height="17"/>
-                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Wallpaper path" placeholderString="eeee" id="o4r-Yu-1hp">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -175,7 +159,6 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="42" id="kGp-Pl-5b9"/>
                     </constraints>
-                    <animations/>
                     <popUpButtonCell key="cell" type="bevel" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" arrowPosition="arrowAtCenter" selectedItem="3eF-Gm-YUk" id="rNs-DT-bWh">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -262,7 +245,6 @@
                 <constraint firstItem="NAz-nN-rwh" firstAttribute="leading" secondItem="7IR-fu-vta" secondAttribute="leading" id="rx9-iz-K1Q"/>
                 <constraint firstItem="A7o-ob-fMm" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" symbolic="YES" id="wf5-Ld-eqR"/>
             </constraints>
-            <animations/>
             <point key="canvasLocation" x="178" y="459.5"/>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="NAO-Zd-98r"/>

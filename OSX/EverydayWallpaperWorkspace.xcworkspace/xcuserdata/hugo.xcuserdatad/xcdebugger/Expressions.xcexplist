@@ -3,6 +3,28 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "AppSettings.MainCodePage.getter:AppSettings.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "userDefaultDictionary[mainCodePageConst].stringValue">
+            </PersistentString>
+            <PersistentString
+               value = "userDefaultDictionary![mainCodePageConst]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppSettings.AlternateCodePage.getter:AppSettings.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "NSUserDefaults.standardUserDefaults().dataForKey(alternateCodePageConst)">
+            </PersistentString>
+            <PersistentString
+               value = "userDefaults.stringForKey(alternateCodePageConst)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "EverydayWallpaperViewController.mainMenuClick(AnyObject) -&gt; ():EverydayWallpaperViewController.swift">
          <PersistentStrings>
             <PersistentString

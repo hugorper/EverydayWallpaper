@@ -101,4 +101,29 @@ class EverydayWallpaperAppSettingsTests: XCTestCase {
         AppSettings.sharedInstance.IsAlternateUseYesterdayWallpaper = testValue2
         XCTAssert(AppSettings.sharedInstance.IsAlternateUseYesterdayWallpaper == testValue2)
     }
+    
+    func testLastSuccessfulUpdateReadWrite() {
+        let testValue1 = NSDate(dateString:"2010-12-15 06:00:00")
+        let testValue2 = NSDate(dateString:"2013-12-11 10:09:08")
+        
+        AppSettings.sharedInstance.LastSuccessfulUpdate = testValue1
+        XCTAssert(AppSettings.sharedInstance.LastSuccessfulUpdate == testValue1, "Value error for LastSuccessfulUpdate")
+        
+        AppSettings.sharedInstance.LastSuccessfulUpdate = testValue2
+        XCTAssert(AppSettings.sharedInstance.LastSuccessfulUpdate == testValue2)
+    }
+}
+
+
+// Extensio to create specific date using the NSDate(dateString:"2015-12-15") synthax
+extension NSDate
+{
+    convenience
+    init(dateString:String) {
+        let dateStringFormatter = NSDateFormatter()
+        dateStringFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateStringFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        let d = dateStringFormatter.dateFromString(dateString)!
+        self.init(timeInterval:0, sinceDate:d)
+    }
 }

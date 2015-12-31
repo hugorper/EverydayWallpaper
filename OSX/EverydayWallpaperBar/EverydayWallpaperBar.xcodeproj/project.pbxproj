@@ -14,6 +14,7 @@
 		78A6BBED1ADCDDDC00554D13 /* EverydayWallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A6BBEB1ADCDDDC00554D13 /* EverydayWallpaperViewController.swift */; };
 		78A6BBEE1ADCDDDC00554D13 /* EverydayWallpaperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78A6BBEC1ADCDDDC00554D13 /* EverydayWallpaperViewController.xib */; };
 		9A07005B1C1B4E620066B045 /* EverydayWallpaperUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07005A1C1B4E620066B045 /* EverydayWallpaperUtils.framework */; };
+		9A40C76C1C35AC2400437D32 /* WallpaperUpdateScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A40C76B1C35AC2400437D32 /* WallpaperUpdateScheduler.swift */; };
 		9A96F4561C2B3E46002F49D4 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96F4551C2B3E46002F49D4 /* AppSettings.swift */; };
 		9AA0E8171C3421B80036F370 /* defaultPreference.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AA0E8161C3421B80036F370 /* defaultPreference.plist */; };
 		9AA0E8201C349A010036F370 /* EverydayWallpaperBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0E81F1C349A010036F370 /* EverydayWallpaperBarTests.swift */; };
@@ -39,6 +40,7 @@
 		78A6BBEB1ADCDDDC00554D13 /* EverydayWallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EverydayWallpaperViewController.swift; sourceTree = "<group>"; };
 		78A6BBEC1ADCDDDC00554D13 /* EverydayWallpaperViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EverydayWallpaperViewController.xib; sourceTree = "<group>"; };
 		9A07005A1C1B4E620066B045 /* EverydayWallpaperUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EverydayWallpaperUtils.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/EverydayWallpaperWorkspace-fojqkuwirnwzhfbtacttnusyaoru/Build/Products/Debug/EverydayWallpaperUtils.framework"; sourceTree = "<group>"; };
+		9A40C76B1C35AC2400437D32 /* WallpaperUpdateScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperUpdateScheduler.swift; sourceTree = "<group>"; };
 		9A96F4551C2B3E46002F49D4 /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		9AA0E8161C3421B80036F370 /* defaultPreference.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaultPreference.plist; sourceTree = "<group>"; };
 		9AA0E81D1C349A010036F370 /* EverydayWallpaperBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverydayWallpaperBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +98,7 @@
 				78A6BBCE1ADCB5EE00554D13 /* Supporting Files */,
 				9A96F4551C2B3E46002F49D4 /* AppSettings.swift */,
 				9AA0E8161C3421B80036F370 /* defaultPreference.plist */,
+				9A40C76B1C35AC2400437D32 /* WallpaperUpdateScheduler.swift */,
 			);
 			path = EverydayWallpaperBar;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				78A6BBED1ADCDDDC00554D13 /* EverydayWallpaperViewController.swift in Sources */,
 				9A96F4561C2B3E46002F49D4 /* AppSettings.swift in Sources */,
 				7891CA031AE09AF000EC10C6 /* EventMonitor.swift in Sources */,
+				9A40C76C1C35AC2400437D32 /* WallpaperUpdateScheduler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +424,7 @@
 				9AA0E8261C349A010036F370 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

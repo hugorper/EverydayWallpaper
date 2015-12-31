@@ -25,6 +25,8 @@ class AppSettings {
     var alternateCodePageConst = "AlternateCodePage"
     var isAlternateIsDifferentConst = "AlternateIsDifferent"
     var isAlternateUseYesterdayWallpaperConst = "AlternateUseYesterdayWallpaper"
+    var LastSuccessfulUpdateConst = "LastSuccessfulUpdate"
+    
     var userDefaultDictionary: [String : AnyObject]?
     
     // Prevents others from using the default '()' initializer for this class.
@@ -132,5 +134,14 @@ class AppSettings {
         }
     }
 
+    var LastSuccessfulUpdate: NSDate {
+        get {
+            return (userDefaultDictionary![LastSuccessfulUpdateConst])! as! NSDate
+        }
+        set {
+            userDefaultDictionary![LastSuccessfulUpdateConst] = newValue
+            self.save()
+        }
+    }
 }
 

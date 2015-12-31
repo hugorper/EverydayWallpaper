@@ -6,10 +6,10 @@
          contextName = "AppSettings.reloadDefaultPreference() -&gt; ():AppSettings.swift">
       </ContextState>
       <ContextState
-         contextName = "AppSettings.(loadDefaultPreference in _ED0EEBB59F75FF15E8264D61F017675F)() -&gt; ():AppSettings.swift">
+         contextName = "EverydayWallpaperViewController.mainMenuClick(AnyObject) -&gt; ():EverydayWallpaperViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "(userDefaultDictionary![isActivateConst]?.boolValue)!">
+               value = "sender.tag()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -33,10 +33,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "EverydayWallpaperViewController.mainMenuClick(AnyObject) -&gt; ():EverydayWallpaperViewController.swift">
+         contextName = "AppSettings.(loadDefaultPreference in _ED0EEBB59F75FF15E8264D61F017675F)() -&gt; ():AppSettings.swift">
          <PersistentStrings>
             <PersistentString
-               value = "sender.tag()">
+               value = "(userDefaultDictionary![isActivateConst]?.boolValue)!">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -48,6 +48,14 @@
             </PersistentString>
             <PersistentString
                value = "userDefaultDictionary![mainCodePageConst]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppSettings.LastSuccessfulUpdate.getter:AppSettings.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(userDefaultDictionary![LastSuccessfulUpdateConst])!">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

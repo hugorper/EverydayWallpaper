@@ -33,8 +33,9 @@ class AppSettings {
         if self.isFirstUse() {
             self.loadDefaultPreference()
         }
-        
-        userDefaultDictionary = userDefaults.dictionaryForKey(prefKey)
+        else {
+            userDefaultDictionary = userDefaults.dictionaryForKey(prefKey)
+        }
     }
     
     internal func isFirstUse() -> Bool {
@@ -48,6 +49,7 @@ class AppSettings {
         userDefaults.setObject(dict, forKey: prefKey)
         userDefaults.synchronize()
         
+        userDefaultDictionary = userDefaults.dictionaryForKey(prefKey)
     }
     
     private func save() {

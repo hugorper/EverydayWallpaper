@@ -48,6 +48,23 @@ List of supported resolutions:
 "176x220", "220x176", "240x240", "240x320", "240x400", "320x240", "320x320", "360x480", "400x240", "480x360", "480x640", "480x800", "640x480", "768x1024", "800x480", "800x600", "1024x768", "1280x720", "1280x768", "1366x768", "1920x1080", "1920x1200"
 ````
 
+## Schedule Background Wallpaper Update Task
+One of the most important aspect of this application is how and when call the wallpaper update. In order to be efficient I will not use the NSTimer class, some appropriate APIs helps to perform background tasks by limiting impact on the system and increase energy efficiency.
+
+For more information about the APIs go to [Schedule Background Activity](https://developer.apple.com/library/mac/documentation/Performance/Conceptual/power_efficiency_guidelines_osx/SchedulingBackgroundActivity.html) and with network support [Schedule Background Networking](https://developer.apple.com/library/mac/documentation/Performance/Conceptual/power_efficiency_guidelines_osx/SchedulingNetworkActivity.html#//apple_ref/doc/uid/TP40013929-CH33-SW1).
+
+### Task scheduling
+To goal is to update the wallpaper each day, the task will be scheduled each day at 05:00am.
+If the computer is not connected to internet, the task must be delayed until it's connected.
+This mechanisms will be managed from the WallpaperUpdateScheduler class.
+
+
+
+
+
+
+
+
 
 ## Create OSX PreferencePane icon
 

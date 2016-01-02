@@ -14,8 +14,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let popover = NSPopover()
     var eventMonitor: EventMonitor?
     private var defaultToolTipDelay: Int = 0
+    
+    private var reach: Reachability?
 
     func applicationDidFinishLaunching(notification: NSNotification) {
+        self.reach = Reachability.reachabilityForInternetConnection()
+        
         
         if let button = statusItem.button {
             button.image = NSImage(named: "StatusBarButtonImage")
@@ -59,6 +63,42 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         eventMonitor?.stop()
     }
 
+    // check if nework unavailable and call reachabilityChanged when network become available
+    func isWaitingForNextReachNeeded() -> Bool {
+        if !self.reach!.isReachableViaWiFi() && !self.reach!.isReachableViaWWAN() {
+            self.updateWallpaperOnNextNetworkConnect()
+            
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    
+    func updateWallpaperOnNextNetworkConnect () {
+        // Allocate a reachability object
+        self.reach = Reachability.reachabilityForInternetConnection()
+        
+        // Tell the reachability that we DON'T want to be reachable on 3G/EDGE/CDMA
+        self.reach!.reachableOnWWAN = false
+        
+        // Here we set up a NSNotification observer. The Reachability that caused the notification
+        // is passed in the object parameter
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "reachabilityChanged:",
+            name: kReachabilityChangedNotification,
+            object: nil)
+        
+        self.reach!.startNotifier()
+    }
+    
+    func reachabilityChanged(notification: NSNotification) {
+        if self.reach!.isReachableViaWiFi() || self.reach!.isReachableViaWWAN() {
+            print("Service avalaible!!!")
+            self.reach!.stopNotifier()
+        }
+    }
+    
     private func saveAndChangeDefaultToolTipDefaults() {
         defaultToolTipDelay = NSUserDefaults.standardUserDefaults().integerForKey("NSInitialToolTipDelay")
 

@@ -1,0 +1,3 @@
+[submodule "OSX/Reachability"]
+	path = OSX/Reachability
+	url = https://github.com/tonymillion/Reachability.git

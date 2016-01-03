@@ -49,6 +49,8 @@ class EverydayWallpaperViewController: NSViewController {
         allScreenMarketsCombo.selectItemWithTitle(AppSettings.sharedInstance.MainCodePage)
         alternateScreenMarketsCombo.selectItemWithTitle(AppSettings.sharedInstance.AlternateCodePage)
         imagePathControl.stringValue = ImageDownloader.sharedLoader.WallpaperSavePath
+        
+        self.updateControlsFromState()
     }
     
     override func viewWillAppear() {
@@ -89,6 +91,8 @@ extension EverydayWallpaperViewController {
     
     @IBAction func allScreenActivationChange (sender: NSButton) {
         AppSettings.sharedInstance.IsActivate = sender.state == NSOnState ? true : false
+        
+        self.updateControlsFromState()
     }
     
     @IBAction func alternateScreenActivationChange (sender: NSButton) {
@@ -109,5 +113,21 @@ extension EverydayWallpaperViewController {
     
     @IBAction func saveLastChange (sender: NSButton) {
         AppSettings.sharedInstance.IsWallpaperSaved  = sender.state == NSOnState ? true : false
+    }
+    
+    func updateControlsFromState() {
+        let wallpaperActivateState: Bool = AppSettings.sharedInstance.IsActivate
+        
+        alternateScreenActivationCheckbox.enabled = wallpaperActivateState
+        allScreenMarketsCombo.enabled = wallpaperActivateState
+        alternateScreenMarketsCombo.enabled = wallpaperActivateState
+        useYesterdayOnAlternateScreenCheckbox.enabled = wallpaperActivateState
+        saveLastButton.enabled = wallpaperActivateState
+        wallpaperImageView.enabled = wallpaperActivateState
+        wallpaperPreviousButton.enabled = wallpaperActivateState
+        wallpaperScreenTodayButton.enabled = wallpaperActivateState
+        wallpaperScreenNextButton.enabled = wallpaperActivateState
+        infoTooltipImage.enabled = wallpaperActivateState
+        infoImageLabel.enabled = wallpaperActivateState
     }
 }

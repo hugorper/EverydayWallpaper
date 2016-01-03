@@ -31,7 +31,7 @@
             <subviews>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="A7o-ob-fMm">
                     <rect key="frame" x="18" y="261" width="247" height="18"/>
-                    <buttonCell key="cell" type="check" title="Activate wallpapers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="gJp-PK-57j">
+                    <buttonCell key="cell" type="check" title="Activate EverydayWallpapers" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="gJp-PK-57j">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>

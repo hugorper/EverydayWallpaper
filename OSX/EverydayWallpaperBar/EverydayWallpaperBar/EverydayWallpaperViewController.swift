@@ -33,6 +33,18 @@ class EverydayWallpaperViewController: NSViewController {
     
     var actionHide: Selector = ""
     
+    
+    override func viewDidLoad() {
+        // load apps settings
+        allScreenActivationCheckbox.state = AppSettings.sharedInstance.IsActivate ? NSOnState : NSOffState
+        saveLastButton.state = AppSettings.sharedInstance.IsWallpaperSaved ? NSOnState : NSOffState
+        alternateScreenActivationCheckbox.state = AppSettings.sharedInstance.IsAlternateIsDifferent ? NSOnState : NSOffState
+        useYesterdayOnAlternateScreenCheckbox.state = AppSettings.sharedInstance.IsAlternateUseYesterdayWallpaper ? NSOnState : NSOffState
+        allScreenMarketsCombo.selectItemWithTitle(AppSettings.sharedInstance.MainCodePage)
+        allScreenMarketsCombo.selectItemWithTitle(AppSettings.sharedInstance.AlternateCodePage)
+        imagePathControl.stringValue = AppSettings.sharedInstance.WallpaperSavePath
+    }
+    
     override func viewWillAppear() {
         super.viewWillAppear()
         
@@ -43,6 +55,7 @@ class EverydayWallpaperViewController: NSViewController {
             alternateScreenMarketsCombo.addItemWithTitle(market.rawValue)
         }
     }
+    
 }
 
 // MARK: Actions

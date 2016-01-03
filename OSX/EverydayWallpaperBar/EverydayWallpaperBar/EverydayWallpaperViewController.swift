@@ -39,7 +39,7 @@ class EverydayWallpaperViewController: NSViewController {
         useYesterdayOnAlternateScreenCheckbox.state = AppSettings.sharedInstance.IsAlternateUseYesterdayWallpaper ? NSOnState : NSOffState
         allScreenMarketsCombo.selectItemWithTitle(AppSettings.sharedInstance.MainCodePage)
         allScreenMarketsCombo.selectItemWithTitle(AppSettings.sharedInstance.AlternateCodePage)
-        imagePathControl.stringValue = AppSettings.sharedInstance.WallpaperSavePath
+        imagePathControl.stringValue = ImageDownloader.sharedLoader.WallpaperSavePath
     }
     
     override func viewWillAppear() {
@@ -80,4 +80,7 @@ extension EverydayWallpaperViewController {
         NSApplication.sharedApplication().terminate(sender)
     }
 
+    @IBAction func choosePathAction(sender: NSPathControl) {
+        print(sender.stringValue)
+    }
 }

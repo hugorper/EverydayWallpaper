@@ -145,17 +145,5 @@ class AppSettings {
             self.save()
         }
     }
-    
-    var WallpaperSavePath: String {
-        get {
-            if pictureSavePath.isEmpty {
-                let pictureURLPath = NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.PicturesDirectory, .UserDomainMask, true)[0] as String)
-
-                pictureSavePath = pictureURLPath.URLByAppendingPathComponent(imageFolderConst, isDirectory: true).path!
-            }
-            
-            return pictureSavePath
-        }
-    }
 }
 

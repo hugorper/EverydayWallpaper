@@ -41,6 +41,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ImageDownloader.WallpaperSavePath.getter:ImageDownloader.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fullImagePath.path.isEmpty">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "AppSettings.MainCodePage.getter:AppSettings.swift">
          <PersistentStrings>
             <PersistentString

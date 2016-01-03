@@ -19,6 +19,8 @@ class AppSettings {
     static let sharedInstance = AppSettings()
     var userDefaults = NSUserDefaults.standardUserDefaults()
     var prefKey = NSBundle.mainBundle().infoDictionary!["CFBundleIdentifier"] as! String
+    var pictureSavePath: String = ""
+    var imageFolderConst = "EverydayWallpaper"
     var savedWallpaperConst = "SaveWallpapers"
     var isActivateConst = "Activate"
     var mainCodePageConst = "MainCodePage"
@@ -141,6 +143,18 @@ class AppSettings {
         set {
             userDefaultDictionary![LastSuccessfulUpdateConst] = newValue
             self.save()
+        }
+    }
+    
+    var WallpaperSavePath: String {
+        get {
+            if pictureSavePath.isEmpty {
+                let pictureURLPath = NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.PicturesDirectory, .UserDomainMask, true)[0] as String)
+
+                pictureSavePath = pictureURLPath.URLByAppendingPathComponent(imageFolderConst, isDirectory: true).path!
+            }
+            
+            return pictureSavePath
         }
     }
 }

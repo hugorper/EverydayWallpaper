@@ -31,9 +31,6 @@ class EverydayWallpaperViewController: NSViewController {
     
     @IBOutlet weak var infoImageLabel: NSTextField!
     
-    var actionHide: Selector = ""
-    
-    
     override func viewDidLoad() {
         // load apps settings
         allScreenActivationCheckbox.state = AppSettings.sharedInstance.IsActivate ? NSOnState : NSOffState

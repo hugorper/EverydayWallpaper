@@ -35,6 +35,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="allScreenActivationChange:" target="-2" id="gUr-L2-LEq"/>
+                    </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aKN-lA-QLh">
                     <rect key="frame" x="36" y="238" width="74" height="17"/>
@@ -57,6 +60,9 @@
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" id="zP3-SF-htu"/>
                     </popUpButtonCell>
+                    <connections>
+                        <action selector="allScreenMarketsChange:" target="-2" id="HTI-f7-CE9"/>
+                    </connections>
                 </popUpButton>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="NAz-nN-rwh">
                     <rect key="frame" x="18" y="105" width="199" height="18"/>
@@ -64,6 +70,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="saveLastChange:" target="-2" id="boY-SP-dYF"/>
+                    </connections>
                 </button>
                 <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b3z-nm-alc">
                     <rect key="frame" x="20" y="20" width="467" height="22"/>
@@ -111,6 +120,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="alternateScreenActivationChange:" target="-2" id="b8T-BL-Gv9"/>
+                    </connections>
                 </button>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ued-2d-7ee">
                     <rect key="frame" x="114" y="166" width="97" height="25"/>
@@ -119,6 +131,9 @@
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" id="1Ry-uR-rkh"/>
                     </popUpButtonCell>
+                    <connections>
+                        <action selector="alternateScreenMarketsChange:" target="-2" id="K7U-6e-rot"/>
+                    </connections>
                 </popUpButton>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="FuD-p6-RSL">
                     <rect key="frame" x="40" y="144" width="171" height="18"/>
@@ -126,6 +141,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="useYesterdayOnAlternateScreenChange:" target="-2" id="bDg-F0-JyQ"/>
+                    </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="75b-oZ-kLO">
                     <rect key="frame" x="36" y="171" width="74" height="17"/>

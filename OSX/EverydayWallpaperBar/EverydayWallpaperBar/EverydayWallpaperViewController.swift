@@ -32,25 +32,27 @@ class EverydayWallpaperViewController: NSViewController {
     @IBOutlet weak var infoImageLabel: NSTextField!
     
     override func viewDidLoad() {
+        
+        infoTooltipImage.toolTip = "none"
+        
+        // load markets com strings
+        for market in BingWallperMarkets.allValues {
+            allScreenMarketsCombo.addItemWithTitle(market.rawValue)
+            alternateScreenMarketsCombo.addItemWithTitle(market.rawValue)
+        }
+        
         // load apps settings
         allScreenActivationCheckbox.state = AppSettings.sharedInstance.IsActivate ? NSOnState : NSOffState
         saveLastButton.state = AppSettings.sharedInstance.IsWallpaperSaved ? NSOnState : NSOffState
         alternateScreenActivationCheckbox.state = AppSettings.sharedInstance.IsAlternateIsDifferent ? NSOnState : NSOffState
         useYesterdayOnAlternateScreenCheckbox.state = AppSettings.sharedInstance.IsAlternateUseYesterdayWallpaper ? NSOnState : NSOffState
         allScreenMarketsCombo.selectItemWithTitle(AppSettings.sharedInstance.MainCodePage)
-        allScreenMarketsCombo.selectItemWithTitle(AppSettings.sharedInstance.AlternateCodePage)
+        alternateScreenMarketsCombo.selectItemWithTitle(AppSettings.sharedInstance.AlternateCodePage)
         imagePathControl.stringValue = ImageDownloader.sharedLoader.WallpaperSavePath
     }
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        
-        infoTooltipImage.toolTip = "ddddddddd"
-        
-        for market in BingWallperMarkets.allValues {
-            allScreenMarketsCombo.addItemWithTitle(market.rawValue)
-            alternateScreenMarketsCombo.addItemWithTitle(market.rawValue)
-        }
     }
     
 }
@@ -83,5 +85,29 @@ extension EverydayWallpaperViewController {
     @IBAction func choosePathAction(sender: NSPathControl) {
         // dont use sender.stringValue because it fail if the folder is deleted
         NSWorkspace.sharedWorkspace().selectFile(ImageDownloader.sharedLoader.WallpaperSavePath, inFileViewerRootedAtPath: "")
+    }
+    
+    @IBAction func allScreenActivationChange (sender: NSButton) {
+        AppSettings.sharedInstance.IsActivate = sender.state == NSOnState ? true : false
+    }
+    
+    @IBAction func alternateScreenActivationChange (sender: NSButton) {
+        AppSettings.sharedInstance.IsAlternateIsDifferent = sender.state == NSOnState ? true : false
+    }
+    
+    @IBAction func allScreenMarketsChange (sender: NSPopUpButton) {
+        AppSettings.sharedInstance.MainCodePage = sender.titleOfSelectedItem!
+    }
+    
+    @IBAction func alternateScreenMarketsChange (sender: NSPopUpButton) {
+        AppSettings.sharedInstance.AlternateCodePage = sender.titleOfSelectedItem!
+    }
+    
+    @IBAction func useYesterdayOnAlternateScreenChange (sender: NSButton) {
+        AppSettings.sharedInstance.IsAlternateUseYesterdayWallpaper = sender.state == NSOnState ? true : false
+    }
+    
+    @IBAction func saveLastChange (sender: NSButton) {
+        AppSettings.sharedInstance.IsWallpaperSaved  = sender.state == NSOnState ? true : false
     }
 }

@@ -51,22 +51,19 @@ List of supported resolutions:
 ## Schedule Background Wallpaper Update Task
 One of the most important aspect of this application is how and when call the wallpaper update. In order to be efficient I will not use the NSTimer class, some appropriate APIs helps to perform background tasks by limiting impact on the system and increase energy efficiency.
 
-For more information about the APIs go to [Schedule Background Activity](https://developer.apple.com/library/mac/documentation/Performance/Conceptual/power_efficiency_guidelines_osx/SchedulingBackgroundActivity.html) and with network support [Schedule Background Networking](https://developer.apple.com/library/mac/documentation/Performance/Conceptual/power_efficiency_guidelines_osx/SchedulingNetworkActivity.html#//apple_ref/doc/uid/TP40013929-CH33-SW1).
+For more information about the APIs go to [Schedule Background Activity][1] 
 
 ### Task scheduling
 To goal is to update the wallpaper each day, the task will be scheduled each day at 05:00am.
-If the computer is not connected to internet, the task must be delayed until it's connected.
-This mechanisms will be managed from the WallpaperUpdateScheduler class.
+
+If task fail and the computer is not connected to internet, the task is delayed until it's connected.
+This mechanisms will be managed using [Reachability library][2] and EverydayWallpaper is referenced on the [list of project using Reachability][3]. If you plan to use Reachability don't miss the list when you use it.
 
 
 
 
+<!-- Links  -->
+[1]: https://developer.apple.com/library/mac/documentation/Performance/Conceptual/power_efficiency_guidelines_osx/SchedulingBackgroundActivity.html
+[2]: https://github.com/tonymillion/Reachability
+[3]: https://github.com/tonymillion/Reachability/wiki/Projects-using-Reachability
 
-
-
-
-
-## Create OSX PreferencePane icon
-
-Online icon creator
-https://iconverticons.com/online/

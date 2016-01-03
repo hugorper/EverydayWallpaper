@@ -81,6 +81,7 @@ extension EverydayWallpaperViewController {
     }
 
     @IBAction func choosePathAction(sender: NSPathControl) {
-        print(sender.stringValue)
+        // dont use sender.stringValue because it fail if the folder is deleted
+        NSWorkspace.sharedWorkspace().selectFile(ImageDownloader.sharedLoader.WallpaperSavePath, inFileViewerRootedAtPath: "")
     }
 }

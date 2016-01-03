@@ -15,6 +15,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var eventMonitor: EventMonitor?
     private var defaultToolTipDelay: Int = 0
     
+    let activity = NSBackgroundActivityScheduler(identifier: NSBundle.mainBundle().infoDictionary!["CFBundleIdentifier"] as! String)
+    
     private var reach: Reachability?
 
     func applicationDidFinishLaunching(notification: NSNotification) {
@@ -77,7 +79,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     
-    
     func updateWallpaperOnNextNetworkConnect () {
         // Allocate a reachability object
         self.reach = Reachability.reachabilityForInternetConnection()
@@ -110,6 +111,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     private func restoreDefaultToolTipDefaults() {
         NSUserDefaults.standardUserDefaults().setInteger(defaultToolTipDelay, forKey: "NSInitialToolTipDelay")
+    }
+    
+    private func loadScheduler() {
+        
     }
 }
 

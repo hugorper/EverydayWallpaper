@@ -32,6 +32,7 @@ public class BingWallpaperReference {
     var UrlWithoutResolution: String = ""
     var StartDate: NSDate = NSDate()
     var EndDate: NSDate = NSDate()
+    var FullStartDate: NSDate = NSDate()
 
     /*!
     * @discussion Class constructor
@@ -40,17 +41,28 @@ public class BingWallpaperReference {
     * @param param description
     * @param param description
     */
-    init(url: String, urlBase: String, startDate: String, endDate: String) {
+    init(url: String, urlBase: String, startDate: String, endDate: String, fullStartDate: String) {
         Url = url
         UrlWithoutResolution = urlBase
         StartDate = dateFromString(startDate)
         EndDate = dateFromString(endDate)
+        FullStartDate = dateFromString(fullStartDate, withTime: true)
     }
 
     func dateFromString(dateString: String) -> NSDate {
+        return dateFromString(dateString, withTime: false)
+    }
+    
+    func dateFromString(dateString: String, withTime: Bool) -> NSDate {
         let dateFormatter = NSDateFormatter()
 
-        dateFormatter.dateFormat = "yyyyMMdd"
+        if  withTime {
+            dateFormatter.dateFormat = "yyyyMMddHHmm"
+        }
+        else {
+            dateFormatter.dateFormat = "yyyyMMdd"
+        }
+        
 
         let date = dateFormatter.dateFromString(dateString)
 
@@ -88,16 +100,19 @@ public class BingWallpaperService {
             let imgUrlBase = jsonDictionary.valueForKeyPath("images.urlbase") as! [String]
             let startDate = jsonDictionary.valueForKeyPath("images.startdate") as! [String]
             let endDate = jsonDictionary.valueForKeyPath("images.enddate") as! [String]
+            let fullStartDate = jsonDictionary.valueForKeyPath("images.fullstartdate") as! [String]
 
             let bing = BingWallpaperReference(url: baseUrl.stringByAppendingString(imgUrl[0]),
                     urlBase: baseUrl.stringByAppendingString(imgUrlBase[0]),
                     startDate: startDate[0],
-                    endDate: endDate[0])
+                    endDate: endDate[0],
+                    fullStartDate: fullStartDate[0])
 
             print(bing.Url)
             print(bing.UrlWithoutResolution)
             print(bing.StartDate)
             print(bing.EndDate)
+            print(bing.FullStartDate)
 
             return bing;
 

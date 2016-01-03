@@ -41,6 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(aNotification: NSNotification) {
         self.restoreDefaultToolTipDefaults()
+        self.reach?.stopNotifier()
     }
 
     func togglePopover(sender: AnyObject?) {
@@ -74,6 +75,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return false;
         }
     }
+    
+    
     
     func updateWallpaperOnNextNetworkConnect () {
         // Allocate a reachability object

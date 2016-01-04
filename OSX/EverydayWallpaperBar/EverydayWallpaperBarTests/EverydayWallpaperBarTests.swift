@@ -118,8 +118,8 @@ class EverydayWallpaperAppSettingsTests: XCTestCase {
 // Extensio to create specific date using the NSDate(dateString:"2015-12-15") synthax
 extension NSDate
 {
-    convenience
-    init(dateString:String) {
+    
+    convenience init(dateString:String) {
         let dateStringFormatter = NSDateFormatter()
         dateStringFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         dateStringFormatter.locale = NSLocale(localeIdentifier: "fr_CH_POSIX")

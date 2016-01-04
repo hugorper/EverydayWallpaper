@@ -19,6 +19,8 @@
 		9A96F4561C2B3E46002F49D4 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96F4551C2B3E46002F49D4 /* AppSettings.swift */; };
 		9AA0E8171C3421B80036F370 /* defaultPreference.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AA0E8161C3421B80036F370 /* defaultPreference.plist */; };
 		9AA0E8201C349A010036F370 /* EverydayWallpaperBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0E81F1C349A010036F370 /* EverydayWallpaperBarTests.swift */; };
+		9AC05C541C3B1EC100D76274 /* ScreenInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC05C531C3B1EC100D76274 /* ScreenInfo.swift */; };
+		9AC05C561C3B24A000D76274 /* ScreenInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC05C551C3B24A000D76274 /* ScreenInfoTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		9AA0E81D1C349A010036F370 /* EverydayWallpaperBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverydayWallpaperBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA0E81F1C349A010036F370 /* EverydayWallpaperBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverydayWallpaperBarTests.swift; sourceTree = "<group>"; };
 		9AA0E8211C349A010036F370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AC05C531C3B1EC100D76274 /* ScreenInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenInfo.swift; sourceTree = "<group>"; };
+		9AC05C551C3B24A000D76274 /* ScreenInfoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenInfoTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 				78A6BBCE1ADCB5EE00554D13 /* Supporting Files */,
 				9A96F4551C2B3E46002F49D4 /* AppSettings.swift */,
 				9AA0E8161C3421B80036F370 /* defaultPreference.plist */,
+				9AC05C531C3B1EC100D76274 /* ScreenInfo.swift */,
 			);
 			path = EverydayWallpaperBar;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				9AA0E81F1C349A010036F370 /* EverydayWallpaperBarTests.swift */,
+				9AC05C551C3B24A000D76274 /* ScreenInfoTests.swift */,
 				9AA0E8211C349A010036F370 /* Info.plist */,
 			);
 			path = EverydayWallpaperBarTests;
@@ -248,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78A6BBD11ADCB5EE00554D13 /* AppDelegate.swift in Sources */,
+				9AC05C541C3B1EC100D76274 /* ScreenInfo.swift in Sources */,
 				78A6BBED1ADCDDDC00554D13 /* EverydayWallpaperViewController.swift in Sources */,
 				9A96F4561C2B3E46002F49D4 /* AppSettings.swift in Sources */,
 				7891CA031AE09AF000EC10C6 /* EventMonitor.swift in Sources */,
@@ -260,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AA0E8201C349A010036F370 /* EverydayWallpaperBarTests.swift in Sources */,
+				9AC05C561C3B24A000D76274 /* ScreenInfoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

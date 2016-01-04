@@ -13,11 +13,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
     let popover = NSPopover()
     var eventMonitor: EventMonitor?
-    private var defaultToolTipDelay: Int = 0
+    var defaultToolTipDelay: Int = 0
+    var reach: Reachability?
+    //var
     
-    let activity = NSBackgroundActivityScheduler(identifier: NSBundle.mainBundle().infoDictionary!["CFBundleIdentifier"] as! String)
+    //let activity = NSBackgroundActivityScheduler(identifier: NSBundle.mainBundle().infoDictionary!["CFBundleIdentifier"] as! String)
     
-    private var reach: Reachability?
 
     func applicationDidFinishLaunching(notification: NSNotification) {
         self.reach = Reachability.reachabilityForInternetConnection()
@@ -44,6 +45,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(aNotification: NSNotification) {
         self.restoreDefaultToolTipDefaults()
         self.reach?.stopNotifier()
+    }
+    
+    func forceWallpaperUpdate()
+    {
+        
     }
 
     func togglePopover(sender: AnyObject?) {

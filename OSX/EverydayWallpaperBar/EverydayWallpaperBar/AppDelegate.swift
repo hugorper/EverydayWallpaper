@@ -15,9 +15,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var eventMonitor: EventMonitor?
     var defaultToolTipDelay: Int = 0
     var reach: Reachability?
-    //var
     
-    //let activity = NSBackgroundActivityScheduler(identifier: NSBundle.mainBundle().infoDictionary!["CFBundleIdentifier"] as! String)
+    let activity = NSBackgroundActivityScheduler(identifier: NSBundle.mainBundle().infoDictionary!["CFBundleIdentifier"] as! String)
     
 
     func applicationDidFinishLaunching(notification: NSNotification) {
@@ -40,14 +39,39 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         eventMonitor?.start()
 
         self.saveAndChangeDefaultToolTipDefaults()
+        
+        self.activity.tolerance = 60
+        self.activity.interval = 3600
+        self.activity.repeats = true
+        
+        activity.scheduleWithBlock(
+            { (completion: NSBackgroundActivityCompletionHandler) in
+                self.checkWallpaperUpdate()
+                completion(NSBackgroundActivityResult.Finished)
+            }
+        )
+
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
+        self.activity.invalidate()
         self.restoreDefaultToolTipDefaults()
         self.reach?.stopNotifier()
     }
+
+    func checkWallpaperUpdate()
+    {
+        if AppSettings.sharedInstance.IsActivate {
+            
+            if !AppSettings.sharedInstance.LastSuccessfulUpdate.isToday() {
+                
+            }
+            
+            
+        }
+    }
     
-    func forceWallpaperUpdate()
+    func wallpaperUpdate()
     {
         
     }
@@ -123,6 +147,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
     }
 }
+
 
 /*
 import Foundation

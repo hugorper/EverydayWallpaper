@@ -72,6 +72,29 @@ public class BingWallpaperReference {
     func urlStringByAppendingResolution(resolution: BingWallperResolutions) -> String {
         return UrlWithoutResolution.stringByAppendingString("_").stringByAppendingString(resolution.rawValue).stringByAppendingString(".jpg")
     }
+    
+    func urlStringByAppendingResolution(resolution: CGSize) -> String {
+        
+        return UrlWithoutResolution.stringByAppendingString("_").stringByAppendingString(self.resolutionFromSize(resolution).rawValue).stringByAppendingString(".jpg")
+    }
+    
+    func resolutionFromSize(size: CGSize) -> BingWallperResolutions {
+        var found = false
+        var mappedResolution: BingWallperResolutions = BingWallperResolutions.Res240x320
+        
+        for resolution in BingWallperResolutions.allValues {
+            let width = Int(size.width)
+            let height = Int(size.height)
+            
+            if resolution.rawValue == "\(width)x\(height)" {
+                found = true
+                mappedResolution = resolution
+                break
+            }
+        }
+        
+        return mappedResolution
+    }
 }
 
 public class BingWallpaperService {

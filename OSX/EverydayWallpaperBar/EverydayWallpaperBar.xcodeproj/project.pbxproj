@@ -13,9 +13,11 @@
 		78A6BBD61ADCB5EE00554D13 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78A6BBD41ADCB5EE00554D13 /* MainMenu.xib */; };
 		78A6BBED1ADCDDDC00554D13 /* EverydayWallpaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A6BBEB1ADCDDDC00554D13 /* EverydayWallpaperViewController.swift */; };
 		78A6BBEE1ADCDDDC00554D13 /* EverydayWallpaperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78A6BBEC1ADCDDDC00554D13 /* EverydayWallpaperViewController.xib */; };
+		9A0384B71C3C7EDC00D9F3CA /* MiscTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0384B61C3C7EDC00D9F3CA /* MiscTests.swift */; };
 		9A07005B1C1B4E620066B045 /* EverydayWallpaperUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07005A1C1B4E620066B045 /* EverydayWallpaperUtils.framework */; };
 		9A4E8DBB1C386784000CCC6F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4E8DB81C386276000CCC6F /* SystemConfiguration.framework */; };
 		9A4E8DC01C3867EA000CCC6F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E8DBF1C3867EA000CCC6F /* Reachability.m */; };
+		9A59433C1C3C5B9800D7C3AC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A59433B1C3C5B9800D7C3AC /* Extensions.swift */; };
 		9A96F4561C2B3E46002F49D4 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96F4551C2B3E46002F49D4 /* AppSettings.swift */; };
 		9AA0E8171C3421B80036F370 /* defaultPreference.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AA0E8161C3421B80036F370 /* defaultPreference.plist */; };
 		9AA0E8201C349A010036F370 /* EverydayWallpaperBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0E81F1C349A010036F370 /* EverydayWallpaperBarTests.swift */; };
@@ -42,11 +44,13 @@
 		78A6BBD51ADCB5EE00554D13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		78A6BBEB1ADCDDDC00554D13 /* EverydayWallpaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EverydayWallpaperViewController.swift; sourceTree = "<group>"; };
 		78A6BBEC1ADCDDDC00554D13 /* EverydayWallpaperViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EverydayWallpaperViewController.xib; sourceTree = "<group>"; };
+		9A0384B61C3C7EDC00D9F3CA /* MiscTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscTests.swift; sourceTree = "<group>"; };
 		9A07005A1C1B4E620066B045 /* EverydayWallpaperUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EverydayWallpaperUtils.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/EverydayWallpaperWorkspace-fojqkuwirnwzhfbtacttnusyaoru/Build/Products/Debug/EverydayWallpaperUtils.framework"; sourceTree = "<group>"; };
 		9A4E8DB81C386276000CCC6F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9A4E8DBD1C3867E9000CCC6F /* EverydayWallpaperBar-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EverydayWallpaperBar-Bridging-Header.h"; sourceTree = "<group>"; };
 		9A4E8DBE1C3867EA000CCC6F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ../../Reachability/Reachability.h; sourceTree = "<group>"; };
 		9A4E8DBF1C3867EA000CCC6F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../../Reachability/Reachability.m; sourceTree = "<group>"; };
+		9A59433B1C3C5B9800D7C3AC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9A96F4551C2B3E46002F49D4 /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		9AA0E8161C3421B80036F370 /* defaultPreference.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaultPreference.plist; sourceTree = "<group>"; };
 		9AA0E81D1C349A010036F370 /* EverydayWallpaperBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverydayWallpaperBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +113,7 @@
 				9A96F4551C2B3E46002F49D4 /* AppSettings.swift */,
 				9AA0E8161C3421B80036F370 /* defaultPreference.plist */,
 				9AC05C531C3B1EC100D76274 /* ScreenInfo.swift */,
+				9A59433B1C3C5B9800D7C3AC /* Extensions.swift */,
 			);
 			path = EverydayWallpaperBar;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 		9AA0E81E1C349A010036F370 /* EverydayWallpaperBarTests */ = {
 			isa = PBXGroup;
 			children = (
+				9A0384B61C3C7EDC00D9F3CA /* MiscTests.swift */,
 				9AA0E81F1C349A010036F370 /* EverydayWallpaperBarTests.swift */,
 				9AC05C551C3B24A000D76274 /* ScreenInfoTests.swift */,
 				9AA0E8211C349A010036F370 /* Info.plist */,
@@ -259,6 +265,7 @@
 				9A96F4561C2B3E46002F49D4 /* AppSettings.swift in Sources */,
 				7891CA031AE09AF000EC10C6 /* EventMonitor.swift in Sources */,
 				9A4E8DC01C3867EA000CCC6F /* Reachability.m in Sources */,
+				9A59433C1C3C5B9800D7C3AC /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AA0E8201C349A010036F370 /* EverydayWallpaperBarTests.swift in Sources */,
+				9A0384B71C3C7EDC00D9F3CA /* MiscTests.swift in Sources */,
 				9AC05C561C3B24A000D76274 /* ScreenInfoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

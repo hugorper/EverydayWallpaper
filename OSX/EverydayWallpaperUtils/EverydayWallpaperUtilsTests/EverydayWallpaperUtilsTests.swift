@@ -73,6 +73,13 @@ class EverydayWallpaperUtilsTests: XCTestCase {
             }
         }
     }
+    
+    func testBingWallpaperSizeMapper() {
+        let bing = BingWallpaperService.GetYesterdayBingWallpaperReference(DefaultMarket)
+        let size = CGSizeMake(1024, 768)
+        
+        XCTAssert(bing!.resolutionFromSize(size) == BingWallperResolutions.Res1024x768, "Error resolution mao fail resolutionFromSize")
+     }
 
     func testBingWallpaperPerformance() {
         // This is an example of a performance test case.

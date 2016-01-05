@@ -32,7 +32,6 @@ class EverydayWallpaperViewController: NSViewController {
     @IBOutlet weak var infoImageLabel: NSTextField!
     
     override func viewDidLoad() {
-        
         infoTooltipImage.toolTip = "none"
         
         // load markets com strings

@@ -24,9 +24,6 @@ class MiscTests: XCTestCase {
     func testDateExtensionIsToday() {
         let date:NSDate = NSDate()
         
-        XCTAssert(date.isToday() , "isToday extension func fail")
+        XCTAssert(date.isToday() , "NSDate isToday extension func fail")
     }
-
-
-
 }

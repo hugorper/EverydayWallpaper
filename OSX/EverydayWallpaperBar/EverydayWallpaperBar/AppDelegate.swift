@@ -64,7 +64,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if AppSettings.sharedInstance.IsActivate {
             
             if !AppSettings.sharedInstance.LastSuccessfulUpdate.isToday() {
-                
+                //let bing = BingWallpaperService.GetTodayBingWallpaperReference(DefaultMarket);
+                /*
+                let bing = BingWallpaperService.GetYesterdayBingWallpaperReference(DefaultMarket)
+
+                var mainScreenResolution = bing!.resolutionFromSize(ScreenInfo.mainScreenSize())
+                let url = bing!.urlStringByAppendingResolution(mainScreenResolution)
+                    
+                let downloadedImagePath = ImageDownloader.sharedLoader.downloadImageFromUrl(url, fileName: "test\(resolution).jpg")
+                    
+                    let success: Bool = NSFileManager.defaultManager().fileExistsAtPath("\(downloadedImagePath)")
+                    
+                    XCTAssert(success, "Downloaded wallpaper for resolution \(resolution) error")
+                    
+                    if success {
+                        do {
+                            try NSFileManager.defaultManager().removeItemAtPath("\(downloadedImagePath)")
+                        } catch {
+                            XCTAssert(false, "Error deleting file for resolution \(resolution)")
+                        }
+                    }
+                }*/
+
             }
             
             

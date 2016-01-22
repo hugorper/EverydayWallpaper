@@ -7,48 +7,73 @@
 //
 
 import Foundation
+import Cocoa
+import EverydayWallpaperUtils
 
-
-class WallpapersFileNameing {
-    var BaseFolder: String
-    var WallpaperProvider: String
+class WallpapersFileNaming {
+    var BaseFolder: String = ""
+    var WallpaperProvider: String = ""
     var Width: Int = 0
     var Height: Int = 0
     var Date: NSDate
-    
-    init(wallpaperProvider: String) {
-        self.WallpaperProvider = wallpaperProvider
+
+    init() {
+        self.BaseFolder = ""
+        self.Width = Int(0)
+        self.Height = Int(0)
+        self.WallpaperProvider = ""
+        self.Date = NSDate()
     }
 
-    init(wallpaperProvider: String, withBaseFolder: String) {
-        self.init(wallpaperProvider)
-        
-        self.BaseFolder = baseFolder
+    convenience init(provider: String) {
+        self.init()
+        self.WallpaperProvider = provider
+    }
+
+    convenience init(provider: String, withBaseFolder: String) {
+        self.init(provider: provider)
+
+        self.BaseFolder = withBaseFolder
     }
     
-    init(wallpaperProvider: String, withBaseFolder: String, withSize: GCFloat) {
-        self.init(wallpaperProvider, withBaseFolder)
+    convenience init(provider: String, withBaseFolder: String, withSize: CGSize) {
+        self.init(provider: provider, withBaseFolder: withBaseFolder)
         
-        self.Width = Int(size.Width)
-        self.Height = Int(size.Height)
+        self.Width = Int(withSize.width)
+        self.Height = Int(withSize.height)
     }
     
-    init(wallpaperProvider: String, withBaseFolder: String, withSize: GCFloat, withDate: NSDate) {
-        self.init(wallpaperProvider, withBaseFolder, withSize)
+    convenience init(provider: String, withBaseFolder: String, withSize: CGSize, withDate: NSDate) {
+        self.init(provider: provider, withBaseFolder: withBaseFolder, withSize: withSize)
         
         self.Date = withDate
     }
     
     func fullName() -> String {
-        return ""
+        let destinationPath = NSURL.init(fileURLWithPath: ImageDownloader.sharedLoader.WallpaperSavePath).URLByAppendingPathComponent("\(self.fileName())")
+        
+        return destinationPath.path!
     }
 
     func fileName() -> String {
-        return ""
+        
+        return "\(Date.toShortString())-\(WallpaperProvider)-\(Width)x\(Height).jpg"
     }
     
     func fileExist() -> Bool {
-        return false
+        return NSFileManager.defaultManager().fileExistsAtPath("\(self.fullName())")
+    }
+    
+    static var BingProvider: String {
+        get {
+            return "Bing"
+        }
     }
 
+    /// unused
+    static var NationalGeogrphicProvider: String {
+        get {
+            return "Bing"
+        }
+    }
 }

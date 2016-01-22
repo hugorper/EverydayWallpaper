@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import EverydayWallpaperBar
+@testable import EverydayWallpaperUtils
 
 class MiscTests: XCTestCase {
 
@@ -25,5 +26,13 @@ class MiscTests: XCTestCase {
         let date:NSDate = NSDate()
         
         XCTAssert(date.isToday() , "NSDate isToday extension func fail")
+    }
+    
+    func testNaming() {
+        let dateFrom = NSDate(dateString:"2010-12-15 06:00:00")
+        
+        let naming = WallpapersFileNaming.init(provider: WallpapersFileNaming.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: CGSizeMake(1024, 768), withDate: dateFrom)
+        
+        XCTAssert(naming.fullName() == "\(ImageDownloader.sharedLoader.WallpaperSavePath)/20101215-Bing-1024x768.jpg" , "Wallpaper URL malformed")
     }
 }

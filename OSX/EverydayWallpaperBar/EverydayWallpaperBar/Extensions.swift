@@ -35,4 +35,12 @@ extension NSDate
             return false
         }
     }
+    
+    func toShortString() -> String{
+        var dateFormatter = NSDateFormatter()
+        
+        dateFormatter.dateFormat = "yyyMMdd"
+        
+        return dateFormatter.stringFromDate(self)
+    }
 }

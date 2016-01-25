@@ -24,11 +24,11 @@
             return Static.instance
         }
         
-        func downloadImageFromUrl(url: String, fileName: String) -> String {
+        public func downloadImageFromUrl(url: String, fileName: String) -> String {
             if let url = NSURL(string: url) {
                 if let data = NSData(contentsOfURL: url) {
                     
-                    let destinationPath = NSURL.init(fileURLWithPath: self.WallpaperSavePath).URLByAppendingPathComponent("/\(fileName)")
+                    let destinationPath = NSURL.init(fileURLWithPath: self.WallpaperSavePath).URLByAppendingPathComponent("\(fileName)")
                     
                     do {
                         try data.writeToFile(destinationPath.path!, options: .AtomicWrite)

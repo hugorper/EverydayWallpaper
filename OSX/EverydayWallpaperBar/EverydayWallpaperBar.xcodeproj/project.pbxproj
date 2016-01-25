@@ -24,6 +24,7 @@
 		9AA0E8201C349A010036F370 /* EverydayWallpaperBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA0E81F1C349A010036F370 /* EverydayWallpaperBarTests.swift */; };
 		9AC05C541C3B1EC100D76274 /* ScreenInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC05C531C3B1EC100D76274 /* ScreenInfo.swift */; };
 		9AC05C561C3B24A000D76274 /* ScreenInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC05C551C3B24A000D76274 /* ScreenInfoTests.swift */; };
+		9AFE86811C56B4EE00815A23 /* BackgroundTaskScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFE86801C56B4EE00815A23 /* BackgroundTaskScheduler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		9AA0E8211C349A010036F370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AC05C531C3B1EC100D76274 /* ScreenInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenInfo.swift; sourceTree = "<group>"; };
 		9AC05C551C3B24A000D76274 /* ScreenInfoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenInfoTests.swift; sourceTree = "<group>"; };
+		9AFE86801C56B4EE00815A23 /* BackgroundTaskScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTaskScheduler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		78A6BBCD1ADCB5EE00554D13 /* EverydayWallpaperBar */ = {
 			isa = PBXGroup;
 			children = (
+				9AFE867F1C56B4BF00815A23 /* Scheduling */,
 				9A4E8DBC1C3867A0000CCC6F /* Reachability */,
 				78A6BBD01ADCB5EE00554D13 /* AppDelegate.swift */,
 				78A6BBEB1ADCDDDC00554D13 /* EverydayWallpaperViewController.swift */,
@@ -157,6 +160,14 @@
 				9AA0E8211C349A010036F370 /* Info.plist */,
 			);
 			path = EverydayWallpaperBarTests;
+			sourceTree = "<group>";
+		};
+		9AFE867F1C56B4BF00815A23 /* Scheduling */ = {
+			isa = PBXGroup;
+			children = (
+				9AFE86801C56B4EE00815A23 /* BackgroundTaskScheduler.swift */,
+			);
+			name = Scheduling;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AFE86811C56B4EE00815A23 /* BackgroundTaskScheduler.swift in Sources */,
 				78A6BBD11ADCB5EE00554D13 /* AppDelegate.swift in Sources */,
 				9AC05C541C3B1EC100D76274 /* ScreenInfo.swift in Sources */,
 				9A0384B91C3C80A100D9F3CA /* WallpapersFileNaming.swift in Sources */,

@@ -22,7 +22,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EverydayWallpaperUtils/EverydayWallpaperUtilsTests/EverydayWallpaperUtilsTests.swift"
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EverydayWallpaperUtils/EverydayWallpaperUtils/BingWallpaper.swift"
-            timestampString = "473724551.960649"
+            filePath = "EverydayWallpaperBar/EverydayWallpaperBar/AppDelegate.swift"
+            timestampString = "475454014.539351"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "resolutionFromSize(_:)"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "isWaitingForNextReachNeeded()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EverydayWallpaperBar/EverydayWallpaperBar/AppDelegate.swift"
-            timestampString = "475188053.964851"
+            timestampString = "475454131.369423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "checkWallpaperUpdate()"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "wallpaperUpdate()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

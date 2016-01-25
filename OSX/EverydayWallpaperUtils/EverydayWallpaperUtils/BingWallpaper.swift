@@ -28,11 +28,11 @@ public enum BingWallperMarkets: String {
 }
 
 public class BingWallpaperReference {
-    var Url: String = ""
-    var UrlWithoutResolution: String = ""
-    var StartDate: NSDate = NSDate()
-    var EndDate: NSDate = NSDate()
-    var FullStartDate: NSDate = NSDate()
+    public var Url: String = ""
+    public var UrlWithoutResolution: String = ""
+    public var StartDate: NSDate = NSDate()
+    public var EndDate: NSDate = NSDate()
+    public var FullStartDate: NSDate = NSDate()
 
     /*!
     * @discussion Class constructor
@@ -49,11 +49,11 @@ public class BingWallpaperReference {
         FullStartDate = dateFromString(fullStartDate, withTime: true)
     }
 
-    func dateFromString(dateString: String) -> NSDate {
+    public func dateFromString(dateString: String) -> NSDate {
         return dateFromString(dateString, withTime: false)
     }
     
-    func dateFromString(dateString: String, withTime: Bool) -> NSDate {
+    public func dateFromString(dateString: String, withTime: Bool) -> NSDate {
         let dateFormatter = NSDateFormatter()
 
         if  withTime {
@@ -69,16 +69,16 @@ public class BingWallpaperReference {
         return date!
     }
 
-    func urlStringByAppendingResolution(resolution: BingWallperResolutions) -> String {
+    public func urlStringByAppendingResolution(resolution: BingWallperResolutions) -> String {
         return UrlWithoutResolution.stringByAppendingString("_").stringByAppendingString(resolution.rawValue).stringByAppendingString(".jpg")
     }
     
-    func urlStringByAppendingResolution(resolution: CGSize) -> String {
+    public func urlStringByAppendingResolution(resolution: CGSize) -> String {
         
         return UrlWithoutResolution.stringByAppendingString("_").stringByAppendingString(self.resolutionFromSize(resolution).rawValue).stringByAppendingString(".jpg")
     }
     
-    func resolutionFromSize(size: CGSize) -> BingWallperResolutions {
+    public func resolutionFromSize(size: CGSize) -> BingWallperResolutions {
         var found = false
         var mappedResolution: BingWallperResolutions = BingWallperResolutions.Res240x320
         
@@ -93,22 +93,39 @@ public class BingWallpaperReference {
             }
         }
         
+        if (!found) {
+            for resolution in BingWallperResolutions.allValues.reverse() {
+                let width = Int(size.width)
+                let height = Int(size.height)
+                
+                let resString = resolution.rawValue
+                let resArray = resString.characters.split{$0 == "x"}.map(String.init)
+                
+                if (Int(resArray[0])! / Int(resArray[1])!) == (width / height) {
+                    found = true
+                    mappedResolution = resolution
+                    break
+                }
+            }
+        
+        }
+        
         return mappedResolution
     }
 }
 
 public class BingWallpaperService {
 
-    static func GetTodayBingWallpaperReference(market: String) -> BingWallpaperReference? {
+    public static func GetTodayBingWallpaperReference(market: String) -> BingWallpaperReference? {
         return GetBingWallpaperReference(0, market: market);
     }
 
-    static func GetYesterdayBingWallpaperReference(market: String) -> BingWallpaperReference? {
+    public static func GetYesterdayBingWallpaperReference(market: String) -> BingWallpaperReference? {
         return GetBingWallpaperReference(1, market: market);
     }
 
     // The idx parameter is the start day index. 0 for current day, 1 for yesterday, etc..
-    private static func GetBingWallpaperReference(idx: Int, market: String) -> BingWallpaperReference? {
+    public static func GetBingWallpaperReference(idx: Int, market: String) -> BingWallpaperReference? {
 
         let baseUrl = "http://www.bing.com/"
         let relativeUrl = "HPImageArchive.aspx?format=js&mbl=1&idx=\(idx)&n=1&mkt=\(market)"

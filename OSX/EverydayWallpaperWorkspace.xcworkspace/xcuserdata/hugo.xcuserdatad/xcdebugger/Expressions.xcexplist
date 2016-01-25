@@ -3,13 +3,18 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "AppSettings.reloadDefaultPreference() -&gt; ():AppSettings.swift">
-      </ContextState>
-      <ContextState
          contextName = "EverydayWallpaperViewController.mainMenuClick(AnyObject) -&gt; ():EverydayWallpaperViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "sender.tag()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppSettings.(loadDefaultPreference in _ED0EEBB59F75FF15E8264D61F017675F)() -&gt; ():AppSettings.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(userDefaultDictionary![isActivateConst]?.boolValue)!">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -25,6 +30,28 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "AppSettings.reloadDefaultPreference() -&gt; ():AppSettings.swift">
+      </ContextState>
+      <ContextState
+         contextName = "WallpapersFileNaming.fullName() -&gt; String:WallpapersFileNaming.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "destinationPath.path!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BingWallpaperReference.resolutionFromSize(CGSize) -&gt; BingWallperResolutions:BingWallpaper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "resolution.rawValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static BingWallpaperService.GetBingWallpaperReference(Int, market : String) -&gt; BingWallpaperReference?:BingWallpaper.swift">
+      </ContextState>
+      <ContextState
          contextName = "EverydayWallpaperAppSettingsTests.testReloadDefaultSettingsFromFile() -&gt; ():EverydayWallpaperBarTests.swift">
          <PersistentStrings>
             <PersistentString
@@ -33,18 +60,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MiscTests.(testNaming(MiscTests) -&gt; () -&gt; ()).(implicit closure #1):MiscTests.swift">
+         contextName = "EverydayWallpaperUtilsTests.testAllResolutionsDownloadWithPerformance() -&gt; ():EverydayWallpaperUtilsTests.swift">
          <PersistentStrings>
             <PersistentString
-               value = "ImageDownloader.sharedLoader.WallpaperSavePath">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "AppSettings.(loadDefaultPreference in _ED0EEBB59F75FF15E8264D61F017675F)() -&gt; ():AppSettings.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "(userDefaultDictionary![isActivateConst]?.boolValue)!">
+               value = "DefaultMarket">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -52,7 +71,18 @@
          contextName = "ImageDownloader.WallpaperSavePath.getter:ImageDownloader.swift">
          <PersistentStrings>
             <PersistentString
-               value = "fullImagePath.path.isEmpty">
+               value = "fullImagePath">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.wallpaperUpdate() -&gt; ():AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "naming.fullName()">
+            </PersistentString>
+            <PersistentString
+               value = "ScreenInfo.screensSizeFromIndex(0)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -76,10 +106,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "WallpapersFileNaming.fullName() -&gt; String:WallpapersFileNaming.swift">
+         contextName = "MiscTests.(testNaming(MiscTests) -&gt; () -&gt; ()).(implicit closure #1):MiscTests.swift">
          <PersistentStrings>
             <PersistentString
-               value = "destinationPath.path!">
+               value = "ImageDownloader.sharedLoader.WallpaperSavePath">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -12,6 +12,7 @@ import EverydayWallpaperUtils
 
 class WallpapersFileNaming {
     var BaseFolder: String = ""
+    var Market: String = "none"
     var WallpaperProvider: String = ""
     var Width: Int = 0
     var Height: Int = 0
@@ -23,6 +24,7 @@ class WallpapersFileNaming {
         self.Height = Int(0)
         self.WallpaperProvider = ""
         self.Date = NSDate()
+        self.Market = ""
     }
 
     convenience init(provider: String) {
@@ -48,6 +50,12 @@ class WallpapersFileNaming {
         
         self.Date = withDate
     }
+
+    convenience init(provider: String, withBaseFolder: String, withSize: CGSize, withDate: NSDate, withMarket: String) {
+        self.init(provider: provider, withBaseFolder: withBaseFolder, withSize: withSize, withDate: withDate)
+        
+        self.Market = withMarket
+    }
     
     func fullName() -> String {
         let destinationPath = NSURL.init(fileURLWithPath: ImageDownloader.sharedLoader.WallpaperSavePath).URLByAppendingPathComponent("\(self.fileName())")
@@ -57,7 +65,7 @@ class WallpapersFileNaming {
 
     func fileName() -> String {
         
-        return "\(Date.toShortString())-\(WallpaperProvider)-\(Width)x\(Height).jpg"
+        return "\(Date.toShortString())-\(WallpaperProvider)-\(Market)-\(Width)x\(Height).jpg"
     }
     
     func fileExist() -> Bool {

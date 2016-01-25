@@ -66,7 +66,7 @@ class EverydayWallpaperUtilsTests: XCTestCase {
 
             if success {
                 do {
-                    try NSFileManager.defaultManager().removeItemAtPath("\(downloadedImagePath)")
+                    //try NSFileManager.defaultManager().removeItemAtPath("\(downloadedImagePath)")
                 } catch {
                     XCTAssert(false, "Error deleting file for resolution \(resolution)")
                 }

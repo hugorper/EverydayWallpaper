@@ -24,7 +24,7 @@ class WallpapersFileNaming {
         self.Height = Int(0)
         self.WallpaperProvider = ""
         self.Date = NSDate()
-        self.Market = ""
+        self.Market = "none"
     }
 
     convenience init(provider: String) {

@@ -97,7 +97,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         if (true == true) {
-            alternateWallpaper = BingWallpaperService.GetYesTodayBingWallpaperReference(AppSettings.sharedInstance.AlternateCodePage)
+            alternateWallpaper = BingWallpaperService.GetTodayBingWallpaperReference(AppSettings.sharedInstance.AlternateCodePage)
             
             
             naming = WallpapersFileNaming.init(provider: WallpapersFileNaming.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: ScreenInfo.screensSizeFromIndex(0), withDate: NSDate(), withMarket: AppSettings.sharedInstance.AlternateCodePage)

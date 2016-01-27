@@ -62,13 +62,27 @@ public class WallpaperFiles {
         return destinationPath.path!
     }
 
+    public func fullName(withDate: NSDate) -> String {
+        let destinationPath = NSURL.init(fileURLWithPath: ImageDownloader.sharedLoader.WallpaperSavePath).URLByAppendingPathComponent("\(self.fileName(withDate))")
+        
+        return destinationPath.path!
+    }
+    
     public func fileName() -> String {
         
         return "\(Date.toShortString())-\(WallpaperProvider)-\(Market)-\(Width)x\(Height).jpg"
     }
+
+    public func fileName(withDate: NSDate) -> String {
+        return "\(withDate.toShortString())-\(WallpaperProvider)-\(Market)-\(Width)x\(Height).jpg"
+    }
     
     public func fileExist() -> Bool {
         return NSFileManager.defaultManager().fileExistsAtPath("\(self.fullName())")
+    }
+    
+    public func fileExist(withDate: NSDate) -> Bool {
+        return NSFileManager.defaultManager().fileExistsAtPath("\(self.fullName(withDate))")
     }
     
     public static var BingProvider: String {

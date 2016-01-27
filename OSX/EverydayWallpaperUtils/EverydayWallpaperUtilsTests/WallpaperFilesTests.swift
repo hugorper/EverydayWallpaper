@@ -8,6 +8,8 @@
 
 import XCTest
 
+@testable import EverydayWallpaperUtils
+
 class WallpaperFilesTests: XCTestCase {
 
     override func setUp() {
@@ -20,16 +22,12 @@ class WallpaperFilesTests: XCTestCase {
         super.tearDown()
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    func testNaming() {
+        let dateFrom = NSDate(dateString:"2010-12-15 06:00:00")
+        
+        let naming = WallpaperFiles.init(provider: WallpaperFiles.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: CGSizeMake(1024, 768), withDate: dateFrom)
+        
+        XCTAssert(naming.fullName() == "\(ImageDownloader.sharedLoader.WallpaperSavePath)/20101215-Bing-none-1024x768.jpg" , "Wallpaper URL malformed")
     }
 
 }

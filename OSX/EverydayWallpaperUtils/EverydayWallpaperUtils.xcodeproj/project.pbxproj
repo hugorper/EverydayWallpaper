@@ -11,6 +11,9 @@
 		9A6DD5991C1232AB0053E597 /* EverydayWallpaperUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6DD58E1C1232AB0053E597 /* EverydayWallpaperUtils.framework */; };
 		9A6DD59E1C1232AB0053E597 /* EverydayWallpaperUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6DD59D1C1232AB0053E597 /* EverydayWallpaperUtilsTests.swift */; };
 		9A6DD5A91C13076E0053E597 /* BingWallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6DD5A81C13076E0053E597 /* BingWallpaper.swift */; };
+		9AFE86831C59607D00815A23 /* WallpapersFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFE86821C59607D00815A23 /* WallpapersFiles.swift */; };
+		9AFE86851C5960A900815A23 /* MiscTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFE86841C5960A900815A23 /* MiscTests.swift */; };
+		9AFE868A1C5962EE00815A23 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFE86891C5962EE00815A23 /* Extensions.swift */; };
 		9AFF73EB1C14985700F5BF2E /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF73EA1C14985700F5BF2E /* ImageDownloader.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +35,9 @@
 		9A6DD59D1C1232AB0053E597 /* EverydayWallpaperUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverydayWallpaperUtilsTests.swift; sourceTree = "<group>"; };
 		9A6DD59F1C1232AB0053E597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A6DD5A81C13076E0053E597 /* BingWallpaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingWallpaper.swift; sourceTree = "<group>"; };
+		9AFE86821C59607D00815A23 /* WallpapersFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpapersFiles.swift; sourceTree = "<group>"; };
+		9AFE86841C5960A900815A23 /* MiscTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscTests.swift; sourceTree = "<group>"; };
+		9AFE86891C5962EE00815A23 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../../Shared/Extensions.swift; sourceTree = "<group>"; };
 		9AFF73EA1C14985700F5BF2E /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +81,8 @@
 		9A6DD5901C1232AB0053E597 /* EverydayWallpaperUtils */ = {
 			isa = PBXGroup;
 			children = (
+				9AFE868B1C5962F100815A23 /* Shared */,
+				9AFE86821C59607D00815A23 /* WallpapersFiles.swift */,
 				9A6DD5911C1232AB0053E597 /* EverydayWallpaperUtils.h */,
 				9A6DD5931C1232AB0053E597 /* Info.plist */,
 				9A6DD5A81C13076E0053E597 /* BingWallpaper.swift */,
@@ -86,10 +94,19 @@
 		9A6DD59C1C1232AB0053E597 /* EverydayWallpaperUtilsTests */ = {
 			isa = PBXGroup;
 			children = (
+				9AFE86841C5960A900815A23 /* MiscTests.swift */,
 				9A6DD59D1C1232AB0053E597 /* EverydayWallpaperUtilsTests.swift */,
 				9A6DD59F1C1232AB0053E597 /* Info.plist */,
 			);
 			path = EverydayWallpaperUtilsTests;
+			sourceTree = "<group>";
+		};
+		9AFE868B1C5962F100815A23 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				9AFE86891C5962EE00815A23 /* Extensions.swift */,
+			);
+			name = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,7 +218,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AFF73EB1C14985700F5BF2E /* ImageDownloader.swift in Sources */,
+				9AFE86831C59607D00815A23 /* WallpapersFiles.swift in Sources */,
 				9A6DD5A91C13076E0053E597 /* BingWallpaper.swift in Sources */,
+				9AFE868A1C5962EE00815A23 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A6DD59E1C1232AB0053E597 /* EverydayWallpaperUtilsTests.swift in Sources */,
+				9AFE86851C5960A900815A23 /* MiscTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

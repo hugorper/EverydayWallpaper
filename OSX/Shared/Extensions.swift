@@ -44,3 +44,17 @@ extension NSDate
         return dateFormatter.stringFromDate(self)
     }
 }
+
+extension String
+{
+    func toFile (path: String) -> Bool {
+        do {
+            try self.writeToFile(path, atomically: true, encoding: NSUTF8StringEncoding)
+            
+            return true
+            
+        } catch {
+            return false
+        }
+    }
+}

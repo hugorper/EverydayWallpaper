@@ -31,7 +31,7 @@ class MiscTests: XCTestCase {
     func testNaming() {
         let dateFrom = NSDate(dateString:"2010-12-15 06:00:00")
         
-        let naming = WallpapersFiles.init(provider: WallpapersFiles.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: CGSizeMake(1024, 768), withDate: dateFrom)
+        let naming = WallpaperFiles.init(provider: WallpaperFiles.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: CGSizeMake(1024, 768), withDate: dateFrom)
         
         XCTAssert(naming.fullName() == "\(ImageDownloader.sharedLoader.WallpaperSavePath)/20101215-Bing-none-1024x768.jpg" , "Wallpaper URL malformed")
     }

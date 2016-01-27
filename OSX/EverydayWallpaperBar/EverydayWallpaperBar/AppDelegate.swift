@@ -74,7 +74,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         var alternateWallpaper = todayWallpaper
         
         
-        var naming = WallpapersFiles.init(provider: WallpapersFiles.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: ScreenInfo.screensSizeFromIndex(0), withDate: NSDate(), withMarket: AppSettings.sharedInstance.MainCodePage)
+        var naming = WallpaperFiles.init(provider: WallpaperFiles.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: ScreenInfo.screensSizeFromIndex(0), withDate: NSDate(), withMarket: AppSettings.sharedInstance.MainCodePage)
         
         var downloadedImagePath = ImageDownloader.sharedLoader.downloadImageFromUrl(todayWallpaper!.Url, fileName: naming.fileName())
         
@@ -99,7 +99,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             alternateWallpaper = BingWallpaperService.GetTodayBingWallpaperReference(AppSettings.sharedInstance.AlternateCodePage)
             
             
-            naming = WallpapersFiles.init(provider: WallpapersFiles.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: ScreenInfo.screensSizeFromIndex(0), withDate: NSDate(), withMarket: AppSettings.sharedInstance.AlternateCodePage)
+            naming = WallpaperFiles.init(provider: WallpaperFiles.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: ScreenInfo.screensSizeFromIndex(0), withDate: NSDate(), withMarket: AppSettings.sharedInstance.AlternateCodePage)
             
             downloadedImagePath = ImageDownloader.sharedLoader.downloadImageFromUrl(alternateWallpaper!.Url, fileName: naming.fileName())
         }

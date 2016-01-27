@@ -1,5 +1,5 @@
 //
-//  WallpapersFiles.swift
+//  WallpaperFiles.swift
 //  EverydayWallpaperBar
 //
 //  Created by Hugo PEREIRA on 05.01.16.
@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-public class WallpapersFiles {
+public class WallpaperFiles {
     var BaseFolder: String = ""
     var Market: String = "none"
     var WallpaperProvider: String = ""

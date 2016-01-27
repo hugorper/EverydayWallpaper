@@ -27,7 +27,6 @@ class AppSettings {
     var alternateCodePageConst = "AlternateCodePage"
     var isAlternateIsDifferentConst = "AlternateIsDifferent"
     var isAlternateUseYesterdayWallpaperConst = "AlternateUseYesterdayWallpaper"
-    var LastSuccessfulUpdateConst = "LastSuccessfulUpdate"
     
     var userDefaultDictionary: [String : AnyObject]?
     
@@ -132,16 +131,6 @@ class AppSettings {
         }
         set {
             userDefaultDictionary![isAlternateUseYesterdayWallpaperConst] = newValue
-            self.save()
-        }
-    }
-
-    var LastSuccessfulUpdate: NSDate {
-        get {
-            return (userDefaultDictionary![LastSuccessfulUpdateConst])! as! NSDate
-        }
-        set {
-            userDefaultDictionary![LastSuccessfulUpdateConst] = newValue
             self.save()
         }
     }

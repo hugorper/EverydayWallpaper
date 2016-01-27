@@ -60,11 +60,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func checkWallpaperUpdate()
     {
         if AppSettings.sharedInstance.IsActivate {
-            if AppSettings.sharedInstance.LastSuccessfulUpdate.isToday() == false || 1==1 {
-                wallpaperUpdate()
-            }
-            else {
-            }
+         //   if AppSettings.sharedInstance.LastSuccessfulUpdate.isToday() == false || 1==1 {
+           //     wallpaperUpdate()
+          //  }
+           // else {
+           // }
         }
     }
     
@@ -89,7 +89,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
                     try workspace.setDesktopImageURL(imgurl, forScreen: screen, options: [:])
                 }
-                //AppSettings.sharedInstance.LastSuccessfulUpdate = NSDate()
                 
             } catch {
                 print(error)
@@ -112,7 +111,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
                     try workspace.setDesktopImageURL(imgurl, forScreen: screen, options: [:])
                 }
-                //AppSettings.sharedInstance.LastSuccessfulUpdate = NSDate()
                 
             } catch {
                 print(error)

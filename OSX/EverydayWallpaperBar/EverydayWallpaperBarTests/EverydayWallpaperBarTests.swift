@@ -102,16 +102,6 @@ class EverydayWallpaperAppSettingsTests: XCTestCase {
         XCTAssert(AppSettings.sharedInstance.IsAlternateUseYesterdayWallpaper == testValue2)
     }
     
-    func testLastSuccessfulUpdateReadWrite() {
-        let testValue1 = NSDate(dateString:"2010-12-15 06:00:00")
-        let testValue2 = NSDate(dateString:"2013-12-11 10:09:08")
-        
-        AppSettings.sharedInstance.LastSuccessfulUpdate = testValue1
-        XCTAssert(AppSettings.sharedInstance.LastSuccessfulUpdate == testValue1, "Value error for LastSuccessfulUpdate")
-        
-        AppSettings.sharedInstance.LastSuccessfulUpdate = testValue2
-        XCTAssert(AppSettings.sharedInstance.LastSuccessfulUpdate == testValue2)
-    }
 }
 
 

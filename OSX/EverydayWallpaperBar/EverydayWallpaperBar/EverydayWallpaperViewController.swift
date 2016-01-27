@@ -108,5 +108,7 @@ extension EverydayWallpaperViewController {
         alternateScreenMarketsCombo.enabled = wallpaperActivateState
         useYesterdayOnAlternateScreenCheckbox.enabled = wallpaperActivateState
         saveLastButton.enabled = wallpaperActivateState
+        
+        (NSApplication.sharedApplication().delegate as! AppDelegate).updateImageNameFromState(true)
     }
 }

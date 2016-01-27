@@ -16,6 +16,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var eventMonitor: EventMonitor?
     var defaultToolTipDelay: Int = 0
     var reach: Reachability?
+    let enabledImageName: String = "StatusBarButtonImage"
+    let disabledImageName: String = "StatusBarButtonImageDisabled"
+    var statusBarImageName: String = "StatusBarButtonImage"
     
     let activity = NSBackgroundActivityScheduler(identifier: NSBundle.mainBundle().infoDictionary!["CFBundleIdentifier"] as! String)
     
@@ -25,7 +28,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         
         if let button = statusItem.button {
-            button.image = NSImage(named: "StatusBarButtonImage")
+            self.updateImageNameFromState(false)
+            
+            button.image = NSImage(named: statusBarImageName)
             button.action = Selector("togglePopover:")
         }
 
@@ -50,6 +55,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.restoreDefaultToolTipDefaults()
         self.reach?.stopNotifier()
         self.activity.invalidate()
+    }
+    
+    func updateImageNameFromState(isImageUpdated: Bool) {
+        if AppSettings.sharedInstance.IsActivate {
+            statusBarImageName = enabledImageName
+        }
+        else {
+            statusBarImageName = disabledImageName
+        }
+        
+        if isImageUpdated {
+            if let button = statusItem.button {
+                button.image = NSImage(named: statusBarImageName)
+            }
+        }
     }
     
     func scheduleNextUpdate() {

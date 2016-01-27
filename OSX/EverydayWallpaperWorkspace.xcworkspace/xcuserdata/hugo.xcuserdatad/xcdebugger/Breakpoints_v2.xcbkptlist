@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EverydayWallpaperBar/EverydayWallpaperBar/AppDelegate.swift"
-            timestampString = "475618435.258874"
+            timestampString = "475628511.961268"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "isWaitingForNextReachNeeded()"
             landmarkType = "5">
          </BreakpointContent>

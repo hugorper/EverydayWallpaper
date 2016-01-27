@@ -20,12 +20,12 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView focusRingType="none" id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="429" height="276"/>
+            <rect key="frame" x="0.0" y="0.0" width="429" height="292"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button translatesAutoresizingMaskIntoConstraints="NO" id="A7o-ob-fMm">
-                    <rect key="frame" x="18" y="240" width="290" height="18"/>
-                    <buttonCell key="cell" type="check" title="Activate EverydayWallpapers Bing download" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="gJp-PK-57j">
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A7o-ob-fMm">
+                    <rect key="frame" x="18" y="256" width="395" height="18"/>
+                    <buttonCell key="cell" type="check" title="Activate EverydayWallpapers download and set on all screens" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="gJp-PK-57j">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -33,22 +33,16 @@
                         <action selector="allScreenActivationChange:" target="-2" id="gUr-L2-LEq"/>
                     </connections>
                 </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aKN-lA-QLh">
-                    <rect key="frame" x="36" y="217" width="74" height="17"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="70" id="fVa-RN-1Go"/>
-                    </constraints>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aKN-lA-QLh">
+                    <rect key="frame" x="36" y="233" width="74" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Codepage:" id="YJ0-Qu-9i0">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tXF-q0-Qvc">
-                    <rect key="frame" x="116" y="210" width="92" height="25"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="92" id="xev-bj-K3W"/>
-                    </constraints>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tXF-q0-Qvc">
+                    <rect key="frame" x="116" y="226" width="92" height="25"/>
                     <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="f1Z-JS-pyd">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -58,8 +52,8 @@
                         <action selector="allScreenMarketsChange:" target="-2" id="HTI-f7-CE9"/>
                     </connections>
                 </popUpButton>
-                <button translatesAutoresizingMaskIntoConstraints="NO" id="NAz-nN-rwh">
-                    <rect key="frame" x="18" y="84" width="155" height="18"/>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NAz-nN-rwh">
+                    <rect key="frame" x="18" y="100" width="155" height="18"/>
                     <buttonCell key="cell" type="check" title="Save last 10 wallpares" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="b9u-GM-eUH">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -68,8 +62,8 @@
                         <action selector="saveLastChange:" target="-2" id="boY-SP-dYF"/>
                     </connections>
                 </button>
-                <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b3z-nm-alc">
-                    <rect key="frame" x="20" y="20" width="333" height="22"/>
+                <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b3z-nm-alc">
+                    <rect key="frame" x="20" y="36" width="399" height="22"/>
                     <pathCell key="cell" selectable="YES" alignment="left" id="1a0-MX-er9">
                         <font key="font" metaFont="system"/>
                         <url key="url" string="file://localhost/Applications/"/>
@@ -80,8 +74,8 @@
                         <action selector="choosePathAction:" target="-2" id="8g6-T6-ZPq"/>
                     </connections>
                 </pathControl>
-                <button translatesAutoresizingMaskIntoConstraints="NO" id="7bz-Tc-9Qm">
-                    <rect key="frame" x="18" y="175" width="339" height="18"/>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7bz-Tc-9Qm">
+                    <rect key="frame" x="18" y="191" width="339" height="18"/>
                     <buttonCell key="cell" type="check" title="Use different wallpaper market on secondary screen" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Hx6-WK-uJS">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -90,8 +84,8 @@
                         <action selector="alternateScreenActivationChange:" target="-2" id="b8T-BL-Gv9"/>
                     </connections>
                 </button>
-                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ued-2d-7ee">
-                    <rect key="frame" x="114" y="145" width="97" height="25"/>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ued-2d-7ee">
+                    <rect key="frame" x="114" y="161" width="97" height="25"/>
                     <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="abu-yl-Ows">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -101,8 +95,8 @@
                         <action selector="alternateScreenMarketsChange:" target="-2" id="K7U-6e-rot"/>
                     </connections>
                 </popUpButton>
-                <button translatesAutoresizingMaskIntoConstraints="NO" id="FuD-p6-RSL">
-                    <rect key="frame" x="40" y="123" width="163" height="18"/>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FuD-p6-RSL">
+                    <rect key="frame" x="40" y="139" width="163" height="18"/>
                     <buttonCell key="cell" type="check" title="Use yesteray wallpaper" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Hcl-zz-VuU">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -111,30 +105,27 @@
                         <action selector="useYesterdayOnAlternateScreenChange:" target="-2" id="bDg-F0-JyQ"/>
                     </connections>
                 </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="75b-oZ-kLO">
-                    <rect key="frame" x="36" y="150" width="74" height="17"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="752" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="75b-oZ-kLO">
+                    <rect key="frame" x="36" y="166" width="74" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Codepage:" id="ugJ-y3-MGp">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7IR-fu-vta">
-                    <rect key="frame" x="18" y="50" width="96" height="17"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7IR-fu-vta">
+                    <rect key="frame" x="18" y="66" width="96" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Wallpaper path" placeholderString="eeee" id="o4r-Yu-1hp">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="cR3-Cg-hhH">
-                    <rect key="frame" x="367" y="23" width="42" height="19"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="42" id="kGp-Pl-5b9"/>
-                    </constraints>
-                    <popUpButtonCell key="cell" type="bevel" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" arrowPosition="arrowAtCenter" selectedItem="3eF-Gm-YUk" id="rNs-DT-bWh">
+                <popUpButton fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cR3-Cg-hhH">
+                    <rect key="frame" x="361" y="11" width="57" height="19"/>
+                    <popUpButtonCell key="cell" type="bevel" bezelStyle="rounded" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyUpOrDown" inset="2" pullsDown="YES" arrowPosition="arrowAtCenter" id="rNs-DT-bWh">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="system"/>
                         <menu key="menu" id="n3H-Qt-LbI">
                             <items>
                                 <menuItem state="on" image="NSSmartBadgeTemplate" hidden="YES" id="IjV-ND-xxc"/>
@@ -165,34 +156,7 @@
                     </popUpButtonCell>
                 </popUpButton>
             </subviews>
-            <constraints>
-                <constraint firstItem="aKN-lA-QLh" firstAttribute="trailing" secondItem="75b-oZ-kLO" secondAttribute="trailing" id="1cj-C8-qAL"/>
-                <constraint firstItem="b3z-nm-alc" firstAttribute="leading" secondItem="7IR-fu-vta" secondAttribute="leading" id="3i5-2m-lqx"/>
-                <constraint firstItem="tXF-q0-Qvc" firstAttribute="centerX" secondItem="Ued-2d-7ee" secondAttribute="centerX" id="3kX-vV-xmP"/>
-                <constraint firstItem="Ued-2d-7ee" firstAttribute="centerY" secondItem="75b-oZ-kLO" secondAttribute="centerY" id="7Vs-qS-12F"/>
-                <constraint firstItem="tXF-q0-Qvc" firstAttribute="top" secondItem="aKN-lA-QLh" secondAttribute="top" id="9h8-Sy-HQ8"/>
-                <constraint firstItem="A7o-ob-fMm" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="BXu-VN-Fp6"/>
-                <constraint firstItem="FuD-p6-RSL" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="42" id="FAF-Q5-OIh"/>
-                <constraint firstItem="cR3-Cg-hhH" firstAttribute="leading" secondItem="b3z-nm-alc" secondAttribute="trailing" constant="14" id="Fbd-7d-Slk"/>
-                <constraint firstItem="aKN-lA-QLh" firstAttribute="top" secondItem="A7o-ob-fMm" secondAttribute="bottom" constant="8" symbolic="YES" id="IMo-1K-Yb8"/>
-                <constraint firstAttribute="trailing" secondItem="cR3-Cg-hhH" secondAttribute="trailing" constant="20" symbolic="YES" id="JrX-ZJ-X4B"/>
-                <constraint firstItem="NAz-nN-rwh" firstAttribute="leading" secondItem="7bz-Tc-9Qm" secondAttribute="leading" id="OoJ-vv-NrC"/>
-                <constraint firstItem="Ued-2d-7ee" firstAttribute="top" secondItem="7bz-Tc-9Qm" secondAttribute="bottom" constant="8" symbolic="YES" id="Oqd-gv-HNt"/>
-                <constraint firstItem="A7o-ob-fMm" firstAttribute="leading" secondItem="7bz-Tc-9Qm" secondAttribute="leading" id="PTY-oW-Qbt"/>
-                <constraint firstItem="aKN-lA-QLh" firstAttribute="leading" secondItem="75b-oZ-kLO" secondAttribute="leading" id="QdT-kv-uPA"/>
-                <constraint firstItem="b3z-nm-alc" firstAttribute="top" secondItem="7IR-fu-vta" secondAttribute="bottom" constant="8" symbolic="YES" id="QtV-eD-YAT"/>
-                <constraint firstItem="NAz-nN-rwh" firstAttribute="top" secondItem="FuD-p6-RSL" secondAttribute="bottom" constant="25" id="Tj1-9G-1X3"/>
-                <constraint firstItem="cR3-Cg-hhH" firstAttribute="top" secondItem="b3z-nm-alc" secondAttribute="top" id="WHk-PW-psk"/>
-                <constraint firstItem="tXF-q0-Qvc" firstAttribute="leading" secondItem="aKN-lA-QLh" secondAttribute="trailing" constant="8" symbolic="YES" id="b93-KV-SlX"/>
-                <constraint firstItem="Ued-2d-7ee" firstAttribute="leading" secondItem="75b-oZ-kLO" secondAttribute="trailing" constant="6" id="meU-Ux-IIo"/>
-                <constraint firstItem="7bz-Tc-9Qm" firstAttribute="top" secondItem="tXF-q0-Qvc" secondAttribute="bottom" constant="21" id="obz-Mj-NJm"/>
-                <constraint firstAttribute="bottom" secondItem="b3z-nm-alc" secondAttribute="bottom" constant="20" symbolic="YES" id="pxZ-bf-x1S"/>
-                <constraint firstItem="FuD-p6-RSL" firstAttribute="top" secondItem="Ued-2d-7ee" secondAttribute="bottom" constant="8" symbolic="YES" id="r1a-fh-ePf"/>
-                <constraint firstItem="aKN-lA-QLh" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="38" id="rIT-ik-mKl"/>
-                <constraint firstItem="NAz-nN-rwh" firstAttribute="leading" secondItem="7IR-fu-vta" secondAttribute="leading" id="rx9-iz-K1Q"/>
-                <constraint firstItem="A7o-ob-fMm" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" symbolic="YES" id="wf5-Ld-eqR"/>
-            </constraints>
-            <point key="canvasLocation" x="114.5" y="449"/>
+            <point key="canvasLocation" x="114.5" y="457"/>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="NAO-Zd-98r"/>
     </objects>

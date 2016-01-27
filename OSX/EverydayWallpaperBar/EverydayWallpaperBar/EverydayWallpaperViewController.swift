@@ -19,21 +19,7 @@ class EverydayWallpaperViewController: NSViewController {
     
     @IBOutlet weak var imagePathControl: NSPathControl!
     
-    @IBOutlet weak var wallpaperImageView: NSImageView!
-
-    @IBOutlet weak var wallpaperPreviousButton: NSButton!
-    
-    @IBOutlet weak var wallpaperScreenTodayButton: NSButton!
-    
-    @IBOutlet weak var wallpaperScreenNextButton: NSButton!
-
-    @IBOutlet weak var infoTooltipImage: NSImageView!
-    
-    @IBOutlet weak var infoImageLabel: NSTextField!
-    
     override func viewDidLoad() {
-        infoTooltipImage.toolTip = "none"
-        
         // load markets com strings
         for market in BingWallperMarkets.allValues {
             allScreenMarketsCombo.addItemWithTitle(market.rawValue)
@@ -122,11 +108,5 @@ extension EverydayWallpaperViewController {
         alternateScreenMarketsCombo.enabled = wallpaperActivateState
         useYesterdayOnAlternateScreenCheckbox.enabled = wallpaperActivateState
         saveLastButton.enabled = wallpaperActivateState
-        wallpaperImageView.enabled = wallpaperActivateState
-        wallpaperPreviousButton.enabled = wallpaperActivateState
-        wallpaperScreenTodayButton.enabled = wallpaperActivateState
-        wallpaperScreenNextButton.enabled = wallpaperActivateState
-        infoTooltipImage.enabled = wallpaperActivateState
-        infoImageLabel.enabled = wallpaperActivateState
     }
 }

@@ -51,7 +51,6 @@ class EverydayWallpaperUtilsTests: XCTestCase {
     }
 
     func testAllResolutionsDownloadWithPerformance() {
-        //let bing = BingWallpaperService.GetTodayBingWallpaperReference(DefaultMarket);
         let bing = BingWallpaperService.GetYesterdayBingWallpaperReference(DefaultMarket)
 
         for resolution in BingWallperResolutions.allValues {

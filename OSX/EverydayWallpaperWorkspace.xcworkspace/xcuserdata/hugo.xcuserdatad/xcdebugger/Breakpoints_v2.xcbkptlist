@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EverydayWallpaperUtils/EverydayWallpaperUtilsTests/EverydayWallpaperUtilsTests.swift"
-            timestampString = "473724179.846197"
+            timestampString = "475712810.393198"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "testBingWallpaperSizeMapper()"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EverydayWallpaperUtils/EverydayWallpaperUtilsTests/EverydayWallpaperUtilsTests.swift"
-            timestampString = "475697002.434364"
+            timestampString = "475712810.393198"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "testAllResolutionsDownloadWithPerformance()"
             landmarkType = "5">
          </BreakpointContent>

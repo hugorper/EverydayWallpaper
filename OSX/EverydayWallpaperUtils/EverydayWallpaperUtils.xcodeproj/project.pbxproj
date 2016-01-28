@@ -16,6 +16,7 @@
 		9AFE868A1C5962EE00815A23 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFE86891C5962EE00815A23 /* Extensions.swift */; };
 		9AFE868D1C5965A700815A23 /* WallpaperFilesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFE868C1C5965A700815A23 /* WallpaperFilesTests.swift */; };
 		9AFE86911C5AC86C00815A23 /* SearchFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFE86901C5AC86C00815A23 /* SearchFile.swift */; };
+		9AFE86931C5ACB6E00815A23 /* SearchFileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFE86921C5ACB6E00815A23 /* SearchFileTests.swift */; };
 		9AFF73EB1C14985700F5BF2E /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF73EA1C14985700F5BF2E /* ImageDownloader.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		9AFE86891C5962EE00815A23 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../../Shared/Extensions.swift; sourceTree = "<group>"; };
 		9AFE868C1C5965A700815A23 /* WallpaperFilesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperFilesTests.swift; sourceTree = "<group>"; };
 		9AFE86901C5AC86C00815A23 /* SearchFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFile.swift; sourceTree = "<group>"; };
+		9AFE86921C5ACB6E00815A23 /* SearchFileTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFileTests.swift; sourceTree = "<group>"; };
 		9AFF73EA1C14985700F5BF2E /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 				9A6DD59D1C1232AB0053E597 /* EverydayWallpaperUtilsTests.swift */,
 				9A6DD59F1C1232AB0053E597 /* Info.plist */,
 				9AFE868C1C5965A700815A23 /* WallpaperFilesTests.swift */,
+				9AFE86921C5ACB6E00815A23 /* SearchFileTests.swift */,
 			);
 			path = EverydayWallpaperUtilsTests;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A6DD59E1C1232AB0053E597 /* EverydayWallpaperUtilsTests.swift in Sources */,
+				9AFE86931C5ACB6E00815A23 /* SearchFileTests.swift in Sources */,
 				9AFE868D1C5965A700815A23 /* WallpaperFilesTests.swift in Sources */,
 				9AFE86851C5960A900815A23 /* MiscTests.swift in Sources */,
 			);

@@ -10,12 +10,11 @@ import Foundation
 
 public class SearchFile {
     
-    static func existFromDirectory (path: String, withPrefix: String) -> Bool {
-        let fm = NSFileManager.defaultManager()
-        let path = NSBundle.mainBundle().resourcePath!
+    public static func existFromDirectory (path: String, withPrefix: String) -> Bool {
+        let fileManager = NSFileManager.defaultManager()
         
         do {
-            let items = try fm.contentsOfDirectoryAtPath(path)
+            let items = try fileManager.contentsOfDirectoryAtPath(path)
             
             for item in items {
                 if item.hasPrefix(withPrefix) {

@@ -36,11 +36,16 @@ class EverydayWallpaperViewController: NSViewController {
         imagePathControl.stringValue = ImageDownloader.sharedLoader.WallpaperSavePath
         
         self.updateControlsFromState()
+
+        self.view.layer!.contents =  NSImage(named:"back")!
+    
     }
     
     override func viewWillAppear() {
         super.viewWillAppear()
     }
+    
+
     
 }
 

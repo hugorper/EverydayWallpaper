@@ -44,9 +44,7 @@ class EverydayWallpaperViewController: NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
     }
-    
-
-    
+  
 }
 
 // MARK: Actions

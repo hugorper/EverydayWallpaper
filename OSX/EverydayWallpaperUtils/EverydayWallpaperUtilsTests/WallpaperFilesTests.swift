@@ -27,7 +27,7 @@ class WallpaperFilesTests: XCTestCase {
         
         let naming = WallpaperFiles.init(provider: WallpaperFiles.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: CGSizeMake(1024, 768), withDate: dateFrom)
         
-        XCTAssert(naming.fullName() == "\(ImageDownloader.sharedLoader.WallpaperSavePath)/20101215-Bing-none-1024x768.jpg" , "Wallpaper URL malformed")
+        XCTAssert(naming.fullName() == "\(ImageDownloader.sharedLoader.WallpaperSavePath)/20101215\(Constants.Naming.FileNameSeparator)\(Constants.Naming.Bing)\(Constants.Naming.FileNameSeparator)\(Constants.Default.None)\(Constants.Naming.FileNameSeparator)1024\(Constants.Naming.ResolutionSeparator)768.jpg" , "Wallpaper URL malformed")
     }
 
     func testExistForDate() {

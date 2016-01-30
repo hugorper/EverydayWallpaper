@@ -36,7 +36,7 @@ extension NSDate
         }
     }
     
-    func toShortString() -> String{
+    func toShortString() -> String {
         let dateFormatter = NSDateFormatter()
         
         dateFormatter.dateFormat = "yyyMMdd"

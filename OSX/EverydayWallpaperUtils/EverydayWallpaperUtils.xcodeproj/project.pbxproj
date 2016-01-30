@@ -17,6 +17,7 @@
 		9AFE868D1C5965A700815A23 /* WallpaperFilesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFE868C1C5965A700815A23 /* WallpaperFilesTests.swift */; };
 		9AFE86911C5AC86C00815A23 /* SearchFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFE86901C5AC86C00815A23 /* SearchFile.swift */; };
 		9AFE86931C5ACB6E00815A23 /* SearchFileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFE86921C5ACB6E00815A23 /* SearchFileTests.swift */; };
+		9AFF2A241C5D391F004D0478 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF2A231C5D391F004D0478 /* Constants.swift */; };
 		9AFF73EB1C14985700F5BF2E /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF73EA1C14985700F5BF2E /* ImageDownloader.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		9AFE868C1C5965A700815A23 /* WallpaperFilesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperFilesTests.swift; sourceTree = "<group>"; };
 		9AFE86901C5AC86C00815A23 /* SearchFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFile.swift; sourceTree = "<group>"; };
 		9AFE86921C5ACB6E00815A23 /* SearchFileTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFileTests.swift; sourceTree = "<group>"; };
+		9AFF2A231C5D391F004D0478 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9AFF73EA1C14985700F5BF2E /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 				9A6DD5A81C13076E0053E597 /* BingWallpaper.swift */,
 				9AFF73EA1C14985700F5BF2E /* ImageDownloader.swift */,
 				9AFE86901C5AC86C00815A23 /* SearchFile.swift */,
+				9AFF2A231C5D391F004D0478 /* Constants.swift */,
 			);
 			path = EverydayWallpaperUtils;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				9AFE86911C5AC86C00815A23 /* SearchFile.swift in Sources */,
 				9A6DD5A91C13076E0053E597 /* BingWallpaper.swift in Sources */,
 				9AFE868A1C5962EE00815A23 /* Extensions.swift in Sources */,
+				9AFF2A241C5D391F004D0478 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

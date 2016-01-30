@@ -79,6 +79,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func checkWallpaperUpdate()
     {
+        // if last update occur today
+        var shortDateString = NSDate().toShortString()
+        //shortDateString.appendContentsOf(<#T##other: String##String#>)
+        
         if AppSettings.sharedInstance.IsActivate {
          //   if AppSettings.sharedInstance.LastSuccessfulUpdate.isToday() == false || 1==1 {
            //     wallpaperUpdate()

@@ -11,7 +11,7 @@ import Cocoa
 
 public class WallpaperFiles {
     var BaseFolder: String = ""
-    var Market: String = "none"
+    var Market: String = Constants.Default.None
     var WallpaperProvider: String = ""
     var Width: Int = 0
     var Height: Int = 0
@@ -23,7 +23,7 @@ public class WallpaperFiles {
         self.Height = Int(0)
         self.WallpaperProvider = ""
         self.Date = NSDate()
-        self.Market = "none"
+        self.Market = Constants.Default.None
     }
 
     public convenience init(provider: String) {
@@ -69,12 +69,11 @@ public class WallpaperFiles {
     }
     
     public func fileName() -> String {
-        
-        return "\(Date.toShortString())-\(WallpaperProvider)-\(Market)-\(Width)x\(Height).jpg"
+        return "\(Date.toShortString())\(Constants.Naming.FileNameSeparator)\(WallpaperProvider)\(Constants.Naming.FileNameSeparator)\(Market)\(Constants.Naming.FileNameSeparator)\(Width)\(Constants.Naming.ResolutionSeparator)\(Height).jpg"
     }
 
     public func fileName(withDate: NSDate) -> String {
-        return "\(withDate.toShortString())-\(WallpaperProvider)-\(Market)-\(Width)x\(Height).jpg"
+        return "\(withDate.toShortString())\(Constants.Naming.FileNameSeparator)\(WallpaperProvider)\(Constants.Naming.FileNameSeparator)\(Market)\(Constants.Naming.FileNameSeparator)\(Width)\(Constants.Naming.ResolutionSeparator)\(Height).jpg"
     }
     
     public func fileExist() -> Bool {
@@ -87,14 +86,14 @@ public class WallpaperFiles {
     
     public static var BingProvider: String {
         get {
-            return "Bing"
+            return Constants.Naming.Bing
         }
     }
 
     /// unused
-    public static var NationalGeogrphicProvider: String {
+    public static var NationalGeographicProvider: String {
         get {
-            return "Bing"
+            return Constants.Naming.NationalGeographic
         }
     }
 }

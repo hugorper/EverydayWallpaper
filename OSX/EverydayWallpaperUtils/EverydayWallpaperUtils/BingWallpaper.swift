@@ -8,6 +8,10 @@
 
 import Foundation
 
+/*!
+* @discussion enum BingWallperResolutions
+* @comment Warming the separator must be the same has Constants.Naming.ResolutionSeparator
+*/
 public enum BingWallperResolutions: String {
     case Res176x220 = "176x220", Res220x176 = "220x176", Res240x240 = "240x240", Res240x320 = "240x320",
          Res240x400 = "240x400", Res320x240 = "320x240", Res320x320 = "320x320", Res360x480 = "360x480",
@@ -86,7 +90,7 @@ public class BingWallpaperReference {
             let width = Int(size.width)
             let height = Int(size.height)
             
-            if resolution.rawValue == "\(width)x\(height)" {
+            if resolution.rawValue == "\(width)\(Constants.Naming.ResolutionSeparator)\(height)" {
                 found = true
                 mappedResolution = resolution
                 break
@@ -99,7 +103,7 @@ public class BingWallpaperReference {
                 let height = Int(size.height)
                 
                 let resString = resolution.rawValue
-                let resArray = resString.characters.split{$0 == "x"}.map(String.init)
+                let resArray = resString.characters.split{$0 == Character(Constants.Naming.ResolutionSeparator)}.map(String.init)
                 
                 if (Int(resArray[0])! / Int(resArray[1])!) == (width / height) {
                     found = true

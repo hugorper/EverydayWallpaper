@@ -26,12 +26,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EverydayWallpaperBar/EverydayWallpaperBar/AppDelegate.swift"
-            timestampString = "475872903.238772"
+            timestampString = "476143749.959478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
-            landmarkName = "isWaitingForNextReachNeeded()"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EverydayWallpaperBar/EverydayWallpaperBar/AppDelegate.swift"
+            timestampString = "476143749.959478"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "checkWallpaperUpdate()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

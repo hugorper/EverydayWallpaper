@@ -9,14 +9,14 @@
 import Foundation
 
 public struct Constants {
-    struct Naming {
-        static let ResolutionSeparator = "x"
-        static let FileNameSeparator = "-"
-        static let Bing = "Bing"
-        static let NationalGeographic = "NationalGeographic"
+    public struct Naming {
+        public static let ResolutionSeparator = "x"
+        public static let FileNameSeparator = "-"
+        public static let Bing = "Bing"
+        public static let NationalGeographic = "NationalGeographic"
     }
     
-    struct Default {
-        static let None = "none"
+    public struct Default {
+        public static let None = "none"
     }
 }

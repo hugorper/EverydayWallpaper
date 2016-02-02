@@ -19,10 +19,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let enabledImageName: String = "StatusBarButtonImage"
     let disabledImageName: String = "StatusBarButtonImageDisabled"
     var statusBarImageName: String = "StatusBarButtonImage"
+    var isUpdateProcessing: Bool = false
     
-    let activity = NSBackgroundActivityScheduler(identifier: NSBundle.mainBundle().infoDictionary!["CFBundleIdentifier"] as! String)
+    // activate desactive if uodateing
+    //(popover.contentViewController as! EverydayWallpaperViewController).shouldShowSpinner()
+    //(popover.contentViewController as! EverydayWallpaperViewController).shouldHideSpinner()
     
-
     func applicationDidFinishLaunching(notification: NSNotification) {
         self.reach = Reachability.reachabilityForInternetConnection()
         
@@ -43,18 +45,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
         eventMonitor?.start()
-
-        self.saveAndChangeDefaultToolTipDefaults()
         
-        self.checkWallpaperUpdate()
-
+        //self.initWallpaperUpdate()
     }
     
 
     func applicationWillTerminate(aNotification: NSNotification) {
-        self.restoreDefaultToolTipDefaults()
         self.reach?.stopNotifier()
-        self.activity.invalidate()
     }
     
     func updateImageNameFromState(isImageUpdated: Bool) {
@@ -70,6 +67,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 button.image = NSImage(named: statusBarImageName)
             }
         }
+        
+        self.initWallpaperUpdate()
+    }
+    
+    func initWallpaperUpdate() {
+        let isProcessing = isUpdateProcessing
+        
+        
+        if AppSettings.sharedInstance.IsActivate {
+            if !isProcessing {
+                isUpdateProcessing = true
+                
+                
+                isUpdateProcessing = false
+            }
+        }
+        else {
+        }
     }
     
     func scheduleNextUpdate() {
@@ -79,9 +94,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func checkWallpaperUpdate()
     {
+        //(popover.contentViewController as! EverydayWallpaperViewController).spinnerShouldShow()
         // if last update occur today
+        var isUpdatedToday = false
         var shortDateString = NSDate().toShortString()
-        //shortDateString.appendContentsOf(<#T##other: String##String#>)
+        shortDateString.appendContentsOf(Constants.Naming.FileNameSeparator)
+        
+        if SearchFile.existFromDirectory(ImageDownloader.sharedLoader.WallpaperSavePath, withPrefix: shortDateString) {
+            isUpdatedToday = true
+        }
+        else {
+            //self.wallpaperUpdate()
+        }
         
         if AppSettings.sharedInstance.IsActivate {
          //   if AppSettings.sharedInstance.LastSuccessfulUpdate.isToday() == false || 1==1 {
@@ -90,13 +114,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
            // else {
            // }
         }
+        
+        
+        //(popover.contentViewController as! EverydayWallpaperViewController).spinnerShoudHidden()
     }
     
     func wallpaperUpdate()
     {
         let todayWallpaper = BingWallpaperService.GetTodayBingWallpaperReference(AppSettings.sharedInstance.MainCodePage)
         var alternateWallpaper = todayWallpaper
-        
         
         var naming = WallpaperFiles.init(provider: WallpaperFiles.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: ScreenInfo.screensSizeFromIndex(0), withDate: NSDate(), withMarket: AppSettings.sharedInstance.MainCodePage)
         
@@ -221,16 +247,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             print("Service avalaible!!!")
             self.reach!.stopNotifier()
         }
-    }
-    
-    private func saveAndChangeDefaultToolTipDefaults() {
-        defaultToolTipDelay = NSUserDefaults.standardUserDefaults().integerForKey("NSInitialToolTipDelay")
-
-        NSUserDefaults.standardUserDefaults().setInteger(100, forKey: "NSInitialToolTipDelay")
-    }
-
-    private func restoreDefaultToolTipDefaults() {
-        NSUserDefaults.standardUserDefaults().setInteger(defaultToolTipDelay, forKey: "NSInitialToolTipDelay")
     }
     
     private func loadScheduler() {

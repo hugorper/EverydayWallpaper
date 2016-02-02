@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
@@ -12,7 +12,9 @@
                 <outlet property="alternateScreenActivationCheckbox" destination="7bz-Tc-9Qm" id="J62-hb-rYO"/>
                 <outlet property="alternateScreenMarketsCombo" destination="Ued-2d-7ee" id="JUQ-pj-9Jq"/>
                 <outlet property="imagePathControl" destination="b3z-nm-alc" id="tWj-tW-cIh"/>
+                <outlet property="popupMenu" destination="cR3-Cg-hhH" id="6X0-TC-ikm"/>
                 <outlet property="saveLastButton" destination="NAz-nN-rwh" id="r5W-S9-SyK"/>
+                <outlet property="spinner" destination="CEh-HQ-qhO" id="VNF-MI-jAe"/>
                 <outlet property="useYesterdayOnAlternateScreenCheckbox" destination="FuD-p6-RSL" id="OLk-aZ-Uqt"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -91,40 +93,6 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </textFieldCell>
                 </textField>
-                <popUpButton autoresizesSubviews="NO" focusRingType="none" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cR3-Cg-hhH">
-                    <rect key="frame" x="324" y="244" width="39" height="41"/>
-                    <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="only" alignment="center" alternateImage="gear" scrollable="YES" lineBreakMode="clipping" focusRingType="none" inset="2" pullsDown="YES" arrowPosition="noArrow" autoenablesItems="NO" altersStateOfSelectedItem="NO" selectedItem="IjV-ND-xxc" id="rNs-DT-bWh">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                        <menu key="menu" autoenablesItems="NO" id="n3H-Qt-LbI">
-                            <items>
-                                <menuItem image="gear" hidden="YES" id="IjV-ND-xxc"/>
-                                <menuItem title="Help" tag="1" id="pbP-bh-OIs">
-                                    <connections>
-                                        <action selector="menuActionHelp:" target="-2" id="3mf-Fc-H1J"/>
-                                    </connections>
-                                </menuItem>
-                                <menuItem isSeparatorItem="YES" id="RVn-kg-b4t"/>
-                                <menuItem title="Uninstall" tag="2" id="ZcS-bG-Efx">
-                                    <connections>
-                                        <action selector="menuActionUninstall:" target="-2" id="aF7-wi-KXe"/>
-                                    </connections>
-                                </menuItem>
-                                <menuItem isSeparatorItem="YES" id="c2h-UE-IA4"/>
-                                <menuItem title="Hide" tag="4" id="3eF-Gm-YUk">
-                                    <connections>
-                                        <action selector="menuActionHide:" target="-2" id="e4r-t9-DOL"/>
-                                    </connections>
-                                </menuItem>
-                                <menuItem title="Exit" tag="4" id="YUY-ll-u6I">
-                                    <connections>
-                                        <action selector="menuActionQuit:" target="-2" id="g3o-o7-u5e"/>
-                                    </connections>
-                                </menuItem>
-                            </items>
-                        </menu>
-                    </popUpButtonCell>
-                </popUpButton>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GBS-tv-2W1">
                     <rect key="frame" x="14" y="250" width="256" height="29"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Everyday Wallpaper" id="wYC-Po-jfr">
@@ -136,7 +104,7 @@
                 <textField autoresizesSubviews="NO" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5H6-Tp-zv1">
                     <rect key="frame" x="250" y="3" width="115" height="18"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" focusRingType="none" alignment="right" title="hugorper.com" id="GXi-XZ-I1o">
-                        <font key="font" metaFont="system" size="11"/>
+                        <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                     </textFieldCell>
@@ -195,6 +163,48 @@
                         <action selector="choosePathAction:" target="-2" id="8g6-T6-ZPq"/>
                     </connections>
                 </pathControl>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CEh-HQ-qhO" customClass="CircularSnail" customModule="EverydayWallpaperBar" customModuleProvider="target">
+                    <rect key="frame" x="147" y="111" width="80" height="80"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="40"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customView>
+                <popUpButton autoresizesSubviews="NO" focusRingType="none" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cR3-Cg-hhH">
+                    <rect key="frame" x="324" y="244" width="39" height="41"/>
+                    <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="only" alignment="center" alternateImage="gear" scrollable="YES" lineBreakMode="clipping" focusRingType="none" inset="2" pullsDown="YES" arrowPosition="noArrow" autoenablesItems="NO" altersStateOfSelectedItem="NO" selectedItem="IjV-ND-xxc" id="rNs-DT-bWh">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <menu key="menu" autoenablesItems="NO" id="n3H-Qt-LbI">
+                            <items>
+                                <menuItem image="gear" hidden="YES" id="IjV-ND-xxc"/>
+                                <menuItem title="Help" tag="1" id="pbP-bh-OIs">
+                                    <connections>
+                                        <action selector="menuActionHelp:" target="-2" id="3mf-Fc-H1J"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem isSeparatorItem="YES" id="RVn-kg-b4t"/>
+                                <menuItem title="Uninstall" tag="2" id="ZcS-bG-Efx">
+                                    <connections>
+                                        <action selector="menuActionUninstall:" target="-2" id="aF7-wi-KXe"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem isSeparatorItem="YES" id="c2h-UE-IA4"/>
+                                <menuItem title="Hide" tag="4" id="3eF-Gm-YUk">
+                                    <connections>
+                                        <action selector="menuActionHide:" target="-2" id="e4r-t9-DOL"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="Exit" tag="4" id="YUY-ll-u6I">
+                                    <connections>
+                                        <action selector="menuActionQuit:" target="-2" id="g3o-o7-u5e"/>
+                                    </connections>
+                                </menuItem>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
             </subviews>
             <point key="canvasLocation" x="225.5" y="473"/>
         </customView>

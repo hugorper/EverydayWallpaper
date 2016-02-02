@@ -19,7 +19,15 @@ class EverydayWallpaperViewController: NSViewController {
     
     @IBOutlet weak var imagePathControl: NSPathControl!
     
+    @IBOutlet weak var popupMenu: NSPopUpButton!
+    @IBOutlet weak var spinner: CircularSnail!
+    
+    private var isUpdating: Bool = false;
+    private var isVisible: Bool = false;
+    
     override func viewDidLoad() {
+        self.spinner.hidden = true
+        
         // load markets com strings
         for market in BingWallperMarkets.allValues {
             allScreenMarketsCombo.addItemWithTitle(market.rawValue)
@@ -44,7 +52,34 @@ class EverydayWallpaperViewController: NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
     }
-  
+    
+    internal func shouldShowSpinner() {
+        isUpdating = true;
+        if self.isVisible {
+            spinner.hidden = false
+            (spinner as IndeterminateAnimation).animate = true
+            self.updateControlState(true, enableMenu: false)
+        }
+    }
+    
+    internal func shouldHideSpinner() {
+        isUpdating = false;
+
+        if spinner != nil {
+            spinner.hidden = true
+            (spinner as IndeterminateAnimation).animate = false
+            self.updateControlState(false, enableMenu: true)
+        }
+    }
+    
+    override func viewDidAppear() {
+        isVisible = true
+    }
+    
+    override func viewDidDisappear() {
+        isVisible = false
+    }
+
 }
 
 // MARK: Actions
@@ -106,12 +141,18 @@ extension EverydayWallpaperViewController {
     func updateControlsFromState() {
         let wallpaperActivateState: Bool = AppSettings.sharedInstance.IsActivate
         
-        alternateScreenActivationCheckbox.enabled = wallpaperActivateState
-        allScreenMarketsCombo.enabled = wallpaperActivateState
-        alternateScreenMarketsCombo.enabled = wallpaperActivateState
-        useYesterdayOnAlternateScreenCheckbox.enabled = wallpaperActivateState
-        saveLastButton.enabled = wallpaperActivateState
+        self.updateControlState(wallpaperActivateState, enableMenu: true)
         
         (NSApplication.sharedApplication().delegate as! AppDelegate).updateImageNameFromState(true)
+    }
+    
+    private func updateControlState(enabled: Bool, enableMenu: Bool) {
+        alternateScreenActivationCheckbox.enabled = enabled
+        allScreenMarketsCombo.enabled = enabled
+        alternateScreenMarketsCombo.enabled = enabled
+        useYesterdayOnAlternateScreenCheckbox.enabled = enabled
+        saveLastButton.enabled = enabled
+        
+        self.popupMenu.enabled = enableMenu
     }
 }

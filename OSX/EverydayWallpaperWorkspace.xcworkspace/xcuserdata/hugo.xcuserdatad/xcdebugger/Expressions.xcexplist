@@ -49,6 +49,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "EverydayWallpaperViewController.shouldShowSpinner() -&gt; ():EverydayWallpaperViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.hiddenOrHasHiddenAncestor">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "BingWallpaperReference.resolutionFromSize(CGSize) -&gt; BingWallperResolutions:BingWallpaper.swift">
          <PersistentStrings>
             <PersistentString
@@ -102,6 +110,14 @@
             </PersistentString>
             <PersistentString
                value = "userDefaultDictionary![mainCodePageConst]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.initWallpaperUpdate() -&gt; ():AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "popover">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

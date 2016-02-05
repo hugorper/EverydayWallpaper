@@ -20,3 +20,9 @@ public struct Constants {
         public static let None = "none"
     }
 }
+
+public enum DownloadStatus: ErrorType {
+    case NetworkNotReachable
+    case UndefinedError
+    case Success
+}

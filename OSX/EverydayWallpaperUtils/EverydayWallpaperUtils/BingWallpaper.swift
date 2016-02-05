@@ -31,6 +31,7 @@ public enum BingWallperMarkets: String {
     public static let allValues = [EnglishUnitedStates, ChineseChina, JapaneseJapan, EnglishAustralia, EnglishUnitedKingdom, GermanGermany, EnglishNewZealand, EnglishCanada]
 }
 
+
 public class BingWallpaperReference {
     public var Url: String = ""
     public var UrlWithoutResolution: String = ""
@@ -120,22 +121,26 @@ public class BingWallpaperReference {
 
 public class BingWallpaperService {
 
-    public static func GetTodayBingWallpaperReference(market: String) -> BingWallpaperReference? {
-        return GetBingWallpaperReference(0, market: market);
+    public static func GetTodayBingWallpaperReference(market: String) throws ->  BingWallpaperReference? {
+        return try GetBingWallpaperReference(0, market: market);
     }
 
-    public static func GetYesterdayBingWallpaperReference(market: String) -> BingWallpaperReference? {
-        return GetBingWallpaperReference(1, market: market);
+    public static func GetYesterdayBingWallpaperReference(market: String) throws ->  BingWallpaperReference? {
+        return try GetBingWallpaperReference(1, market: market);
     }
 
     // The idx parameter is the start day index. 0 for current day, 1 for yesterday, etc..
-    public static func GetBingWallpaperReference(idx: Int, market: String) -> BingWallpaperReference? {
+    public static func GetBingWallpaperReference(idx: Int, market: String) throws -> BingWallpaperReference? {
 
         let baseUrl = "http://www.bing.com/"
         let relativeUrl = "HPImageArchive.aspx?format=js&mbl=1&idx=\(idx)&n=1&mkt=\(market)"
 
         let endpoint = NSURL(string: baseUrl.stringByAppendingString(relativeUrl))
         let data = NSData(contentsOfURL: endpoint!)
+        
+        if data == nil {
+            throw DownloadStatus.UndefinedError
+        }
 
         do {
             let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
@@ -161,6 +166,7 @@ public class BingWallpaperService {
             return bing;
 
         } catch let error {
+            
             print("JSON Serialization failed. Error: \(error)")
         }
 

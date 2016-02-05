@@ -46,7 +46,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         eventMonitor?.start()
         
-        //self.initWallpaperUpdate()
+        self.initWallpaperUpdate()
     }
     
 
@@ -73,18 +73,35 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func initWallpaperUpdate() {
         let isProcessing = isUpdateProcessing
-        
+        var downloadStatus: DownloadStatus = DownloadStatus.Success
         
         if AppSettings.sharedInstance.IsActivate {
             if !isProcessing {
                 isUpdateProcessing = true
                 
+                if !self.isWallpaperUpdatedToday() {
+                    do {
+                        try self.wallpaperUpdate()
+                        downloadStatus = DownloadStatus.Success
+                    }
+                    catch DownloadStatus.NetworkNotReachable {
+                        downloadStatus = DownloadStatus.NetworkNotReachable
+                    }
+                    catch DownloadStatus.UndefinedError {
+                        downloadStatus = DownloadStatus.UndefinedError
+                    }
+                    catch {
+                        downloadStatus = DownloadStatus.UndefinedError
+                    }
+                    
+                    // icicicic
+                }
                 
                 isUpdateProcessing = false
             }
         }
-        else {
-        }
+
+        
     }
     
     func scheduleNextUpdate() {
@@ -92,10 +109,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
 
-    func checkWallpaperUpdate()
+    func isWallpaperUpdatedToday() -> Bool
     {
-        //(popover.contentViewController as! EverydayWallpaperViewController).spinnerShouldShow()
-        // if last update occur today
         var isUpdatedToday = false
         var shortDateString = NSDate().toShortString()
         shortDateString.appendContentsOf(Constants.Naming.FileNameSeparator)
@@ -103,25 +118,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if SearchFile.existFromDirectory(ImageDownloader.sharedLoader.WallpaperSavePath, withPrefix: shortDateString) {
             isUpdatedToday = true
         }
-        else {
-            //self.wallpaperUpdate()
-        }
         
-        if AppSettings.sharedInstance.IsActivate {
-         //   if AppSettings.sharedInstance.LastSuccessfulUpdate.isToday() == false || 1==1 {
-           //     wallpaperUpdate()
-          //  }
-           // else {
-           // }
-        }
-        
-        
-        //(popover.contentViewController as! EverydayWallpaperViewController).spinnerShoudHidden()
+        return isUpdatedToday;
     }
     
-    func wallpaperUpdate()
+    func wallpaperUpdate() throws
     {
-        let todayWallpaper = BingWallpaperService.GetTodayBingWallpaperReference(AppSettings.sharedInstance.MainCodePage)
+        let todayWallpaper = try BingWallpaperService.GetTodayBingWallpaperReference(AppSettings.sharedInstance.MainCodePage)
         var alternateWallpaper = todayWallpaper
         
         var naming = WallpaperFiles.init(provider: WallpaperFiles.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: ScreenInfo.screensSizeFromIndex(0), withDate: NSDate(), withMarket: AppSettings.sharedInstance.MainCodePage)
@@ -135,7 +138,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 let imgurl = NSURL.fileURLWithPath(naming.fullName())
                 let workspace = NSWorkspace.sharedWorkspace()
                 if let screen = NSScreen.mainScreen()  {
-                    
+    
 
                     try workspace.setDesktopImageURL(imgurl, forScreen: screen, options: [:])
                 }
@@ -146,7 +149,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         if (true == true) {
-            alternateWallpaper = BingWallpaperService.GetTodayBingWallpaperReference(AppSettings.sharedInstance.AlternateCodePage)
+            alternateWallpaper = try BingWallpaperService.GetTodayBingWallpaperReference(AppSettings.sharedInstance.AlternateCodePage)
             
             
             naming = WallpaperFiles.init(provider: WallpaperFiles.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: ScreenInfo.screensSizeFromIndex(0), withDate: NSDate(), withMarket: AppSettings.sharedInstance.AlternateCodePage)
@@ -162,34 +165,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     try workspace.setDesktopImageURL(imgurl, forScreen: screen, options: [:])
                 }
                 
-            } catch {
+        }
+        catch {
                 print(error)
-            }
-        
-        
-        
-        
-
-        /*
-        let bing = BingWallpaperService.GetYesterdayBingWallpaperReference(DefaultMarket)
-        
-        var mainScreenResolution = bing!.resolutionFromSize(ScreenInfo.mainScreenSize())
-        let url = bing!.urlStringByAppendingResolution(mainScreenResolution)
-        
-        let downloadedImagePath = ImageDownloader.sharedLoader.downloadImageFromUrl(url, fileName: "test\(resolution).jpg")
-        
-        let success: Bool = NSFileManager.defaultManager().fileExistsAtPath("\(downloadedImagePath)")
-        
-        XCTAssert(success, "Downloaded wallpaper for resolution \(resolution) error")
-        
-        if success {
-        do {
-        try NSFileManager.defaultManager().removeItemAtPath("\(downloadedImagePath)")
-        } catch {
-        XCTAssert(false, "Error deleting file for resolution \(resolution)")
         }
-        }
-        }*/
     }
 
     func togglePopover(sender: AnyObject?) {

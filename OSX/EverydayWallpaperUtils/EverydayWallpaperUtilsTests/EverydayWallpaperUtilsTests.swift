@@ -32,58 +32,122 @@ class EverydayWallpaperUtilsTests: XCTestCase {
         //Date (which is Due date minus 5 days)
         let fiveDaysBefore = currentDateTime.dateByAddingTimeInterval(60 * 60 * 24 * daysToAdd)
 
-        let bing = BingWallpaperService.GetTodayBingWallpaperReference(DefaultMarket);
-
-
-        XCTAssert(bing?.StartDate.compare(fiveDaysBefore) == NSComparisonResult.OrderedDescending, "Invalid date")
+        do {
+            let bing = try BingWallpaperService.GetTodayBingWallpaperReference(DefaultMarket);
+            XCTAssert(bing?.StartDate.compare(fiveDaysBefore) == NSComparisonResult.OrderedDescending, "Invalid date")
+        }
+        catch DownloadStatus.NetworkNotReachable {
+            XCTAssert(false, "Network not reachable")
+        }
+        catch DownloadStatus.UndefinedError {
+            XCTAssert(false, "Undifined error")
+        }
+        catch {
+            XCTAssert(false, "Undifined error")
+        }
     }
 
     func testUrlLoaded() {
-        let bing = BingWallpaperService.GetTodayBingWallpaperReference(DefaultMarket)
-        XCTAssert(bing?.Url.characters.count > 0, "Wallpaper URL empty")
+        do {
+            let bing = try BingWallpaperService.GetTodayBingWallpaperReference(DefaultMarket)
+            XCTAssert(bing?.Url.characters.count > 0, "Wallpaper URL empty")
+        }
+        catch DownloadStatus.NetworkNotReachable {
+            XCTAssert(false, "Network not reachable")
+        }
+        catch DownloadStatus.UndefinedError {
+            XCTAssert(false, "Undifined error")
+        }
+        catch {
+            XCTAssert(false, "Undifined error")
+        }
     }
 
     func testAllMarkets() {
-        for market in BingWallperMarkets.allValues {
-            let bing = BingWallpaperService.GetTodayBingWallpaperReference(market.rawValue);
-            XCTAssert(bing?.Url.characters.count > 0, "Market wallpaper \(market) not found")
+        do {
+            for market in BingWallperMarkets.allValues {
+                let bing = try BingWallpaperService.GetTodayBingWallpaperReference(market.rawValue);
+                XCTAssert(bing?.Url.characters.count > 0, "Market wallpaper \(market) not found")
+            }
+        }
+        catch DownloadStatus.NetworkNotReachable {
+            XCTAssert(false, "Network not reachable")
+        }
+        catch DownloadStatus.UndefinedError {
+            XCTAssert(false, "Undifined error")
+        }
+        catch {
+            XCTAssert(false, "Undifined error")
         }
     }
 
     func testAllResolutionsDownloadWithPerformance() {
-        let bing = BingWallpaperService.GetYesterdayBingWallpaperReference(DefaultMarket)
-
-        for resolution in BingWallperResolutions.allValues {
-
-            let url = bing!.urlStringByAppendingResolution(resolution)
-
-            let downloadedImagePath = ImageDownloader.sharedLoader.downloadImageFromUrl(url, fileName: "test\(resolution).jpg")
-
-            let success: Bool = NSFileManager.defaultManager().fileExistsAtPath("\(downloadedImagePath)")
-
-            XCTAssert(success, "Downloaded wallpaper for resolution \(resolution) error")
-
-            if success {
-                do {
-                    try NSFileManager.defaultManager().removeItemAtPath("\(downloadedImagePath)")
-                } catch {
-                    XCTAssert(false, "Error deleting file for resolution \(resolution)")
+        do {
+            let bing = try BingWallpaperService.GetYesterdayBingWallpaperReference(DefaultMarket)
+            
+            for resolution in BingWallperResolutions.allValues {
+                
+                let url = bing!.urlStringByAppendingResolution(resolution)
+                
+                let downloadedImagePath = ImageDownloader.sharedLoader.downloadImageFromUrl(url, fileName: "test\(resolution).jpg")
+                
+                let success: Bool = NSFileManager.defaultManager().fileExistsAtPath("\(downloadedImagePath)")
+                
+                XCTAssert(success, "Downloaded wallpaper for resolution \(resolution) error")
+                
+                if success {
+                    do {
+                        try NSFileManager.defaultManager().removeItemAtPath("\(downloadedImagePath)")
+                    } catch {
+                        XCTAssert(false, "Error deleting file for resolution \(resolution)")
+                    }
                 }
             }
+        }
+        catch DownloadStatus.NetworkNotReachable {
+            XCTAssert(false, "Network not reachable")
+        }
+        catch DownloadStatus.UndefinedError {
+            XCTAssert(false, "Undifined error")
+        }
+        catch {
+            XCTAssert(false, "Undifined error")
         }
     }
     
     func testBingWallpaperSizeMapper() {
-        let bing = BingWallpaperService.GetYesterdayBingWallpaperReference(DefaultMarket)
-        let size = CGSizeMake(1024, 768)
-        
-        XCTAssert(bing!.resolutionFromSize(size) == BingWallperResolutions.Res1024x768, "Error resolution mao fail resolutionFromSize")
+        do {
+            let bing = try BingWallpaperService.GetYesterdayBingWallpaperReference(DefaultMarket)
+            let size = CGSizeMake(1024, 768)
+            
+            XCTAssert(bing!.resolutionFromSize(size) == BingWallperResolutions.Res1024x768, "Error resolution mao fail resolutionFromSize")
+        }
+        catch DownloadStatus.NetworkNotReachable {
+            XCTAssert(false, "Network not reachable")
+        }
+        catch DownloadStatus.UndefinedError {
+            XCTAssert(false, "Undifined error")
+        }
+        catch {
+            XCTAssert(false, "Undifined error")
+        }
      }
 
     func testBingWallpaperPerformance() {
         // This is an example of a performance test case.
         self.measureBlock {
-            _ = BingWallpaperService.GetTodayBingWallpaperReference(self.DefaultMarket)
+            do {
+                _ = try BingWallpaperService.GetTodayBingWallpaperReference(self.DefaultMarket)
+            }
+            catch DownloadStatus.NetworkNotReachable {
+                XCTAssert(false, "Network not reachable")
+            }
+            catch DownloadStatus.UndefinedError {
+                XCTAssert(false, "Undifined error")
+            }
+            catch {
+                XCTAssert(false, "Undifined error")
+            }
         }
     }
 

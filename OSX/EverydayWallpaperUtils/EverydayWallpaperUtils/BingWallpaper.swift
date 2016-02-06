@@ -131,10 +131,12 @@ public class BingWallpaperService {
 
     // The idx parameter is the start day index. 0 for current day, 1 for yesterday, etc..
     public static func GetBingWallpaperReference(idx: Int, market: String) throws -> BingWallpaperReference? {
-
+        if NetworkStatus.isConnectedToNetwork() == false {
+            throw DownloadStatus.NetworkNotReachable
+        }
+        
         let baseUrl = "http://www.bing.com/"
         let relativeUrl = "HPImageArchive.aspx?format=js&mbl=1&idx=\(idx)&n=1&mkt=\(market)"
-
         let endpoint = NSURL(string: baseUrl.stringByAppendingString(relativeUrl))
         let data = NSData(contentsOfURL: endpoint!)
         
@@ -168,6 +170,7 @@ public class BingWallpaperService {
         } catch let error {
             
             print("JSON Serialization failed. Error: \(error)")
+            throw DownloadStatus.UndefinedError
         }
 
         return nil

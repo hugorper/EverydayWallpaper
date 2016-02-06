@@ -145,13 +145,8 @@ class AppDelegate: NSObject, NSApplicationDelegate
 
             if nextUpdate == SchedulUpdate.Tomorrow
             {
-                let formatter = NSDateFormatter()
-                formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-                let localDate = formatter.dateFromString(date)
-
-                let elapsedTime = NSDate().timeIntervalSinceDate(timeAtPress)
-
-                timeToNextUpdate = NSTimeInterval(60*10);
+                let tomorrow = NSDate().tomorrowWithHour(7, minute: 10, second: 0)
+                timeToNextUpdate = NSDate().timeIntervalSinceDate(tomorrow)
             }
             else if nextUpdate == SchedulUpdate.LaterToday
             {
@@ -159,8 +154,8 @@ class AppDelegate: NSObject, NSApplicationDelegate
             }
             else if nextUpdate == SchedulUpdate.OnFirstDayUpdate
             {
-
-                timeToNextUpdate = NSTimeInterval(60*10);
+                let laterToday = NSDate().todayWithHour(7, minute: 10, second: 0)
+                timeToNextUpdate = NSDate().timeIntervalSinceDate(laterToday)
             }
 
             BackgroundTaskScheduler.delay(timeToNextUpdate)

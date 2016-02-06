@@ -20,7 +20,8 @@ extension NSDate
         self.init(timeInterval:0, sinceDate:d)
     }
     
-    func isToday() -> Bool {
+    func isToday() -> Bool
+    {
         let calendar = NSCalendar.currentCalendar()
         let internalDate = calendar.components([.Era, .Year , .Month , .Day], fromDate: self)
         let compareDate = calendar.components([.Era, .Year , .Month , .Day], fromDate: NSDate())
@@ -36,12 +37,30 @@ extension NSDate
         }
     }
     
-    func toShortString() -> String {
+    func toShortString() -> String
+    {
         let dateFormatter = NSDateFormatter()
         
         dateFormatter.dateFormat = "yyyMMdd"
         
         return dateFormatter.stringFromDate(self)
+    }
+
+    func tomorrowWithHour(hour: Int, minute: Int, second: Int) -> NSDate
+    {
+        let date = self.dateByAddingTimeInterval(60*60*24)
+        let calendar = NSCalendar.currentCalendar()
+        let newDate: NSDate = calendar.dateBySettingHour(hour, minute: minute, second: second, ofDate: date, options: NSCalendarOptions())!
+
+        return newDate
+    }
+
+    func todayWithHour(hour: Int, minute: Int, second: Int) -> NSDate
+    {
+        let calendar = NSCalendar.currentCalendar()
+        let newDate: NSDate = calendar.dateBySettingHour(hour, minute: minute, second: second, ofDate: NSDate(), options: NSCalendarOptions())!
+
+        return newDate
     }
 }
 

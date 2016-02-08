@@ -1,3 +1,6 @@
 [submodule "OSX/Reachability"]
 	path = OSX/Reachability
 	url = https://github.com/tonymillion/Reachability.git
+[submodule "OSX/XCGLogger"]
+	path = OSX/XCGLogger
+	url = https://github.com/DaveWoodCom/XCGLogger.git

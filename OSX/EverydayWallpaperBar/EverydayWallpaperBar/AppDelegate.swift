@@ -6,6 +6,7 @@
 
 import Cocoa
 import EverydayWallpaperUtils
+import XCGLogger
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate
@@ -21,6 +22,8 @@ class AppDelegate: NSObject, NSApplicationDelegate
     let disabledImageName: String = "StatusBarButtonImageDisabled"
     var statusBarImageName: String = "StatusBarButtonImage"
     var isUpdateProcessing: Bool = false
+    // uncomment to use log
+    //let log = XCGLogger.defaultInstance()
 
     enum SchedulUpdate
     {
@@ -36,6 +39,12 @@ class AppDelegate: NSObject, NSApplicationDelegate
 
     func applicationDidFinishLaunching(notification: NSNotification)
     {
+
+        // uncomment to use log
+        //let logPath = NSBundle.mainBundle().bundlePath.stringByAppendingString("/log.log")
+        //log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: logPath, fileLogLevel: .Debug)
+
+        
         self.reach = Reachability.reachabilityForInternetConnection()
 
 
@@ -208,7 +217,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
     {
         let todayWallpaper = try BingWallpaperService.GetTodayBingWallpaperReference(AppSettings.sharedInstance.MainCodePage)
         var alternateWallpaper = todayWallpaper
-
+        
         var naming = WallpaperFiles.init(provider: WallpaperFiles.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: ScreenInfo.screensSizeFromIndex(0), withDate: NSDate(), withMarket: AppSettings.sharedInstance.MainCodePage)
 
         ImageDownloader.sharedLoader.downloadImageFromUrl(todayWallpaper!.Url, fileName: naming.fileName())

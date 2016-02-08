@@ -46,6 +46,15 @@ extension NSDate
         return dateFormatter.stringFromDate(self)
     }
 
+    func toLongString() -> String
+    {
+        let dateFormatter = NSDateFormatter()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        return dateFormatter.stringFromDate(self)
+    }
+    
     func tomorrowWithHour(hour: Int, minute: Int, second: Int) -> NSDate
     {
         let date = self.dateByAddingTimeInterval(60*60*24)

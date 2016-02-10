@@ -38,7 +38,8 @@ public class BingWallpaperReference {
     public var StartDate: NSDate = NSDate()
     public var EndDate: NSDate = NSDate()
     public var FullStartDate: NSDate = NSDate()
-
+    public var FullStartTime: String = ""
+    
     /*!
     * @discussion Class constructor
     * @param param description
@@ -52,6 +53,7 @@ public class BingWallpaperReference {
         StartDate = dateFromString(startDate)
         EndDate = dateFromString(endDate)
         FullStartDate = dateFromString(fullStartDate, withTime: true)
+        FullStartTime = dateFromString(fullStartDate, withTime: true).toShortTimeString()
     }
 
     public func dateFromString(dateString: String) -> NSDate {

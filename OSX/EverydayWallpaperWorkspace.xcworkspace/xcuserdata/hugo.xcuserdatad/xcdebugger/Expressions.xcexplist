@@ -142,6 +142,9 @@
                value = "ss.rawString">
             </PersistentString>
             <PersistentString
+               value = "userDefaultDictionary![bingSettingNameFromMarket(market)] as! String">
+            </PersistentString>
+            <PersistentString
                value = "userDefaultDictionary![BingMarketUpdateHours]?.dictionary()">
             </PersistentString>
          </PersistentStrings>

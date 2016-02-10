@@ -211,7 +211,8 @@ class AppDelegate: NSObject, NSApplicationDelegate
             isUpdatedToday = true
         }
 
-        return isUpdatedToday; }
+        return isUpdatedToday;
+    }
 
     func wallpaperUpdate() throws
     {
@@ -232,9 +233,8 @@ class AppDelegate: NSObject, NSApplicationDelegate
                 let workspace = NSWorkspace.sharedWorkspace()
                 if let screen = NSScreen.mainScreen()
                 {
-
-
                     try workspace.setDesktopImageURL(imgurl, forScreen: screen, options: [:])
+                    AppSettings.sharedInstance.setBingUpdateHoursWithMarket(AppSettings.sharedInstance.MainCodePage, withTimeString: todayWallpaper!.FullStartTime)
                 }
 
             }

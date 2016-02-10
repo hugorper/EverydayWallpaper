@@ -46,6 +46,15 @@ extension NSDate
         return dateFormatter.stringFromDate(self)
     }
 
+    func toShortTimeString() -> String
+    {
+        let dateFormatter = NSDateFormatter()
+
+        dateFormatter.dateFormat = "HH:mm"
+
+        return dateFormatter.stringFromDate(self)
+    }
+
     func toLongString() -> String
     {
         let dateFormatter = NSDateFormatter()

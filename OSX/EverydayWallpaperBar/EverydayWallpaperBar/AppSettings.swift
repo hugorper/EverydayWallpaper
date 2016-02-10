@@ -27,6 +27,7 @@ class AppSettings {
     var alternateCodePageConst = "AlternateCodePage"
     var isAlternateIsDifferentConst = "AlternateIsDifferent"
     var isAlternateUseYesterdayWallpaperConst = "AlternateUseYesterdayWallpaper"
+    let BingMarketUpdateHours = "BingMarketUpdateHours"
     
     var userDefaultDictionary: [String : AnyObject]?
     
@@ -133,6 +134,22 @@ class AppSettings {
             userDefaultDictionary![isAlternateUseYesterdayWallpaperConst] = newValue
             self.save()
         }
+    }
+    
+    func setBingUpdateHoursWithMarket (market: String, withTimeString: String)
+    {
+        userDefaultDictionary![bingSettingNameFromMarket(market)] = withTimeString
+        self.save()
+    }
+
+    func getBingUpdateHoursWithMarket (market: String) -> String
+    {
+        return userDefaultDictionary![bingSettingNameFromMarket(market)] as! String
+    }
+    
+    private func bingSettingNameFromMarket (market: String) -> String
+    {
+        return "BingTime\(market[0].uppercaseString)\(market[1].lowercaseString)\(market[3...4].uppercaseString)"
     }
 }
 

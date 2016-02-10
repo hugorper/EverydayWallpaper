@@ -102,6 +102,24 @@ class EverydayWallpaperAppSettingsTests: XCTestCase {
         XCTAssert(AppSettings.sharedInstance.IsAlternateUseYesterdayWallpaper == testValue2)
     }
     
+    func testReadBingUpdateHoursWithMarket() {
+        XCTAssert(AppSettings.sharedInstance.getBingUpdateHoursWithMarket("en-US").characters.count > 3, "Could not read time from market")
+    }
+
+    func testWriteBingUpdateHoursWithMarket() {
+        let market = "en-US"
+        let restoreInitialValue = AppSettings.sharedInstance.getBingUpdateHoursWithMarket(market)
+        
+        AppSettings.sharedInstance.setBingUpdateHoursWithMarket(market, withTimeString: "none")
+        XCTAssert(AppSettings.sharedInstance.getBingUpdateHoursWithMarket(market) == "none", "Could not write and save time to market")
+
+        // restore initial value
+        AppSettings.sharedInstance.setBingUpdateHoursWithMarket(market, withTimeString: restoreInitialValue)
+
+        XCTAssert(AppSettings.sharedInstance.getBingUpdateHoursWithMarket("en-US").characters.count > 3, "Could not read time from market")
+
+    }
+    
 }
 
 

@@ -3,10 +3,26 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "EverydayWallpaperViewController.mainMenuClick(AnyObject) -&gt; ():EverydayWallpaperViewController.swift">
+         contextName = "WallpapersFileNaming.fullName() -&gt; String:WallpapersFileNaming.swift">
          <PersistentStrings>
             <PersistentString
-               value = "sender.tag()">
+               value = "destinationPath.path!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "EverydayWallpaperViewController.shouldShowSpinner() -&gt; ():EverydayWallpaperViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.hiddenOrHasHiddenAncestor">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "EverydayWallpaperViewController.viewDidLoad() -&gt; ():EverydayWallpaperViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.allScreenActivationCheckbox.attributes">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -19,10 +35,26 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "EverydayWallpaperViewController.viewDidLoad() -&gt; ():EverydayWallpaperViewController.swift">
+         contextName = "EverydayWallpaperUtilsTests.testAllResolutionsDownloadWithPerformance() -&gt; ():EverydayWallpaperUtilsTests.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.allScreenActivationCheckbox.attributes">
+               value = "DefaultMarket">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BingWallpaperReference.resolutionFromSize(CGSize) -&gt; BingWallperResolutions:BingWallpaper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "resolution.rawValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "EverydayWallpaperAppSettingsTests.testReloadDefaultSettingsFromFile() -&gt; ():EverydayWallpaperBarTests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "AppSettings.sharedInstance.IsActivate">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -41,53 +73,18 @@
          contextName = "AppSettings.reloadDefaultPreference() -&gt; ():AppSettings.swift">
       </ContextState>
       <ContextState
-         contextName = "WallpapersFileNaming.fullName() -&gt; String:WallpapersFileNaming.swift">
+         contextName = "AppDelegate.initWallpaperUpdate() -&gt; ():AppDelegate.swift">
          <PersistentStrings>
             <PersistentString
-               value = "destinationPath.path!">
+               value = "popover">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "EverydayWallpaperViewController.shouldShowSpinner() -&gt; ():EverydayWallpaperViewController.swift">
+         contextName = "EverydayWallpaperViewController.mainMenuClick(AnyObject) -&gt; ():EverydayWallpaperViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.view.hiddenOrHasHiddenAncestor">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "BingWallpaperReference.resolutionFromSize(CGSize) -&gt; BingWallperResolutions:BingWallpaper.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "resolution.rawValue">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "static BingWallpaperService.GetBingWallpaperReference(Int, market : String) -&gt; BingWallpaperReference?:BingWallpaper.swift">
-      </ContextState>
-      <ContextState
-         contextName = "EverydayWallpaperAppSettingsTests.testReloadDefaultSettingsFromFile() -&gt; ():EverydayWallpaperBarTests.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "AppSettings.sharedInstance.IsActivate">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "EverydayWallpaperUtilsTests.testAllResolutionsDownloadWithPerformance() -&gt; ():EverydayWallpaperUtilsTests.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "DefaultMarket">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ImageDownloader.WallpaperSavePath.getter:ImageDownloader.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "fullImagePath">
+               value = "sender.tag()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -103,6 +100,25 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "MiscTests.(testNaming(MiscTests) -&gt; () -&gt; ()).(implicit closure #1):MiscTests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ImageDownloader.sharedLoader.WallpaperSavePath">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppSettings.setBingUpdateHoursWithMarket(String, withTimeString : String) -&gt; ():AppSettings.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "userDefaultDictionary![BingMarketUpdateHours]?.dictionary()[market]">
+            </PersistentString>
+            <PersistentString
+               value = "a[market]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "AppSettings.MainCodePage.getter:AppSettings.swift">
          <PersistentStrings>
             <PersistentString
@@ -114,26 +130,54 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "AppDelegate.initWallpaperUpdate() -&gt; ():AppDelegate.swift">
+         contextName = "AppSettings.getBingUpdateHoursWithMarket(String) -&gt; String:AppSettings.swift">
          <PersistentStrings>
             <PersistentString
-               value = "popover">
+               value = "userDefaultDictionary![BingMarketUpdateHours]![market]">
+            </PersistentString>
+            <PersistentString
+               value = "userDefaultDictionary![BingMarketUpdateHours]?.dictionaryForKey(market)">
+            </PersistentString>
+            <PersistentString
+               value = "ss.rawString">
+            </PersistentString>
+            <PersistentString
+               value = "userDefaultDictionary![BingMarketUpdateHours]?.dictionary()">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "EverydayWallpaperAppSettingsTests.testWriteBingUpdateHoursWithMarket() -&gt; ():EverydayWallpaperBarTests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "AppSettings.sharedInstance.getBingUpdateHoursWithMarket(&quot;en-US&quot;) = &quot;ds&quot;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ImageDownloader.WallpaperSavePath.getter:ImageDownloader.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fullImagePath">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppSettings.IsActivate.getter:AppSettings.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "userDefaultDictionary![&quot;BingMarketUpdateHours&quot;].">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static BingWallpaperService.GetBingWallpaperReference(Int, market : String) -&gt; BingWallpaperReference?:BingWallpaper.swift">
       </ContextState>
       <ContextState
          contextName = "AppSettings.LastSuccessfulUpdate.getter:AppSettings.swift">
          <PersistentStrings>
             <PersistentString
                value = "(userDefaultDictionary![LastSuccessfulUpdateConst])!">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MiscTests.(testNaming(MiscTests) -&gt; () -&gt; ()).(implicit closure #1):MiscTests.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "ImageDownloader.sharedLoader.WallpaperSavePath">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

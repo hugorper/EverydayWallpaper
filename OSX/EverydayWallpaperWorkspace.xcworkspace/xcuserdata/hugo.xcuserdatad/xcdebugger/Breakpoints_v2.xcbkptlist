@@ -25,54 +25,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EverydayWallpaperBar/EverydayWallpaperBarTests/EverydayWallpaperBarTests.swift"
-            timestampString = "476657378.135613"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "testReloadDefaultSettingsFromFile()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EverydayWallpaperBar/EverydayWallpaperBarTests/EverydayWallpaperBarTests.swift"
-            timestampString = "476657424.196711"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "testReloadDefaultSettingsFromFile()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EverydayWallpaperBar/EverydayWallpaperBar/AppSettings.swift"
-            timestampString = "476657507.405673"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "reloadDefaultPreference()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "EverydayWallpaperUtils/EverydayWallpaperUtilsTests/EverydayWallpaperUtilsTests.swift"
             timestampString = "476658139.587956"
             startingColumnNumber = "9223372036854775807"
@@ -97,38 +49,6 @@
             endingLineNumber = "70"
             landmarkName = "testAllMarkets()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EverydayWallpaperUtilsTests.EverydayWallpaperUtilsTests.testAllMarkets (EverydayWallpaperUtilsTests.EverydayWallpaperUtilsTests)() -&gt; ()"
-                  moduleName = "EverydayWallpaperUtilsTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hugo/Documents/Development/Projects/EverydayWallpaper/OSX/EverydayWallpaperUtils/EverydayWallpaperUtilsTests/EverydayWallpaperUtilsTests.swift"
-                  timestampString = "476658207.261584"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "637">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EverydayWallpaperUtilsTests.EverydayWallpaperUtilsTests.(testAllMarkets (EverydayWallpaperUtilsTests.EverydayWallpaperUtilsTests) -&gt; () -&gt; ()).(implicit closure #1)"
-                  moduleName = "EverydayWallpaperUtilsTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hugo/Documents/Development/Projects/EverydayWallpaper/OSX/EverydayWallpaperUtils/EverydayWallpaperUtilsTests/EverydayWallpaperUtilsTests.swift"
-                  timestampString = "476658207.262609"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "41">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

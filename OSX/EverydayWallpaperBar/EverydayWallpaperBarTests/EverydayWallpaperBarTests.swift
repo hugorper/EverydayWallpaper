@@ -121,6 +121,15 @@ class EverydayWallpaperAppSettingsTests: XCTestCase {
 
     }
     
+    func testLogLevelReadWrite() {
+        AppSettings.sharedInstance.LogLevel = XCGLogger.LogLevel.None
+        XCTAssert(AppSettings.sharedInstance.LogLevel == XCGLogger.LogLevel.None, "Log level error, not the same as saved")
+        
+        AppSettings.sharedInstance.LogLevel = XCGLogger.LogLevel.Severe
+        XCTAssert(AppSettings.sharedInstance.LogLevel == XCGLogger.LogLevel.Severe, "Log level error, not the same as saved")
+    }
+    
+    
     func testLogFilePathLog()
     {
         let logFilePath = "\(LogFilePathUtilHelper.UserLibraryLogFilePathForApp("EverydayWallpaper"))testlog.log"

@@ -30,5 +30,7 @@
 	<string>07:13</string>
 	<key>BingTimeEnCA</key>
 	<string>07:13</string>
+	<key>LogLevel</key>
+	<string>Severe</string>
 </dict>
 </plist>

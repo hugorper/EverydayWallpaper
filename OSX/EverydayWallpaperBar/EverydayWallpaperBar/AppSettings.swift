@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import XCGLogger
 /*!
 * Provide access to application settings, setings are saved auto
 *
@@ -27,6 +27,7 @@ class AppSettings {
     var alternateCodePageConst = "AlternateCodePage"
     var isAlternateIsDifferentConst = "AlternateIsDifferent"
     var isAlternateUseYesterdayWallpaperConst = "AlternateUseYesterdayWallpaper"
+    let logLevel = "LogLevel"
     let BingMarketUpdateHours = "BingMarketUpdateHours"
     
     var userDefaultDictionary: [String : AnyObject]?
@@ -132,6 +133,43 @@ class AppSettings {
         }
         set {
             userDefaultDictionary![isAlternateUseYesterdayWallpaperConst] = newValue
+            self.save()
+        }
+    }
+
+    var LogLevel: XCGLogger.LogLevel {
+        get
+        {
+            let level:String = userDefaultDictionary![logLevel] as! String
+            
+            if level.lowercaseString.compare("none") == NSComparisonResult.OrderedSame
+            {
+                return XCGLogger.LogLevel.None
+            }
+            else if level.lowercaseString.compare("debug") == NSComparisonResult.OrderedSame
+            {
+                return XCGLogger.LogLevel.Debug
+            }
+            else // Severe or bad format
+            {
+                return XCGLogger.LogLevel.Severe
+            }
+        }
+        set
+        {
+            if newValue == XCGLogger.LogLevel.None
+            {
+                userDefaultDictionary![logLevel]  = "None"
+            }
+            else if newValue == XCGLogger.LogLevel.Debug
+            {
+                userDefaultDictionary![logLevel]  = "Debug"
+            }
+            else
+            {
+                userDefaultDictionary![logLevel]  = "Severe"
+            }
+
             self.save()
         }
     }

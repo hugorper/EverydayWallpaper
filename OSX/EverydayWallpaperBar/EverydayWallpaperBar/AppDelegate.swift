@@ -35,9 +35,9 @@ class AppDelegate: NSObject, NSApplicationDelegate
     func applicationDidFinishLaunching(notification: NSNotification)
     {
         let logPath = LogFilePathUtilHelper.UserLibraryLogFilePathForApp("EverydayWallpaper")
-        log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: logPath, fileLogLevel: .Debug)
+        log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: logPath, fileLogLevel: AppSettings.sharedInstance.LogLevel)
         
-        log.debug("applicationDidFinishLaunching")
+        log.debug("Application start")
         
         self.reach = Reachability.reachabilityForInternetConnection()
 
@@ -67,6 +67,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
 
     func applicationWillTerminate(aNotification: NSNotification)
     {
+        log.debug("Application terminate")
         self.reach?.stopNotifier()
     }
 

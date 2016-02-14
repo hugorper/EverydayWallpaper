@@ -20,15 +20,14 @@ class AppSettings {
     var userDefaults = NSUserDefaults.standardUserDefaults()
     var prefKey = NSBundle.mainBundle().infoDictionary!["CFBundleIdentifier"] as! String
     var pictureSavePath: String = ""
-    var imageFolderConst = "EverydayWallpaper"
-    var savedWallpaperConst = "SaveWallpapers"
-    var isActivateConst = "Activate"
-    var mainCodePageConst = "MainCodePage"
-    var alternateCodePageConst = "AlternateCodePage"
-    var isAlternateIsDifferentConst = "AlternateIsDifferent"
-    var isAlternateUseYesterdayWallpaperConst = "AlternateUseYesterdayWallpaper"
-    let logLevel = "LogLevel"
-    let BingMarketUpdateHours = "BingMarketUpdateHours"
+    private let imageFolderConst = "EverydayWallpaper"
+    private let savedWallpaperConst = "SaveWallpapers"
+    private let isActivateConst = "Activate"
+    private let mainCodePageConst = "MainCodePage"
+    private let alternateCodePageConst = "AlternateCodePage"
+    private let isAlternateIsDifferentConst = "AlternateIsDifferent"
+    private let isAlternateUseYesterdayWallpaperConst = "AlternateUseYesterdayWallpaper"
+    private let logLevelConst = "LogLevel"
     
     var userDefaultDictionary: [String : AnyObject]?
     
@@ -140,7 +139,7 @@ class AppSettings {
     var LogLevel: XCGLogger.LogLevel {
         get
         {
-            let level:String = userDefaultDictionary![logLevel] as! String
+            let level:String = userDefaultDictionary![logLevelConst] as! String
             
             if level.lowercaseString.compare("none") == NSComparisonResult.OrderedSame
             {
@@ -159,15 +158,15 @@ class AppSettings {
         {
             if newValue == XCGLogger.LogLevel.None
             {
-                userDefaultDictionary![logLevel]  = "None"
+                userDefaultDictionary![logLevelConst]  = "None"
             }
             else if newValue == XCGLogger.LogLevel.Debug
             {
-                userDefaultDictionary![logLevel]  = "Debug"
+                userDefaultDictionary![logLevelConst]  = "Debug"
             }
             else
             {
-                userDefaultDictionary![logLevel]  = "Severe"
+                userDefaultDictionary![logLevelConst]  = "Severe"
             }
 
             self.save()

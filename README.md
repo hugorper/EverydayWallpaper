@@ -61,6 +61,7 @@ If task fail and the computer is not connected to internet, the task is delayed 
 This mechanisms will be managed using [Reachability library][2] and EverydayWallpaper is referenced on the [list of project using Reachability][3]. If you plan to use Reachability don't miss the list when you use it.
 
 ## Debugging
+EverydayWallpaper use the [XCGLogger][4] library.
 Application debug erros on */Users/hugo/Library/Logs/EverydayWallpaper* folder, by default **severe** errors are logged.
 You can optionally set a different log level for the file output using the LogLevel on the plist application file.
 Values for LogLevel are:
@@ -68,8 +69,11 @@ Values for LogLevel are:
   2. Severe
   3. None
 This value are not case sensitive, but it's better to format like defined.
+In reality [XCGLogger][4] library use more log level, but EverydayWallaper only use a subset of lib log level.
+
 
 <!-- Links  -->
 [1]: https://developer.apple.com/library/mac/documentation/Performance/Conceptual/power_efficiency_guidelines_osx/SchedulingBackgroundActivity.html
 [2]: https://github.com/tonymillion/Reachability
 [3]: https://github.com/tonymillion/Reachability/wiki/Projects-using-Reachability
+[4]: https://github.com/DaveWoodCom/XCGLogger

@@ -62,7 +62,7 @@ This mechanisms will be managed using [Reachability library][2] and EverydayWall
 
 ## Debugging
 EverydayWallpaper use the [XCGLogger][4] library.
-Application debug erros on */Users/hugo/Library/Logs/EverydayWallpaper* folder, by default **severe** errors are logged.
+Application debug erros on */Users/hugo/Library/Logs/EverydayWallpaper* folder, by default **Severe** errors are logged.
 You can optionally set a different log level for the file output using the LogLevel on the plist application file.
 Values for LogLevel are:
   1. Debug

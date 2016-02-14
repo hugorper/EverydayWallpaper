@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import XCGLogger
 @testable import EverydayWallpaperBar
 
 class EverydayWallpaperAppSettingsTests: XCTestCase {
@@ -118,6 +119,28 @@ class EverydayWallpaperAppSettingsTests: XCTestCase {
 
         XCTAssert(AppSettings.sharedInstance.getBingUpdateHoursWithMarket("en-US").characters.count > 3, "Could not read time from market")
 
+    }
+    
+    func testLogFilePathLog()
+    {
+        let logFilePath = "\(LogFilePathUtilHelper.UserLibraryLogFilePathForApp("EverydayWallpaper"))testlog.log"
+        let log = XCGLogger.defaultInstance()
+        
+        log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: logFilePath, fileLogLevel: .Debug)
+
+        log.info("Test log file")
+        
+        let success: Bool = NSFileManager.defaultManager().fileExistsAtPath(logFilePath)
+        
+        XCTAssert(success, "Log file not created")
+        
+        if success {
+            do {
+                try NSFileManager.defaultManager().removeItemAtPath(logFilePath)
+            } catch {
+                XCTAssert(false, "Error deleting log file")
+            }
+        }
     }
     
 }

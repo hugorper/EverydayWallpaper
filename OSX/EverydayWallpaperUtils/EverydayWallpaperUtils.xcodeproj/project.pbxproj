@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9A06F3421C63FF3F00CF7CC0 /* NetworkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06F3411C63FF3F00CF7CC0 /* NetworkStatus.swift */; };
 		9A06F3441C64B02000CF7CC0 /* NetworkStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06F3431C64B02000CF7CC0 /* NetworkStatusTests.swift */; };
+		9A1DC3481C6CF6490085E8AD /* LogFilePathHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DC3471C6CF6490085E8AD /* LogFilePathHelper.swift */; };
 		9A6DD5921C1232AB0053E597 /* EverydayWallpaperUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A6DD5911C1232AB0053E597 /* EverydayWallpaperUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9A6DD5991C1232AB0053E597 /* EverydayWallpaperUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6DD58E1C1232AB0053E597 /* EverydayWallpaperUtils.framework */; };
 		9A6DD59E1C1232AB0053E597 /* EverydayWallpaperUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6DD59D1C1232AB0053E597 /* EverydayWallpaperUtilsTests.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		9A06F3411C63FF3F00CF7CC0 /* NetworkStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkStatus.swift; sourceTree = "<group>"; };
 		9A06F3431C64B02000CF7CC0 /* NetworkStatusTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkStatusTests.swift; sourceTree = "<group>"; };
+		9A1DC3471C6CF6490085E8AD /* LogFilePathHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogFilePathHelper.swift; path = ../../Shared/LogFilePathHelper.swift; sourceTree = "<group>"; };
 		9A6DD58E1C1232AB0053E597 /* EverydayWallpaperUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EverydayWallpaperUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6DD5911C1232AB0053E597 /* EverydayWallpaperUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EverydayWallpaperUtils.h; sourceTree = "<group>"; };
 		9A6DD5931C1232AB0053E597 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		9AFE868B1C5962F100815A23 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				9A1DC3471C6CF6490085E8AD /* LogFilePathHelper.swift */,
 				9AFE86891C5962EE00815A23 /* Extensions.swift */,
 			);
 			name = Shared;
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AFF73EB1C14985700F5BF2E /* ImageDownloader.swift in Sources */,
+				9A1DC3481C6CF6490085E8AD /* LogFilePathHelper.swift in Sources */,
 				9AFE86831C59607D00815A23 /* WallpaperFiles.swift in Sources */,
 				9A06F3421C63FF3F00CF7CC0 /* NetworkStatus.swift in Sources */,
 				9AFE86911C5AC86C00815A23 /* SearchFile.swift in Sources */,

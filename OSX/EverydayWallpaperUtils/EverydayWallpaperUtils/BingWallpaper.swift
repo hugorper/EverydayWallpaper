@@ -175,7 +175,6 @@ public class BingWallpaperService {
             throw DownloadStatus.UndefinedError
         }
 
-        return nil
     }
 }
 

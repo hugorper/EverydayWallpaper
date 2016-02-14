@@ -18,6 +18,7 @@
 		9A06F33C1C614B2200CF7CC0 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06F33B1C614B2200CF7CC0 /* BaseView.swift */; };
 		9A06F33E1C614C0E00CF7CC0 /* ProgressUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A06F33D1C614C0E00CF7CC0 /* ProgressUtils.swift */; };
 		9A07005B1C1B4E620066B045 /* EverydayWallpaperUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07005A1C1B4E620066B045 /* EverydayWallpaperUtils.framework */; };
+		9A1DC34A1C6CF65A0085E8AD /* LogFilePathHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DC3491C6CF65A0085E8AD /* LogFilePathHelper.swift */; };
 		9A4E8DBB1C386784000CCC6F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4E8DB81C386276000CCC6F /* SystemConfiguration.framework */; };
 		9A4E8DC01C3867EA000CCC6F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E8DBF1C3867EA000CCC6F /* Reachability.m */; };
 		9A96F4561C2B3E46002F49D4 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96F4551C2B3E46002F49D4 /* AppSettings.swift */; };
@@ -95,6 +96,7 @@
 		9A06F33B1C614B2200CF7CC0 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		9A06F33D1C614C0E00CF7CC0 /* ProgressUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressUtils.swift; sourceTree = "<group>"; };
 		9A07005A1C1B4E620066B045 /* EverydayWallpaperUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EverydayWallpaperUtils.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/EverydayWallpaperWorkspace-fojqkuwirnwzhfbtacttnusyaoru/Build/Products/Debug/EverydayWallpaperUtils.framework"; sourceTree = "<group>"; };
+		9A1DC3491C6CF65A0085E8AD /* LogFilePathHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogFilePathHelper.swift; path = ../../Shared/LogFilePathHelper.swift; sourceTree = "<group>"; };
 		9A4E8DB81C386276000CCC6F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9A4E8DBD1C3867E9000CCC6F /* EverydayWallpaperBar-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EverydayWallpaperBar-Bridging-Header.h"; sourceTree = "<group>"; };
 		9A4E8DBE1C3867EA000CCC6F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ../../Reachability/Reachability.h; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 		9AFE86881C5962DA00815A23 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				9A1DC3491C6CF65A0085E8AD /* LogFilePathHelper.swift */,
 				9AFE86861C5962D600815A23 /* Extensions.swift */,
 			);
 			name = Shared;
@@ -412,6 +415,7 @@
 				78A6BBED1ADCDDDC00554D13 /* EverydayWallpaperViewController.swift in Sources */,
 				9A06F33A1C614B0B00CF7CC0 /* IndeterminateAnimation.swift in Sources */,
 				9A96F4561C2B3E46002F49D4 /* AppSettings.swift in Sources */,
+				9A1DC34A1C6CF65A0085E8AD /* LogFilePathHelper.swift in Sources */,
 				7891CA031AE09AF000EC10C6 /* EventMonitor.swift in Sources */,
 				9A06F33C1C614B2200CF7CC0 /* BaseView.swift in Sources */,
 				9A4E8DC01C3867EA000CCC6F /* Reachability.m in Sources */,

@@ -22,8 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
     let disabledImageName: String = "StatusBarButtonImageDisabled"
     var statusBarImageName: String = "StatusBarButtonImage"
     var isUpdateProcessing: Bool = false
-    // uncomment to use log
-    //let log = XCGLogger.defaultInstance()
+    let log = XCGLogger.defaultInstance()
 
     enum SchedulUpdate
     {
@@ -33,17 +32,12 @@ class AppDelegate: NSObject, NSApplicationDelegate
         case WhenNetworkAvailable
     }
 
-    // activate desactive if uodateing
-    //(popover.contentViewController as! EverydayWallpaperViewController).shouldShowSpinner()
-    //(popover.contentViewController as! EverydayWallpaperViewController).shouldHideSpinner()
-
     func applicationDidFinishLaunching(notification: NSNotification)
     {
-
-        // uncomment to use log
-        //let logPath = NSBundle.mainBundle().bundlePath.stringByAppendingString("/log.log")
-        //log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: logPath, fileLogLevel: .Debug)
-
+        let logPath = LogFilePathUtilHelper.UserLibraryLogFilePathForApp("EverydayWallpaper")
+        log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: logPath, fileLogLevel: .Debug)
+        
+        log.debug("applicationDidFinishLaunching")
         
         self.reach = Reachability.reachabilityForInternetConnection()
 
@@ -234,6 +228,8 @@ class AppDelegate: NSObject, NSApplicationDelegate
                 if let screen = NSScreen.mainScreen()
                 {
                     try workspace.setDesktopImageURL(imgurl, forScreen: screen, options: [:])
+                    
+                    // save the hour of wallpaper availybility for a specific market.
                     AppSettings.sharedInstance.setBingUpdateHoursWithMarket(AppSettings.sharedInstance.MainCodePage, withTimeString: todayWallpaper!.FullStartTime)
                 }
 

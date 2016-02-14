@@ -60,8 +60,14 @@ To goal is to update the wallpaper each day, the task will be scheduled each day
 If task fail and the computer is not connected to internet, the task is delayed until it's connected.
 This mechanisms will be managed using [Reachability library][2] and EverydayWallpaper is referenced on the [list of project using Reachability][3]. If you plan to use Reachability don't miss the list when you use it.
 
-
-
+## Debugging
+Application debug erros on */Users/hugo/Library/Logs/EverydayWallpaper* folder, by default **severe** errors are logged.
+You can optionally set a different log level for the file output using the LogLevel on the plist application file.
+Values for LogLevel are:
+  1. Debug
+  2. Severe
+  3. None
+This value are not case sensitive, but it's better to format like defined.
 
 <!-- Links  -->
 [1]: https://developer.apple.com/library/mac/documentation/Performance/Conceptual/power_efficiency_guidelines_osx/SchedulingBackgroundActivity.html

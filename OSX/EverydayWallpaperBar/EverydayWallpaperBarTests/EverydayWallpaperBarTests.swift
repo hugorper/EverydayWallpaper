@@ -69,40 +69,7 @@ class EverydayWallpaperAppSettingsTests: XCTestCase {
         AppSettings.sharedInstance.MainCodePage = testValue2
         XCTAssert(AppSettings.sharedInstance.MainCodePage == testValue2)
     }
-    
-    func testAlternateCodePageReadWrite() {
-        let testValue1 = "abc"
-        let testValue2 = "wxyz"
         
-        AppSettings.sharedInstance.AlternateCodePage = testValue1
-        XCTAssert(AppSettings.sharedInstance.AlternateCodePage == testValue1, "Value error for AlternateCodePage")
-        
-        AppSettings.sharedInstance.AlternateCodePage = testValue2
-        XCTAssert(AppSettings.sharedInstance.AlternateCodePage == testValue2)
-    }
-    
-    func testIsAlternateIsDifferentReadWrite() {
-        let testValue1 = true
-        let testValue2 = false
-        
-        AppSettings.sharedInstance.IsAlternateIsDifferent = testValue1
-        XCTAssert(AppSettings.sharedInstance.IsAlternateIsDifferent == testValue1, "Value error for IsAlternateIsDifferent")
-        
-        AppSettings.sharedInstance.IsAlternateIsDifferent = testValue2
-        XCTAssert(AppSettings.sharedInstance.IsAlternateIsDifferent == testValue2)
-    }
-    
-    func testIsAlternateUseYesterdayWallpaperReadWrite() {
-        let testValue1 = true
-        let testValue2 = false
-        
-        AppSettings.sharedInstance.IsAlternateUseYesterdayWallpaper = testValue1
-        XCTAssert(AppSettings.sharedInstance.IsAlternateUseYesterdayWallpaper == testValue1, "Value error for IsAlternateUseYesterdayWallpaper")
-        
-        AppSettings.sharedInstance.IsAlternateUseYesterdayWallpaper = testValue2
-        XCTAssert(AppSettings.sharedInstance.IsAlternateUseYesterdayWallpaper == testValue2)
-    }
-    
     func testReadBingUpdateHoursWithMarket() {
         XCTAssert(AppSettings.sharedInstance.getBingUpdateHoursWithMarket("en-US").characters.count > 3, "Could not read time from market")
     }

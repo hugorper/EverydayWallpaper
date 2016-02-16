@@ -13,7 +13,7 @@ import XCGLogger
 *
 * Usage:
 * Read setting print(AppSettings.sharedInstance.IsWallpaperSaved)
-* Save settings AppSettings.sharedInstance.AlternateCodePage = "my value"
+* Save settings AppSettings.sharedInstance.IsWallpaperSaved = true
 */
 class AppSettings {
     static let sharedInstance = AppSettings()
@@ -24,9 +24,6 @@ class AppSettings {
     private let savedWallpaperConst = "SaveWallpapers"
     private let isActivateConst = "Activate"
     private let mainCodePageConst = "MainCodePage"
-    private let alternateCodePageConst = "AlternateCodePage"
-    private let isAlternateIsDifferentConst = "AlternateIsDifferent"
-    private let isAlternateUseYesterdayWallpaperConst = "AlternateUseYesterdayWallpaper"
     private let logLevelConst = "LogLevel"
     
     var userDefaultDictionary: [String : AnyObject]?
@@ -105,33 +102,6 @@ class AppSettings {
         }
         set {
             userDefaultDictionary![mainCodePageConst] = newValue
-            self.save()
-        }
-    }
-    var AlternateCodePage: String {
-        get {
-            return (userDefaultDictionary![alternateCodePageConst])! as! String
-        }
-        set {
-            userDefaultDictionary![alternateCodePageConst] = newValue
-            self.save()
-        }
-    }
-    var IsAlternateIsDifferent: Bool {
-        get {
-            return (userDefaultDictionary![isAlternateIsDifferentConst]?.boolValue)!
-        }
-        set {
-            userDefaultDictionary![isAlternateIsDifferentConst] = newValue
-            self.save()
-        }
-    }
-    var IsAlternateUseYesterdayWallpaper: Bool {
-        get {
-            return (userDefaultDictionary![isAlternateUseYesterdayWallpaperConst]?.boolValue)!
-        }
-        set {
-            userDefaultDictionary![isAlternateUseYesterdayWallpaperConst] = newValue
             self.save()
         }
     }

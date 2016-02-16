@@ -8,12 +8,6 @@
 	<true/>
 	<key>MainCodePage</key>
 	<string>en-US</string>
-	<key>AlternateCodePage</key>
-	<string>en-US</string>
-	<key>AlternateIsDifferent</key>
-	<true/>
-	<key>AlternateUseYesterdayWallpaper</key>
-	<false/>
 	<key>BingTimeEnUS</key>
 	<string>07:13</string>
 	<key>BingTimeZhCN</key>

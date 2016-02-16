@@ -212,9 +212,8 @@ class AppDelegate: NSObject, NSApplicationDelegate
     func wallpaperUpdate() throws
     {
         let todayWallpaper = try BingWallpaperService.GetTodayBingWallpaperReference(AppSettings.sharedInstance.MainCodePage)
-        var alternateWallpaper = todayWallpaper
         
-        var naming = WallpaperFiles.init(provider: WallpaperFiles.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: ScreenInfo.screensSizeFromIndex(0), withDate: NSDate(), withMarket: AppSettings.sharedInstance.MainCodePage)
+        let naming = WallpaperFiles.init(provider: WallpaperFiles.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: ScreenInfo.screensSizeFromIndex(0), withDate: NSDate(), withMarket: AppSettings.sharedInstance.MainCodePage)
 
         ImageDownloader.sharedLoader.downloadImageFromUrl(todayWallpaper!.Url, fileName: naming.fileName())
 
@@ -241,26 +240,15 @@ class AppDelegate: NSObject, NSApplicationDelegate
             }
         }
 
-        if (true == true)
-        {
-            alternateWallpaper = try BingWallpaperService.GetTodayBingWallpaperReference(AppSettings.sharedInstance.AlternateCodePage)
-
-
-            naming = WallpaperFiles.init(provider: WallpaperFiles.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: ScreenInfo.screensSizeFromIndex(0), withDate: NSDate(), withMarket: AppSettings.sharedInstance.AlternateCodePage)
-
-            ImageDownloader.sharedLoader.downloadImageFromUrl(alternateWallpaper!.Url, fileName: naming.fileName())
-        }
-
         do
         {
             let imgurl = NSURL.fileURLWithPath(naming.fullName())
             let workspace = NSWorkspace.sharedWorkspace()
-            if let screen = NSScreen.screens()?.last
+            
+            for screen in NSScreen.screens()!
             {
-
                 try workspace.setDesktopImageURL(imgurl, forScreen: screen, options: [:])
             }
-
         }
         catch
         {

@@ -9,12 +9,8 @@ import EverydayWallpaperUtils
 
 class EverydayWallpaperViewController: NSViewController {
     @IBOutlet weak var allScreenActivationCheckbox: NSButton!
-    @IBOutlet weak var alternateScreenActivationCheckbox: NSButton!
     @IBOutlet weak var allScreenMarketsCombo: NSPopUpButton!
 
-    @IBOutlet weak var alternateScreenMarketsCombo: NSPopUpButton!
-    @IBOutlet weak var useYesterdayOnAlternateScreenCheckbox: NSButton!
-    
     @IBOutlet weak var saveLastButton: NSButton!
     
     @IBOutlet weak var imagePathControl: NSPathControl!
@@ -31,16 +27,12 @@ class EverydayWallpaperViewController: NSViewController {
         // load markets com strings
         for market in BingWallperMarkets.allValues {
             allScreenMarketsCombo.addItemWithTitle(market.rawValue)
-            alternateScreenMarketsCombo.addItemWithTitle(market.rawValue)
         }
         
         // load apps settings
         allScreenActivationCheckbox.state = AppSettings.sharedInstance.IsActivate ? NSOnState : NSOffState
         saveLastButton.state = AppSettings.sharedInstance.IsWallpaperSaved ? NSOnState : NSOffState
-        alternateScreenActivationCheckbox.state = AppSettings.sharedInstance.IsAlternateIsDifferent ? NSOnState : NSOffState
-        useYesterdayOnAlternateScreenCheckbox.state = AppSettings.sharedInstance.IsAlternateUseYesterdayWallpaper ? NSOnState : NSOffState
         allScreenMarketsCombo.selectItemWithTitle(AppSettings.sharedInstance.MainCodePage)
-        alternateScreenMarketsCombo.selectItemWithTitle(AppSettings.sharedInstance.AlternateCodePage)
         imagePathControl.stringValue = ImageDownloader.sharedLoader.WallpaperSavePath
         
         self.updateControlsFromState()
@@ -118,20 +110,8 @@ extension EverydayWallpaperViewController {
         self.updateControlsFromState()
     }
     
-    @IBAction func alternateScreenActivationChange (sender: NSButton) {
-        AppSettings.sharedInstance.IsAlternateIsDifferent = sender.state == NSOnState ? true : false
-    }
-    
     @IBAction func allScreenMarketsChange (sender: NSPopUpButton) {
         AppSettings.sharedInstance.MainCodePage = sender.titleOfSelectedItem!
-    }
-    
-    @IBAction func alternateScreenMarketsChange (sender: NSPopUpButton) {
-        AppSettings.sharedInstance.AlternateCodePage = sender.titleOfSelectedItem!
-    }
-    
-    @IBAction func useYesterdayOnAlternateScreenChange (sender: NSButton) {
-        AppSettings.sharedInstance.IsAlternateUseYesterdayWallpaper = sender.state == NSOnState ? true : false
     }
     
     @IBAction func saveLastChange (sender: NSButton) {
@@ -147,10 +127,7 @@ extension EverydayWallpaperViewController {
     }
     
     private func updateControlState(enabled: Bool, enableMenu: Bool) {
-        alternateScreenActivationCheckbox.enabled = enabled
         allScreenMarketsCombo.enabled = enabled
-        alternateScreenMarketsCombo.enabled = enabled
-        useYesterdayOnAlternateScreenCheckbox.enabled = enabled
         saveLastButton.enabled = enabled
         
         self.popupMenu.enabled = enableMenu

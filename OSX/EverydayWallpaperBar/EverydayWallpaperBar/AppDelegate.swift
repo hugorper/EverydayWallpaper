@@ -146,10 +146,15 @@ class AppDelegate: NSObject, NSApplicationDelegate
         else
         {
             var timeToNextUpdate: NSTimeInterval = 0;
+            let timeString: String = AppSettings.sharedInstance.getBingUpdateHoursWithMarket(AppSettings.sharedInstance.MainCodePage)
+            let timeArray = timeString.componentsSeparatedByString(":")
+            let hour = (timeArray[0] as NSString).integerValue
+            let minute = (timeArray[1] as NSString).integerValue
+            
 
             if nextUpdate == SchedulUpdate.Tomorrow
             {
-                let tomorrow = NSDate().tomorrowWithHour(7, minute: 10, second: 0)
+                let tomorrow = NSDate().tomorrowWithHour(hour, minute: minute, second: 0)
                 timeToNextUpdate = NSDate().timeIntervalSinceDate(tomorrow)
             }
             else if nextUpdate == SchedulUpdate.LaterToday
@@ -158,7 +163,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
             }
             else if nextUpdate == SchedulUpdate.OnFirstDayUpdate
             {
-                let laterToday = NSDate().todayWithHour(7, minute: 10, second: 0)
+                let laterToday = NSDate().todayWithHour(hour, minute: minute, second: 0)
                 timeToNextUpdate = NSDate().timeIntervalSinceDate(laterToday)
             }
 

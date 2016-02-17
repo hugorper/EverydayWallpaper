@@ -9,30 +9,32 @@
 import XCTest
 @testable import EverydayWallpaperBar
 
-class ScreenInfoTests: XCTestCase {
+class ScreenInfoTests: XCTestCase
+{
 
-    override func setUp() {
+    override func setUp()
+    {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    
-    override func tearDown() {
+
+    override func tearDown()
+    {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
 
-    func testScreenCount() {
+    func testScreenCount()
+    {
         XCTAssert(ScreenInfo.screensCount() >= 1, "Must return one or more screen countSize error")
     }
 
-    
-    func testMainScreenResolutionExample() {
+
+    func testMainScreenResolutionExample()
+    {
         let size = ScreenInfo.mainScreenSize()
-        
+
         XCTAssert(size.width > 100, "Size error")
         XCTAssert(size.height > 100, "Size error")
     }
-
-
-
 }

@@ -10,21 +10,24 @@ import XCTest
 
 @testable import EverydayWallpaperUtils
 
-class MiscTests: XCTestCase {
-
-    override func setUp() {
+class MiscTests: XCTestCase
+{
+    override func setUp()
+    {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    
-    override func tearDown() {
+
+    override func tearDown()
+    {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
 
-    func testDateExtensionIsToday() {
-        let date:NSDate = NSDate()
-        
-        XCTAssert(date.isToday() , "NSDate isToday extension func fail")
+    func testDateExtensionIsToday()
+    {
+        let date: NSDate = NSDate()
+
+        XCTAssert(date.isToday(), "NSDate isToday extension func fail")
     }
 }

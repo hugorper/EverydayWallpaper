@@ -3,7 +3,6 @@
 * Copyright © 2015 Hugo PEREIRA. All rights reserved.
 */
 
-
 import Cocoa
 import EverydayWallpaperUtils
 import XCGLogger
@@ -36,9 +35,9 @@ class AppDelegate: NSObject, NSApplicationDelegate
     {
         let logPath = LogFilePathUtilHelper.UserLibraryLogFilePathForApp("EverydayWallpaper")
         log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: logPath, fileLogLevel: AppSettings.sharedInstance.LogLevel)
-        
+
         log.debug("Application start")
-        
+
         self.reach = Reachability.reachabilityForInternetConnection()
 
 
@@ -132,8 +131,6 @@ class AppDelegate: NSObject, NSApplicationDelegate
                 isUpdateProcessing = false
             }
         }
-
-
     }
 
     func scheduleNextUpdate(nextUpdate: SchedulUpdate)
@@ -145,12 +142,11 @@ class AppDelegate: NSObject, NSApplicationDelegate
         }
         else
         {
-            var timeToNextUpdate: NSTimeInterval = 0;
-            let timeString: String = AppSettings.sharedInstance.getBingUpdateHoursWithMarket(AppSettings.sharedInstance.MainCodePage)
+            var timeToNextUpdate: NSTimeInterval = 0; let timeString: String = AppSettings.sharedInstance.getBingUpdateHoursWithMarket(AppSettings.sharedInstance.MainCodePage)
             let timeArray = timeString.componentsSeparatedByString(":")
             let hour = (timeArray[0] as NSString).integerValue
             let minute = (timeArray[1] as NSString).integerValue
-            
+
 
             if nextUpdate == SchedulUpdate.Tomorrow
             {
@@ -159,7 +155,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
             }
             else if nextUpdate == SchedulUpdate.LaterToday
             {
-                timeToNextUpdate = NSTimeInterval(60*10); // 10 minutes
+                timeToNextUpdate = NSTimeInterval(60 * 10); // 10 minutes
             }
             else if nextUpdate == SchedulUpdate.OnFirstDayUpdate
             {
@@ -172,7 +168,6 @@ class AppDelegate: NSObject, NSApplicationDelegate
                 self.initWallpaperUpdate()
 
             }
-
         }
     }
 
@@ -217,7 +212,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
     func wallpaperUpdate() throws
     {
         let todayWallpaper = try BingWallpaperService.GetTodayBingWallpaperReference(AppSettings.sharedInstance.MainCodePage)
-        
+
         let naming = WallpaperFiles.init(provider: WallpaperFiles.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: ScreenInfo.screensSizeFromIndex(0), withDate: NSDate(), withMarket: AppSettings.sharedInstance.MainCodePage)
 
         ImageDownloader.sharedLoader.downloadImageFromUrl(todayWallpaper!.Url, fileName: naming.fileName())
@@ -233,7 +228,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
                 if let screen = NSScreen.mainScreen()
                 {
                     try workspace.setDesktopImageURL(imgurl, forScreen: screen, options: [:])
-                    
+
                     // save the hour of wallpaper availybility for a specific market.
                     AppSettings.sharedInstance.setBingUpdateHoursWithMarket(AppSettings.sharedInstance.MainCodePage, withTimeString: todayWallpaper!.FullStartTime)
                 }
@@ -249,7 +244,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
         {
             let imgurl = NSURL.fileURLWithPath(naming.fullName())
             let workspace = NSWorkspace.sharedWorkspace()
-            
+
             for screen in NSScreen.screens()!
             {
                 try workspace.setDesktopImageURL(imgurl, forScreen: screen, options: [:])
@@ -287,18 +282,4 @@ class AppDelegate: NSObject, NSApplicationDelegate
         popover.performClose(sender)
         eventMonitor?.stop()
     }
-
-    // check if nework unavailable and call reachabilityChanged when network become available
-//    func isWaitingForNextReachNeeded() -> Bool
-//    {
-//        if !self.reach!.isReachableViaWiFi() && !self.reach!.isReachableViaWWAN()
-//        {
-//            self.updateWallpaperOnNextNetworkConnect()
-//
-//            return true; }
-//        else
-//        {
-//            return false; }
-//    }
-
 }

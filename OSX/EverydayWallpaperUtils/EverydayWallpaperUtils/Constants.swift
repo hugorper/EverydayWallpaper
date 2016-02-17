@@ -8,20 +8,26 @@
 
 import Foundation
 
-public struct Constants {
-    public struct Naming {
+public struct Constants
+{
+
+    public struct Naming
+    {
         public static let ResolutionSeparator = "x"
         public static let FileNameSeparator = "-"
         public static let Bing = "Bing"
         public static let NationalGeographic = "NationalGeographic"
     }
-    
-    public struct Default {
+
+    public struct Default
+    {
         public static let None = "none"
     }
+
 }
 
-public enum DownloadStatus: ErrorType {
+public enum DownloadStatus: ErrorType
+{
     case NetworkNotReachable
     case UndefinedError
     case Success

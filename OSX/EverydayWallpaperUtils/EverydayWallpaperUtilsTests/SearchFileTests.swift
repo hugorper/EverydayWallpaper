@@ -10,58 +10,67 @@ import XCTest
 
 @testable import EverydayWallpaperUtils
 
-class SearchFileTests: XCTestCase {
+class SearchFileTests: XCTestCase
+{
 
-    override func setUp() {
+    override func setUp()
+    {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    
-    override func tearDown() {
+
+    override func tearDown()
+    {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
 
-    func testFileExist() {
-        let dateFrom = NSDate(dateString:"2000-12-15 06:00:00")
-        
+    func testFileExist()
+    {
+        let dateFrom = NSDate(dateString: "2000-12-15 06:00:00")
+
         let naming = WallpaperFiles.init(provider: WallpaperFiles.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: CGSizeMake(1024, 768), withDate: dateFrom)
-        
+
         let content = "for exist test file"
-        
+
         let fileName = naming.fullName(dateFrom)
-        
+
         content.toFile(fileName)
-        
+
         XCTAssert(SearchFile.existFromDirectory(ImageDownloader.sharedLoader.WallpaperSavePath, withPrefix: "20001215"), "File not found")
-        
-        do {
+
+        do
+        {
             try NSFileManager.defaultManager().removeItemAtPath(fileName)
-            
+
         }
-        catch {
+        catch
+        {
             XCTAssert(false, "Wallpaper file not exit exist fail")
         }
     }
 
-    func testFileNotExist() {
-        let dateFrom = NSDate(dateString:"2000-12-15 06:00:00")
-        
+    func testFileNotExist()
+    {
+        let dateFrom = NSDate(dateString: "2000-12-15 06:00:00")
+
         let naming = WallpaperFiles.init(provider: WallpaperFiles.BingProvider, withBaseFolder: ImageDownloader.sharedLoader.WallpaperSavePath, withSize: CGSizeMake(1024, 768), withDate: dateFrom)
-        
+
         let content = "for exist test file"
-        
+
         let fileName = naming.fullName(dateFrom)
-        
+
         content.toFile(fileName)
-        
+
         XCTAssert(SearchFile.existFromDirectory(ImageDownloader.sharedLoader.WallpaperSavePath, withPrefix: "2000121a") == false, "File found")
-        
-        do {
+
+        do
+        {
             try NSFileManager.defaultManager().removeItemAtPath(fileName)
-            
+
         }
-        catch {
+        catch
+        {
             XCTAssert(false, "Wallpaper file not exit exist fail")
         }
     }

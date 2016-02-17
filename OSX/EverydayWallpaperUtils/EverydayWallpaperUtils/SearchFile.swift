@@ -8,24 +8,31 @@
 
 import Foundation
 
-public class SearchFile {
-    
-    public static func existFromDirectory (path: String, withPrefix: String) -> Bool {
+public class SearchFile
+{
+
+    public static func existFromDirectory(path: String, withPrefix: String) -> Bool
+    {
         let fileManager = NSFileManager.defaultManager()
-        
-        do {
+
+        do
+        {
             let items = try fileManager.contentsOfDirectoryAtPath(path)
-            
-            for item in items {
-                if item.hasPrefix(withPrefix) {
+
+            for item in items
+            {
+                if item.hasPrefix(withPrefix)
+                {
                     return true
                 }
             }
-        } catch {
+        }
+        catch
+        {
             return false
         }
-        
+
         return false
     }
-    
+
 }

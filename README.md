@@ -1,20 +1,24 @@
 # EverydayWallpaper
-OS X and Windows preference tool that changes your wallpaper every day, this version load only Bing wallpapers.
+Everyday Wallpaper is a tool that automatically change your wallpaper every day, the wallpapers come from a Bing service.
+The actual version is for OSX only, in the future a Windows version will be available.
 
-# Bing wallpaper
-This apps download the Bing background image and set the desktop wallpaper.
+## Microsoft Bing
+Bing search engine is famous for using high-resolution images that feet perfectly to use for wallpapers, Images change everyday and they are relative to your geographic zone.
 
-Limit for 'Idx' may vary, my last test product the limit to 25. For 'n' number of images the max value i 8.
+## Goal of EverydayWallpaper
+Automatically change the wallpaper every day with the minimum impact possible on the CPU and the memory.
 
 ## The query
 
 ### Url
 The Json url is:
-```html
-http://www.bing.com/HPImageArchive.aspx?format=js&idx=IDX&n=1&mkt=zh-CN"
+```
+http://www.bing.com/HPImageArchive.aspx?format=js&idx=IDX&n=1&mkt=zh-CN
 ```
 ### Parameter idx
 The idx parameter is the start day index. 0 for current day, 1 for yesterday, etc..
+
+NOTE; Limit for 'Idx' may vary, my last test product the limit to 25. For 'n' number of images the max value i 8.
 
 ### Parameter mkt
 List of 8 markets where Bing is available for wallpaper.

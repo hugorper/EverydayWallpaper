@@ -21,7 +21,9 @@ class AppDelegate: NSObject, NSApplicationDelegate
     let disabledImageName: String = "StatusBarButtonImageDisabled"
     var statusBarImageName: String = "StatusBarButtonImage"
     var isUpdateProcessing: Bool = false
-    let log = XCGLogger.defaultInstance()
+    var log: XCGLogger? = XCGLogger.defaultInstance()
+    
+    
 
     enum SchedulUpdate
     {
@@ -34,12 +36,19 @@ class AppDelegate: NSObject, NSApplicationDelegate
     func applicationDidFinishLaunching(notification: NSNotification)
     {
         let logPath = LogFilePathUtilHelper.UserLibraryLogFilePathForApp("EverydayWallpaper")
-        log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: logPath, fileLogLevel: AppSettings.sharedInstance.LogLevel)
+        
+        if AppSettings.sharedInstance.LogLevel != XCGLogger.LogLevel.None
+        {
+            log!.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true, writeToFile: logPath, fileLogLevel: AppSettings.sharedInstance.LogLevel)
+        }
+        else
+        {
+            log = nil
+        }
 
-        log.debug("Application start")
-
+        log?.debug("Application start")
+        
         self.reach = Reachability.reachabilityForInternetConnection()
-
 
         if let button = statusItem.button
         {
@@ -66,7 +75,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
 
     func applicationWillTerminate(aNotification: NSNotification)
     {
-        log.debug("Application terminate")
+        log?.debug("Application terminate")
         self.reach?.stopNotifier()
     }
 
@@ -94,6 +103,8 @@ class AppDelegate: NSObject, NSApplicationDelegate
 
     func initWallpaperUpdate()
     {
+        log?.debug("Init wallpaper update")
+        
         let isProcessing = isUpdateProcessing
 
         if AppSettings.sharedInstance.IsActivate
@@ -112,14 +123,17 @@ class AppDelegate: NSObject, NSApplicationDelegate
                     }
                     catch DownloadStatus.NetworkNotReachable
                     {
+                        log?.debug("Schedule next update -> WhenNetworkAvailable")
                         self.scheduleNextUpdate(SchedulUpdate.WhenNetworkAvailable)
                     }
                     catch DownloadStatus.UndefinedError
                     {
+                        log?.debug("Schedule next update -> UndefinedError")
                         self.scheduleNextUpdate(SchedulUpdate.LaterToday)
                     }
                     catch
                     {
+                        log?.debug("Schedule next update -> LaterToday")
                         self.scheduleNextUpdate(SchedulUpdate.LaterToday)
                     }
                 }
@@ -135,6 +149,8 @@ class AppDelegate: NSObject, NSApplicationDelegate
 
     func scheduleNextUpdate(nextUpdate: SchedulUpdate)
     {
+        log?.debug("Schedule next update")
+        
         if nextUpdate == SchedulUpdate.WhenNetworkAvailable
         {
             self.updateWallpaperOnNextNetworkConnect()
@@ -146,23 +162,32 @@ class AppDelegate: NSObject, NSApplicationDelegate
             let timeArray = timeString.componentsSeparatedByString(":")
             let hour = (timeArray[0] as NSString).integerValue
             let minute = (timeArray[1] as NSString).integerValue
-
-
+            
+            log?.debug("Next upodate time hour \(hour), minute \(minute) for market \(AppSettings.sharedInstance.MainCodePage) ")
+            
             if nextUpdate == SchedulUpdate.Tomorrow
             {
+                log?.debug("Next update Tomorrow")
+                
                 let tomorrow = NSDate().tomorrowWithHour(hour, minute: minute, second: 0)
                 timeToNextUpdate = NSDate().timeIntervalSinceDate(tomorrow)
             }
             else if nextUpdate == SchedulUpdate.LaterToday
             {
+                log?.debug("Next update LaterToday")
+                
                 timeToNextUpdate = NSTimeInterval(60 * 10); // 10 minutes
             }
             else if nextUpdate == SchedulUpdate.OnFirstDayUpdate
             {
+                log?.debug("Next update OnFirstDayUpdate")
+                
                 let laterToday = NSDate().todayWithHour(hour, minute: minute, second: 0)
                 timeToNextUpdate = NSDate().timeIntervalSinceDate(laterToday)
             }
-
+            
+            log?.debug("Time to next update \(timeToNextUpdate.absoluteValue())")
+            
             BackgroundTaskScheduler.delay(timeToNextUpdate.absoluteValue())
             {
                 self.initWallpaperUpdate()
@@ -173,6 +198,8 @@ class AppDelegate: NSObject, NSApplicationDelegate
 
     func updateWallpaperOnNextNetworkConnect()
     {
+        log?.debug("Update on next network connect")
+        
         // Allocate a reachability object
         self.reach = Reachability.reachabilityForInternetConnection()
 
@@ -190,6 +217,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
     {
         if self.reach!.isReachableViaWiFi() || self.reach!.isReachableViaWWAN()
         {
+            log?.debug("Network is now Reachble")
             self.reach!.stopNotifier()
             self.initWallpaperUpdate()
         }
@@ -236,7 +264,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
             }
             catch
             {
-                print(error)
+                log?.severe("\(error)")
             }
         }
 
@@ -252,7 +280,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
         }
         catch
         {
-            print(error)
+            log?.severe("\(error)")
         }
     }
 

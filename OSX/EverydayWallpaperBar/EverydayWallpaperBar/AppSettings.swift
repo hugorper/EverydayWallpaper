@@ -133,37 +133,31 @@ class AppSettings
     {
         get
         {
-            let level: String = userDefaultDictionary![logLevelConst] as! String
-
-            if level.lowercaseString.compare("none") == NSComparisonResult.OrderedSame
+            if NSBundle.mainBundle().infoDictionary![logLevelConst] != nil
             {
-                return XCGLogger.LogLevel.None
-            }
-            else if level.lowercaseString.compare("debug") == NSComparisonResult.OrderedSame
-            {
-                return XCGLogger.LogLevel.Debug
-            }
-            else // Severe or bad format
-            {
-                return XCGLogger.LogLevel.Severe
-            }
-        }
-        set
-        {
-            if newValue == XCGLogger.LogLevel.None
-            {
-                userDefaultDictionary![logLevelConst] = "None"
-            }
-            else if newValue == XCGLogger.LogLevel.Debug
-            {
-                userDefaultDictionary![logLevelConst] = "Debug"
+                let level: String = NSBundle.mainBundle().infoDictionary![logLevelConst] as! String
+                
+                if level.lowercaseString.compare("none") == NSComparisonResult.OrderedSame
+                {
+                    return XCGLogger.LogLevel.None
+                }
+                else if level.lowercaseString.compare("debug") == NSComparisonResult.OrderedSame
+                {
+                    return XCGLogger.LogLevel.Debug
+                }
+                else if level.lowercaseString.compare("severe") == NSComparisonResult.OrderedSame
+                {
+                    return XCGLogger.LogLevel.Severe
+                }
+                else
+                {
+                    return XCGLogger.LogLevel.Severe
+                }
             }
             else
             {
-                userDefaultDictionary![logLevelConst] = "Severe"
+                return XCGLogger.LogLevel.Severe
             }
-
-            self.save()
         }
     }
 

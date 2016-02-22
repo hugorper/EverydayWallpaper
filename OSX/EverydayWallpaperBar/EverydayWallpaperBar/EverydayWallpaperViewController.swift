@@ -129,6 +129,7 @@ extension EverydayWallpaperViewController
     @IBAction func allScreenMarketsChange(sender: NSPopUpButton)
     {
         AppSettings.sharedInstance.MainCodePage = sender.titleOfSelectedItem!
+        (NSApplication.sharedApplication().delegate as! AppDelegate).initWallpaperUpdate()
     }
 
     @IBAction func saveLastChange(sender: NSButton)

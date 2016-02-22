@@ -226,10 +226,11 @@ class AppDelegate: NSObject, NSApplicationDelegate
     func isWallpaperUpdatedToday() -> Bool
     {
         var isUpdatedToday = false
-        var shortDateString = NSDate().toShortString()
-        shortDateString.appendContentsOf(Constants.Naming.FileNameSeparator)
-
-        if SearchFile.existFromDirectory(ImageDownloader.sharedLoader.WallpaperSavePath, withPrefix: shortDateString)
+        let shortDateString = NSDate().toShortString()
+        let fileNameCheck: String = "\(shortDateString)\(Constants.Naming.FileNameSeparator)\(WallpaperFiles.BingProvider)\(Constants.Naming.FileNameSeparator)\(AppSettings.sharedInstance.MainCodePage)\(Constants.Naming.FileNameSeparator)"
+        
+        
+        if SearchFile.existFromDirectory(ImageDownloader.sharedLoader.WallpaperSavePath, withPrefix: fileNameCheck)
         {
             isUpdatedToday = true
         }

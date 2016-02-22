@@ -163,7 +163,7 @@ class AppDelegate: NSObject, NSApplicationDelegate
                 timeToNextUpdate = NSDate().timeIntervalSinceDate(laterToday)
             }
 
-            BackgroundTaskScheduler.delay(timeToNextUpdate)
+            BackgroundTaskScheduler.delay(timeToNextUpdate.absoluteValue())
             {
                 self.initWallpaperUpdate()
 

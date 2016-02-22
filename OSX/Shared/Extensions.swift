@@ -120,3 +120,13 @@ extension String
         return self[Range(start: start, end: end)]
     }
 }
+
+extension Double {
+    func absoluteValue() -> Double {
+        if self < 0 {
+            return -self
+        } else {
+            return self
+        }
+    }
+}

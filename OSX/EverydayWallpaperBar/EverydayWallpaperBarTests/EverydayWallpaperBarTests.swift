@@ -132,6 +132,20 @@ class EverydayWallpaperAppSettingsTests: XCTestCase
             }
         }
     }
+    /*
+    func testIsUpdatedToday()
+    {
+        var isUpdatedToday = false
+        var shortDateString = NSDate().toShortString()
+        shortDateString.appendContentsOf(Constants.Naming.FileNameSeparator)
+        
+        if SearchFile.existFromDirectory(ImageDownloader.sharedLoader.WallpaperSavePath, withPrefix: shortDateString)
+        {
+            isUpdatedToday = true
+        }
+        
+        return isUpdatedToday;
+    }*/
 
 }
 

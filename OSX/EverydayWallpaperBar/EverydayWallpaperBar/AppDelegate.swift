@@ -100,9 +100,14 @@ class AppDelegate: NSObject, NSApplicationDelegate
 
         self.initWallpaperUpdate()
     }
-
+    
     func initWallpaperUpdate()
     {
+        if popover.contentViewController != nil
+        {
+            self.performSelector("shouldShowSpinnerSelector", withObject: nil, afterDelay: 0.0)
+        }
+        
         log?.debug("Init wallpaper update")
         
         let isProcessing = isUpdateProcessing
@@ -139,12 +144,36 @@ class AppDelegate: NSObject, NSApplicationDelegate
                 }
                 else
                 {
+                    do
+                    {
+                        try self.wallpaperUpdate()
+                    }
+                    catch
+                    {
+                        log?.debug("Updare wallpaper if exist and market change")
+                    }
+
                     self.scheduleNextUpdate(SchedulUpdate.Tomorrow)
                 }
 
                 isUpdateProcessing = false
             }
         }
+        
+        if popover.contentViewController != nil
+        {
+             self.performSelector("shouldHideSpinnerSelector", withObject: nil, afterDelay: 0.5)
+        }
+    }
+    
+    func shouldShowSpinnerSelector ()
+    {
+        (popover.contentViewController as! EverydayWallpaperViewController).shouldShowSpinner()
+    }
+    
+    func shouldHideSpinnerSelector ()
+    {
+        (popover.contentViewController as! EverydayWallpaperViewController).shouldHideSpinner()
     }
 
     func scheduleNextUpdate(nextUpdate: SchedulUpdate)

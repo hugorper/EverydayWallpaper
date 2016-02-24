@@ -48,19 +48,19 @@ class EverydayWallpaperViewController: NSViewController
         super.viewWillAppear()
     }
 
-    internal func shouldShowSpinner()
+    func shouldShowSpinner()
     {
         isUpdating = true
         
         if self.isVisible
         {
-            spinner.hidden = false
             (spinner as IndeterminateAnimation).animate = true
-            self.updateControlState(true, enableMenu: false)
+            spinner.hidden = false
+            self.updateControlState(false, enableMenu: false)
         }
     }
 
-    internal func shouldHideSpinner()
+    func shouldHideSpinner()
     {
         isUpdating = false
 
@@ -68,7 +68,7 @@ class EverydayWallpaperViewController: NSViewController
         {
             spinner.hidden = true
             (spinner as IndeterminateAnimation).animate = false
-            self.updateControlState(false, enableMenu: true)
+            self.updateControlState(true, enableMenu: true)
         }
     }
 
@@ -141,9 +141,9 @@ extension EverydayWallpaperViewController
     {
         let wallpaperActivateState: Bool = AppSettings.sharedInstance.IsActivate
 
-        self.updateControlState(wallpaperActivateState, enableMenu: true)
-
         (NSApplication.sharedApplication().delegate as! AppDelegate).updateImageNameFromState(true)
+
+        self.updateControlState(wallpaperActivateState, enableMenu: true)
     }
 
     private func updateControlState(enabled: Bool, enableMenu: Bool)

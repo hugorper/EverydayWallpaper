@@ -86,21 +86,32 @@ class EverydayWallpaperViewController: NSViewController
 // MARK: Actions
 extension EverydayWallpaperViewController
 {
-
+    @IBAction func menuActionAbout(sender: AnyObject)
+    {
+        openWeb(true)
+    }
+    
     @IBAction func menuActionHelp(sender: AnyObject)
     {
-        let myPopup: NSAlert = NSAlert()
-
-        myPopup.messageText = "Everyday Wallpaper help"
-        myPopup.informativeText = "eee\nfjdskjkjhfdsks fdlj fdlf jdskjf lds sd\n fhdjskfjsahf dhfkj safj hdksja\nfkjjfhcrwuecghjklfdsjklgfhgfg ghfjslkg ghfj"
-
-        myPopup.alertStyle = NSAlertStyle.InformationalAlertStyle
-        myPopup.addButtonWithTitle("close")
-        myPopup.beginSheetModalForWindow(self.view.window!, completionHandler: nil)
+       openWeb(false)
     }
-
+    
+    private func openWeb(isAbout: Bool)
+    {
+        var url: String = "http://www.hugorper.com"
+        
+        if !isAbout
+        {
+            url = "http://www.hugorper.com"
+        }
+        
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: url)!)
+    }
+    
     @IBAction func menuActionUninstall(sender: AnyObject)
     {
+
+
     }
 
     @IBAction func menuActionHide(sender: AnyObject)

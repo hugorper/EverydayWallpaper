@@ -115,21 +115,26 @@
                 </customView>
                 <popUpButton autoresizesSubviews="NO" focusRingType="none" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cR3-Cg-hhH">
                     <rect key="frame" x="324" y="154" width="39" height="41"/>
-                    <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="only" alignment="center" alternateImage="gear" scrollable="YES" lineBreakMode="clipping" focusRingType="none" inset="2" pullsDown="YES" arrowPosition="noArrow" autoenablesItems="NO" altersStateOfSelectedItem="NO" selectedItem="IjV-ND-xxc" id="rNs-DT-bWh">
+                    <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="only" alignment="center" alternateImage="gear" scrollable="YES" lineBreakMode="clipping" focusRingType="none" inset="2" pullsDown="YES" arrowPosition="noArrow" autoenablesItems="NO" altersStateOfSelectedItem="NO" id="rNs-DT-bWh">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                         <font key="font" metaFont="system"/>
                         <menu key="menu" autoenablesItems="NO" id="n3H-Qt-LbI">
                             <items>
                                 <menuItem image="gear" hidden="YES" id="IjV-ND-xxc"/>
+                                <menuItem title="About" tag="2" id="ZcS-bG-Efx">
+                                    <connections>
+                                        <action selector="menuActionAbout:" target="-2" id="TCJ-No-A7q"/>
+                                    </connections>
+                                </menuItem>
                                 <menuItem title="Help" tag="1" id="pbP-bh-OIs">
                                     <connections>
                                         <action selector="menuActionHelp:" target="-2" id="3mf-Fc-H1J"/>
                                     </connections>
                                 </menuItem>
-                                <menuItem isSeparatorItem="YES" id="RVn-kg-b4t"/>
-                                <menuItem title="Uninstall" tag="2" id="ZcS-bG-Efx">
+                                <menuItem isSeparatorItem="YES" id="xOz-U7-Za8"/>
+                                <menuItem title="Uninstall" tag="2" id="Es5-5O-MP6">
                                     <connections>
-                                        <action selector="menuActionUninstall:" target="-2" id="aF7-wi-KXe"/>
+                                        <action selector="menuActionUninstall:" target="-2" id="JsL-9i-0W9"/>
                                     </connections>
                                 </menuItem>
                                 <menuItem isSeparatorItem="YES" id="c2h-UE-IA4"/>

@@ -16,7 +16,7 @@ public struct Constants
         public static let ResolutionSeparator = "x"
         public static let FileNameSeparator = "-"
         public static let Bing = "Bing"
-        public static let NationalGeographic = "NationalGeographic"
+        public static let NationalGeographic = "NationalGeographic" // for future use
     }
 
     public struct Default

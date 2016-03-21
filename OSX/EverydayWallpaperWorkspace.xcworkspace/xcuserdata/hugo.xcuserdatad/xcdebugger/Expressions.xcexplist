@@ -81,6 +81,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "static SearchFile.listOfFileToDelete(String, keepFileCount : Int) -&gt; [String]:SearchFile.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "url.lastPathComponent![0...8]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "EverydayWallpaperViewController.mainMenuClick(AnyObject) -&gt; ():EverydayWallpaperViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -119,21 +127,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "AppSettings.MainCodePage.getter:AppSettings.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "userDefaultDictionary[mainCodePageConst].stringValue">
-            </PersistentString>
-            <PersistentString
-               value = "userDefaultDictionary![mainCodePageConst]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "AppSettings.getBingUpdateHoursWithMarket(String) -&gt; String:AppSettings.swift">
          <PersistentStrings>
             <PersistentString
-               value = "userDefaultDictionary![BingMarketUpdateHours]![market]">
+               value = "userDefaultDictionary![BingMarketUpdateHours]?.dictionary()">
             </PersistentString>
             <PersistentString
                value = "userDefaultDictionary![BingMarketUpdateHours]?.dictionaryForKey(market)">
@@ -145,7 +142,18 @@
                value = "userDefaultDictionary![bingSettingNameFromMarket(market)] as! String">
             </PersistentString>
             <PersistentString
-               value = "userDefaultDictionary![BingMarketUpdateHours]?.dictionary()">
+               value = "userDefaultDictionary![BingMarketUpdateHours]![market]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppSettings.MainCodePage.getter:AppSettings.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "userDefaultDictionary[mainCodePageConst].stringValue">
+            </PersistentString>
+            <PersistentString
+               value = "userDefaultDictionary![mainCodePageConst]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

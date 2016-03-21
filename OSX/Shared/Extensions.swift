@@ -38,7 +38,7 @@ extension NSDate
             return false
         }
     }
-
+    
     func toShortString() -> String
     {
         let dateFormatter = NSDateFormatter()
@@ -118,6 +118,15 @@ extension String
         let start = startIndex.advancedBy(r.startIndex)
         let end = start.advancedBy(r.endIndex - r.startIndex)
         return self[Range(start: start, end: end)]
+    }
+    
+    func isValidShortDateString() -> Bool
+    {
+        let dateFormatter = NSDateFormatter()
+            
+        dateFormatter.dateFormat = "yyyyMMdd"
+        
+        return dateFormatter.dateFromString(self) != nil
     }
 }
 

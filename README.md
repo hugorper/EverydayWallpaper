@@ -1,6 +1,6 @@
 # EverydayWallpaper
 Everyday Wallpaper is a tool that automatically change your wallpaper every day, the wallpapers come from a Bing service.
-The actual version is for OSX only, in the future a Windows version will be available.
+The actual version is for OSX only.
 
 ## Microsoft Bing
 Bing search engine is famous for using high-resolution images that feet perfectly to use for wallpapers, Images change everyday and they are relative to your geographic zone.
@@ -63,6 +63,17 @@ To goal is to update the wallpaper each day, the task will be scheduled each day
 
 If task fail and the computer is not connected to internet, the task is delayed until it's connected.
 This mechanisms will be managed using [Reachability library][2] and EverydayWallpaper is referenced on the [list of project using Reachability][3]. If you plan to use Reachability don't miss the list when you use it.
+
+## App launched at login
+The app can be launched at login, we should know about a specific rule surrounding ‘launch at login’ in the Mac App Store developer requirements list.
+This rule is outlined in the Mac App Store Review Guidelines document:
+
+```
+2.26 Apps that are set to auto-launch or to have other code automatically run at startup or login without user consent will be rejected
+```
+
+To meet this requirement I have included a check box that can be toggled by the user (label: Launch Everyday Wallpaper at login).
+The setting is stored on the **LaunchedAtLogin** in application settings.
 
 ## Debugging
 EverydayWallpaper use the [XCGLogger][4] library.

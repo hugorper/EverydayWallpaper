@@ -289,8 +289,24 @@ class AppDelegate: NSObject, NSApplicationDelegate
 
                     // save the hour of wallpaper availybility for a specific market.
                     AppSettings.sharedInstance.setBingUpdateHoursWithMarket(AppSettings.sharedInstance.MainCodePage, withTimeString: todayWallpaper!.FullStartTime)
+                    
+                    if AppSettings.sharedInstance.IsWallpaperSaved
+                    {
+                        let listFileToDelete = SearchFile.listOfFileToDelete(ImageDownloader.sharedLoader.WallpaperSavePath, keepFileCount: 10)
+                        
+                        for file in listFileToDelete
+                        {
+                            do
+                            {
+                                try NSFileManager.defaultManager().removeItemAtPath(file)
+                            }
+                            catch
+                            {
+                                log?.severe("Could not delete file at \(file)")
+                            }
+                        }
+                    }
                 }
-
             }
             catch
             {

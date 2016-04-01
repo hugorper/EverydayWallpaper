@@ -94,7 +94,7 @@ public class SearchFile
             {
                 if lastFileDatePart != url.lastPathComponent![0 ... 7]
                 {
-                    tmpKeepCount++
+                    tmpKeepCount += 1
                     lastFileDatePart = url.lastPathComponent![0 ... 7]
                 }
             }

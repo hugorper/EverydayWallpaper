@@ -117,7 +117,8 @@ extension String
     {
         let start = startIndex.advancedBy(r.startIndex)
         let end = start.advancedBy(r.endIndex - r.startIndex)
-        return self[Range(start: start, end: end)]
+        // old code not work with swift 3 - self[Range(start: start, end: end)]
+        return self[Range(start..<end)]
     }
     
     func isValidShortDateString() -> Bool

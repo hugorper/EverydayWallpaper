@@ -4,3 +4,6 @@
 [submodule "OSX/XCGLogger"]
 	path = OSX/XCGLogger
 	url = https://github.com/DaveWoodCom/XCGLogger.git
+[submodule "OSX/create-dmg"]
+	path = OSX/create-dmg
+	url = https://github.com/andreyvit/yoursway-create-dmg.git

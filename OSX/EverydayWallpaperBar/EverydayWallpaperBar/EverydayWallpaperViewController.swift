@@ -15,6 +15,8 @@ class EverydayWallpaperViewController: NSViewController
     @IBOutlet weak var saveLastButton: NSButton!
 
     @IBOutlet weak var imagePathControl: NSPathControl!
+    
+    @IBOutlet weak var launchAtLoginButton: NSButton!
 
     @IBOutlet weak var popupMenu: NSPopUpButton!
     @IBOutlet weak var spinner: CircularSnail!
@@ -34,13 +36,13 @@ class EverydayWallpaperViewController: NSViewController
         // load apps settings
         allScreenActivationCheckbox.state = AppSettings.sharedInstance.IsActivate ? NSOnState : NSOffState
         saveLastButton.state = AppSettings.sharedInstance.IsWallpaperSaved ? NSOnState : NSOffState
+        launchAtLoginButton.state = AppSettings.sharedInstance.IsAppLaunchedAtLogin ? NSOnState : NSOffState
         allScreenMarketsCombo.selectItemWithTitle(AppSettings.sharedInstance.MainCodePage)
         imagePathControl.stringValue = ImageDownloader.sharedLoader.WallpaperSavePath
 
         self.updateControlsFromState()
 
         self.view.layer!.contents = NSImage(named: "back")!
-
     }
 
     override func viewWillAppear()
@@ -146,6 +148,14 @@ extension EverydayWallpaperViewController
     @IBAction func saveLastChange(sender: NSButton)
     {
         AppSettings.sharedInstance.IsWallpaperSaved = sender.state == NSOnState ? true : false
+    }
+    
+    @IBAction func launchAtLoginChange(sender: NSButton)
+    {
+        AppSettings.sharedInstance.IsAppLaunchedAtLogin = sender.state == NSOnState ? true : false
+        
+        AppLauncher.UpdateLoginItem( AppSettings.sharedInstance.IsAppLaunchedAtLogin)
+
     }
 
     func updateControlsFromState()

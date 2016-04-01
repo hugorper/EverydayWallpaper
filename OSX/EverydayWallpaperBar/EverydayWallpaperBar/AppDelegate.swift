@@ -70,6 +70,8 @@ class AppDelegate: NSObject, NSApplicationDelegate
         eventMonitor?.start()
 
         self.initWallpaperUpdate()
+        
+        AppLauncher.UpdateLoginItem( AppSettings.sharedInstance.IsAppLaunchedAtLogin)
     }
 
 

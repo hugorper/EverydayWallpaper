@@ -54,18 +54,6 @@ class EverydayWallpaperAppSettingsTests: XCTestCase
         XCTAssert(AppSettings.sharedInstance.IsWallpaperSaved == testValue2)
     }
 
-    func testIsAppLaunchedAtLoginReadWrite()
-    {
-        let testValue1 = true
-        let testValue2 = false
-        
-        AppSettings.sharedInstance.IsAppLaunchedAtLogin = testValue1
-        XCTAssert(AppSettings.sharedInstance.IsAppLaunchedAtLogin == testValue1, "Value error for IsAppLaunchedAtLogin")
-        
-        AppSettings.sharedInstance.IsAppLaunchedAtLogin = testValue2
-        XCTAssert(AppSettings.sharedInstance.IsAppLaunchedAtLogin == testValue2)
-    }
-    
     func testIsActivateReadWrite()
     {
         let testValue1 = true

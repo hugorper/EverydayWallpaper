@@ -10,7 +10,6 @@
                 <outlet property="allScreenActivationCheckbox" destination="A7o-ob-fMm" id="99V-GD-oLL"/>
                 <outlet property="allScreenMarketsCombo" destination="tXF-q0-Qvc" id="GLM-gy-oGA"/>
                 <outlet property="imagePathControl" destination="b3z-nm-alc" id="tWj-tW-cIh"/>
-                <outlet property="launchAtLoginButton" destination="p1T-w1-3Ka" id="ZoJ-Yy-coH"/>
                 <outlet property="popupMenu" destination="cR3-Cg-hhH" id="6X0-TC-ikm"/>
                 <outlet property="saveLastButton" destination="NAz-nN-rwh" id="r5W-S9-SyK"/>
                 <outlet property="spinner" destination="CEh-HQ-qhO" id="VNF-MI-jAe"/>
@@ -20,11 +19,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView wantsLayer="YES" focusRingType="none" id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aKN-lA-QLh">
-                    <rect key="frame" x="34" y="136" width="70" height="17"/>
+                    <rect key="frame" x="34" y="96" width="70" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Codepage:" drawsBackground="YES" id="YJ0-Qu-9i0">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -32,7 +31,7 @@
                     </textFieldCell>
                 </textField>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tXF-q0-Qvc">
-                    <rect key="frame" x="112" y="131" width="92" height="25"/>
+                    <rect key="frame" x="112" y="91" width="92" height="25"/>
                     <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="f1Z-JS-pyd">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -43,7 +42,7 @@
                     </connections>
                 </popUpButton>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NAz-nN-rwh">
-                    <rect key="frame" x="14" y="100" width="17" height="16"/>
+                    <rect key="frame" x="14" y="60" width="17" height="16"/>
                     <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="b9u-GM-eUH">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -53,7 +52,7 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GBS-tv-2W1">
-                    <rect key="frame" x="14" y="200" width="256" height="29"/>
+                    <rect key="frame" x="14" y="160" width="256" height="29"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Everyday Wallpaper" id="wYC-Po-jfr">
                         <font key="font" metaFont="systemSemibold" size="24"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -69,7 +68,7 @@
                     </textFieldCell>
                 </textField>
                 <button autoresizesSubviews="NO" focusRingType="none" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A7o-ob-fMm">
-                    <rect key="frame" x="14" y="159" width="17" height="18"/>
+                    <rect key="frame" x="14" y="119" width="17" height="18"/>
                     <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" state="on" focusRingType="none" inset="2" id="gJp-PK-57j">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -79,7 +78,7 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2XQ-O6-Xvp">
-                    <rect key="frame" x="33" y="160" width="330" height="17"/>
+                    <rect key="frame" x="33" y="120" width="330" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Activate wallpapers update" drawsBackground="YES" id="lkX-om-uXo">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -87,7 +86,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ikd-3U-CbJ">
-                    <rect key="frame" x="33" y="99" width="330" height="17"/>
+                    <rect key="frame" x="33" y="59" width="330" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Save last 10 wallpares" drawsBackground="YES" id="1iR-o9-jC5">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -95,7 +94,7 @@
                     </textFieldCell>
                 </textField>
                 <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b3z-nm-alc">
-                    <rect key="frame" x="16" y="72" width="347" height="22"/>
+                    <rect key="frame" x="16" y="32" width="347" height="22"/>
                     <pathCell key="cell" selectable="YES" alignment="left" id="1a0-MX-er9">
                         <font key="font" metaFont="systemLight" size="13"/>
                         <url key="url" string="file://localhost/Applications/"/>
@@ -107,7 +106,7 @@
                     </connections>
                 </pathControl>
                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CEh-HQ-qhO" customClass="CircularSnail" customModule="EverydayWallpaperBar" customModuleProvider="target">
-                    <rect key="frame" x="147" y="100" width="80" height="80"/>
+                    <rect key="frame" x="147" y="60" width="80" height="80"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="40"/>
@@ -115,7 +114,7 @@
                     </userDefinedRuntimeAttributes>
                 </customView>
                 <popUpButton autoresizesSubviews="NO" focusRingType="none" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cR3-Cg-hhH">
-                    <rect key="frame" x="324" y="194" width="39" height="41"/>
+                    <rect key="frame" x="324" y="154" width="39" height="41"/>
                     <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="only" alignment="center" alternateImage="gear" scrollable="YES" lineBreakMode="clipping" focusRingType="none" inset="2" pullsDown="YES" arrowPosition="noArrow" autoenablesItems="NO" altersStateOfSelectedItem="NO" id="rNs-DT-bWh">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -153,24 +152,6 @@
                         </menu>
                     </popUpButtonCell>
                 </popUpButton>
-                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p1T-w1-3Ka">
-                    <rect key="frame" x="14" y="39" width="17" height="16"/>
-                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="PIs-qy-kys">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="launchAtLoginChange:" target="-2" id="c4J-RM-y7Z"/>
-                    </connections>
-                </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q7V-Uu-CZo">
-                    <rect key="frame" x="33" y="38" width="330" height="17"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Launch Everyday Wallpaper at login" drawsBackground="YES" id="UwS-Q2-rzd">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </textFieldCell>
-                </textField>
             </subviews>
             <point key="canvasLocation" x="225.5" y="473"/>
         </customView>

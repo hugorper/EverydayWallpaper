@@ -25,7 +25,6 @@ class AppSettings
     var pictureSavePath: String = ""
     private let imageFolderConst = "EverydayWallpaper"
     private let savedWallpaperConst = "SaveWallpapers"
-    private let launchedAtLoginConst = "LaunchedAtLogin"
     private let isActivateConst = "Activate"
     private let mainCodePageConst = "MainCodePage"
     private let logLevelConst = "LogLevel"
@@ -104,19 +103,6 @@ class AppSettings
         }
     }
 
-    var IsAppLaunchedAtLogin: Bool
-        {
-        get
-        {
-            return (userDefaultDictionary![launchedAtLoginConst]?.boolValue)!
-        }
-        set
-        {
-            userDefaultDictionary![launchedAtLoginConst] = newValue
-            self.save()
-        }
-    }
-
     var IsActivate: Bool
     {
         get
@@ -172,27 +158,6 @@ class AppSettings
             {
                 return XCGLogger.LogLevel.Severe
             }
-        }
-        set
-        {
-            if newValue == XCGLogger.LogLevel.None
-            {
-                userDefaultDictionary![logLevelConst] = "none"
-            }
-            else if newValue == XCGLogger.LogLevel.Debug
-            {
-                userDefaultDictionary![logLevelConst] = "debug"
-            }
-            else if newValue == XCGLogger.LogLevel.Severe
-            {
-                userDefaultDictionary![logLevelConst] = "severe"
-            }
-            else
-            {
-                userDefaultDictionary![logLevelConst] = "severe"
-            }
-            
-            self.save()
         }
     }
 

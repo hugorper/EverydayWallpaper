@@ -64,7 +64,7 @@ To goal is to update the wallpaper each day, the task will be scheduled each day
 If task fail and the computer is not connected to internet, the task is delayed until it's connected.
 This mechanisms will be managed using [Reachability library][2] and EverydayWallpaper is referenced on the [list of project using Reachability][3]. If you plan to use Reachability don't miss the list when you use it.
 
-## App launched at login
+## App launched at login (to be implemented in next version)
 The app can be launched at login, we should know about a specific rule surrounding ‘launch at login’ in the Mac App Store developer requirements list.
 This rule is outlined in the Mac App Store Review Guidelines document:
 
@@ -74,6 +74,15 @@ This rule is outlined in the Mac App Store Review Guidelines document:
 
 To meet this requirement I have included a check box that can be toggled by the user (label: Launch Everyday Wallpaper at login).
 The setting is stored on the **LaunchedAtLogin** in application settings.
+
+### Adding Startup Items
+
+1. Log in to your Mac with the account you wish to associate with a startup item.
+2. Click the ‘System Preferences’ icon in the Dock, or select the ‘System Preferences’ item from the Apple menu.
+3. Click the ‘Accounts’ or ‘User & Groups’ icon in the System section of the System Preferences window.
+4. Click the appropriate user name in the list of accounts.
+5. Select the ‘Login Items’ tab.
+6. Click the + (plus) button below the Login Items window. A standard Finder browsing sheet will open. Navigate to EverydayWallpaper on Applications folder and  Click once on it to select it, and then click the ‘Add’ button.
 
 ## Debugging
 EverydayWallpaper use the [XCGLogger][4] library.
